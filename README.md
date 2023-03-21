@@ -10,8 +10,10 @@
 #### Naver Api 구현 샘플 코드 (키워드 입력)
 ==> http://localhost:8080/api
 
-#### http://localhost:8080/ 
-==> 링크로 이동
+
+#### 샘플 코드 링크 이동
+==> http://localhost:8080/ 
+
 
 com.ncs
 * config
