@@ -60,7 +60,7 @@ public class CrawlingController {
     public String SearchURL2(Model model) {
 
 
-        String URL = "https://news.naver.com/main/list.naver?mode=LS2D&mid=shm&sid1=100&sid2=264";
+        String URL = "https://news.naver.com/main/list.naver?mode=LS2D&mid=shm&sid1=105&sid2=731";
         NewsDto newsDto = new NewsDto();
         ArrayList<NewsDto> dtoList = new ArrayList<NewsDto>();
 
