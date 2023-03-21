@@ -2,8 +2,8 @@ package com.ncs.entity;
 
 import com.ncs.dto.MemberSaveRequest;
 import lombok.*;
-
 import javax.persistence.*;
+import com.ncs.entity.BaseEntity;
 
 @Getter
 @Entity

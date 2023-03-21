@@ -26,9 +26,9 @@ public class MemberService {
     @Autowired
     private MemberRepository memberRepository;
     @Autowired
-    private final MemberSearchRepository memberSearchRepository;
+    private MemberSearchRepository memberSearchRepository;
     @Autowired
-    private final MemberSearchQueryRepository memberSearchQueryRepository;
+    private MemberSearchQueryRepository memberSearchQueryRepository;
 
     @Transactional
     public void saveAllMember(MemberSaveAllRequest memberSaveAllRequest) {
