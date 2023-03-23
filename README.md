@@ -19,7 +19,7 @@
 <br>
 
 #### 3. https://news.naver.com/main/list.naver?mode=LS2D&mid=shm&sid1=105&sid2=731 에 있는 뉴스기사 크롤링한 예제
-==> localhost:8080/craw2 
+==> localhost:8080/news/add 후 localhost:8080/news/result  
 
 <br>
 
