@@ -12,17 +12,15 @@
   <h3>크롤링 테스트</h3>
 
 
-  <table border="1">
-    <tr th:each="dto : ${dtoList}">
-      <td th:text="${dtoStat.index + 1}"></td>
-      <td th:text="${dto.url}"></td>
-      <td th:text="${dto.title}"></td>
-      <td th:text="${dto.reporter}"></td>
-      <td th:text="${dto.datetime}"></td>
-      <td th:text="${dto.imageURL}"></td>
-      <td th:text="${dto.text}"></td>
-    </tr>
-  </table>
+  <div class="row" th:each="dto : ${newsDtoListlist}">
+    <div class="col-md-4">
+      <dt><img th:src="${dto.imageURL}" onerror="this.style.display='none'" style="width: 100px;height: 70px"></dt>
+    </div>
+    <div class="col-md-8">
+      <dt th:text="${dto.title}"></dt>
+      <dd th:text="${dto.reporter}"></dd>
+    </div>
+  </div>
 </div>
 </body>
 </html>

@@ -5,7 +5,9 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 import javax.persistence.*;
+import java.sql.Array;
 import java.util.ArrayList;
+import java.util.List;
 
 @Getter
 @Setter
@@ -19,23 +21,30 @@ public class News {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(name = "url")
     private String url;
 
     @Lob
-//    @Column(length = 50000)
+    @Column(name = "title")
     private String title;
 
+    @Column(name = "reporter")
     private String reporter;
 
+    @Column(name = "datetime")
     private String datetime;
 
+//    @ElementCollection
+//    @Column(name = "imageurl")
+//    private List<String> imageURL;
+
     @Lob
-//    @Column(length = 50000)
+    @Column(name = "imageurl")
     private String imageURL;
 
 
     @Lob
-//    @Column(length = 300000)
+    @Column(name = "text")
     private String text;
 
 
@@ -45,7 +54,7 @@ public class News {
         news.setTitle(newsDtos.getTitle());
         news.setReporter(newsDtos.getReporter());
         news.setUrl(newsDtos.getUrl());
-        news.setImageURL(newsDtos.getImageURL().toString());
+        news.setImageURL(newsDtos.getImageURL());
         news.setDatetime(newsDtos.getDatetime());
         news.setText(newsDtos.getText());
 

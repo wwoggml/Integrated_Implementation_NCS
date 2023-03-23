@@ -2,6 +2,7 @@ package com.ncs.controller;
 
 
 import com.ncs.dto.NewsDto;
+import com.ncs.entity.News;
 import com.ncs.repository.NewsRepository;
 import com.ncs.service.NewsService;
 import lombok.RequiredArgsConstructor;
@@ -20,6 +21,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
@@ -33,24 +35,26 @@ public class NewsController {
     NewsRepository newsRepository;
 
     @GetMapping("/add")
-    public void SearchURL2(Model model) {
+    public String SearchURL2(Model model) {
 
 
-        String URL = "https://news.naver.com/main/list.naver?mode=LS2D&mid=shm&sid1=100&sid2=264";
+        String URL = "https://news.naver.com/main/list.naver?mode=LS2D&mid=shm&sid1=105&sid2=731";
         NewsDto newsDto = new NewsDto();
         ArrayList<NewsDto> dtoList = new ArrayList<NewsDto>();
 
         Connection conn = Jsoup.connect(URL);
-        String url = "";
+        String url = "", imageURL = "";
+        int index = 0;
 
         try {
             Document document = conn.get();
             Elements urlTest = document.getElementsByClass("photo");
 
-            log.info(urlTest);
 
             for (Element element : urlTest) {
-                ArrayList imageurl = new ArrayList<>();
+                index = 0;
+                imageURL = "";
+                List<String> imageurl = new ArrayList<>();
                 url = element.select("a").attr("abs:href");
                 conn = Jsoup.connect(url);
 
@@ -64,14 +68,17 @@ public class NewsController {
 
 
                 for(Element ele : imageUrl) {
-                    imageurl.add(ele.select("img").attr("abs:data-src"));
+                    if(index == 0) imageURL += ele.select("img").attr("abs:data-src");
+                    else imageURL += ", " + ele.select("img").attr("abs:data-src");
+//                                        imageurl.add(ele.select("img").attr("abs:data-src"));
+                    index++;
                 }
 
 
                 newsDto.setUrl((String) URL);
                 newsDto.setTitle(title.text());
                 newsDto.setReporter(author.text());
-                newsDto.setImageURL(imageurl);
+                newsDto.setImageURL(imageURL);
                 newsDto.setDatetime(date.text());
                 newsDto.setText(text.text());
 
@@ -80,7 +87,9 @@ public class NewsController {
 
         } catch (IOException e) {
             e.printStackTrace();
+            return "Failed to save database (ERROR : " + e.getMessage() + ")";
         }
-
+        return "Save Database Successful!";
     }
+
 }
