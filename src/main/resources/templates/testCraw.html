@@ -14,10 +14,11 @@
 
   <table border="1">
     <tr th:each="dto : ${dtoList}">
+      <td th:text="${dtoStat.index + 1}"></td>
       <td th:text="${dto.url}"></td>
       <td th:text="${dto.title}"></td>
-      <td th:text="${dto.author}"></td>
-      <td th:text="${dto.date}"></td>
+      <td th:text="${dto.reporter}"></td>
+      <td th:text="${dto.datetime}"></td>
       <td th:text="${dto.imageURL}"></td>
       <td th:text="${dto.text}"></td>
     </tr>
