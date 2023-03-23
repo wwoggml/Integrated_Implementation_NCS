@@ -1,25 +1,17 @@
-
 spring:
-  output:
-    ansi:
-      enabled: ALWAYS
-
   datasource:
     url: jdbc:mariadb://localhost:3306/ncs?useSSL=false&useUnicode=true&serverTimezone=Asia/Seoul&allowPublicKeyRetrieval=true
     driver-class-name: org.mariadb.jdbc.Driver
     username: root
     password: root1234
-
   thymeleaf:
     cache: false
-
   jpa:
     hibernate:
       ddl-auto: create
     properties:
       hibernate:
         format_sql: true
-
 logging:
   level:
     org.hibernate.SQL: debug

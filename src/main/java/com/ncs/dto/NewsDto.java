@@ -21,8 +21,8 @@ public class NewsDto {
     private String url;
     private String title;
     private String reporter;
+    private String category;
     private String datetime;
-//    private List<String> imageURL;
     private String imageURL;
     private String text;
 

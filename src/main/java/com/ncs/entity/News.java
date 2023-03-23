@@ -24,6 +24,9 @@ public class News {
     @Column(name = "url")
     private String url;
 
+    @Column(name = "category")
+    private String category;
+
     @Lob
     @Column(name = "title")
     private String title;
@@ -54,6 +57,7 @@ public class News {
         news.setTitle(newsDtos.getTitle());
         news.setReporter(newsDtos.getReporter());
         news.setUrl(newsDtos.getUrl());
+        news.setCategory(newsDtos.getCategory());
         news.setImageURL(newsDtos.getImageURL());
         news.setDatetime(newsDtos.getDatetime());
         news.setText(newsDtos.getText());

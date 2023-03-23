@@ -38,6 +38,7 @@ public class NewsService {
             newsDto.setUrl(news.getUrl());
             newsDto.setTitle(news.getTitle());
             newsDto.setReporter(news.getReporter());
+            newsDto.setCategory(news.getCategory());
             newsDto.setDatetime(news.getDatetime());
             newsDto.setImageURL(news.getImageURL());
             newsDto.setText(news.getText());

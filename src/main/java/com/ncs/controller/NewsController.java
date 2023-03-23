@@ -13,6 +13,7 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.server.DelegatingServerHttpResponse;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -38,12 +39,16 @@ public class NewsController {
     public String SearchURL2(Model model) {
 
 
-        String URL = "https://news.naver.com/main/list.naver?mode=LS2D&mid=shm&sid1=105&sid2=731";
+        String URL = "https://news.naver.com/main/list.naver?mode=LS2D&mid=shm&sid1=101&sid2=258";
+
+        String category = "";
+
         NewsDto newsDto = new NewsDto();
         ArrayList<NewsDto> dtoList = new ArrayList<NewsDto>();
 
         Connection conn = Jsoup.connect(URL);
-        String url = "", imageURL = "";
+        String imageURL = "";
+//        url = "",
         int index = 0;
 
         try {
@@ -55,8 +60,8 @@ public class NewsController {
                 index = 0;
                 imageURL = "";
                 List<String> imageurl = new ArrayList<>();
-                url = element.select("a").attr("abs:href");
-                conn = Jsoup.connect(url);
+                URL = element.select("a").attr("abs:href");
+                conn = Jsoup.connect(URL);
 
                 document = conn.get();
 
@@ -70,15 +75,22 @@ public class NewsController {
                 for(Element ele : imageUrl) {
                     if(index == 0) imageURL += ele.select("img").attr("abs:data-src");
                     else imageURL += ", " + ele.select("img").attr("abs:data-src");
-//                                        imageurl.add(ele.select("img").attr("abs:data-src"));
                     index++;
                 }
 
+
+//                if(URL.contains("sid=105"))
+//                    category = "IT/과학";
+//                else if(URL.contains("sid=101"))
+//                    category = "경제";
+//                else if(URL.contains("sid=103"))
+//                    category = "생활/문화";
 
                 newsDto.setUrl((String) URL);
                 newsDto.setTitle(title.text());
                 newsDto.setReporter(author.text());
                 newsDto.setImageURL(imageURL);
+                newsDto.setCategory("카테고리");
                 newsDto.setDatetime(date.text());
                 newsDto.setText(text.text());
 
