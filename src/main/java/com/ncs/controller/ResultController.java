@@ -25,6 +25,10 @@ public class ResultController {
     @Autowired
     NewsRepository newsRepository;
 
+    @GetMapping("/search")
+    public String SearchURL() {
+        return "CrawlingSearch";
+    }
     @GetMapping("/result")
     public String NewsResult(Model model) {
         List<NewsDto> newsDtoListlist = newsService.getAll();
