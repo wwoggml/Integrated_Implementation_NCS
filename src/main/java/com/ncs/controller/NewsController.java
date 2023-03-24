@@ -35,11 +35,16 @@ public class NewsController {
     @Autowired
     NewsRepository newsRepository;
 
+    @GetMapping("/search")
+    public String SearchURL() {
+        return "CrawlingSearch";
+    }
+
     @GetMapping("/add")
     public String SearchURL2(Model model) {
 
 
-        String URL = "https://news.naver.com/main/list.naver?mode=LS2D&mid=shm&sid1=101&sid2=258";
+        String URL = "https://news.naver.com/main/list.naver?mode=LS2D&mid=shm&sid1=105&sid2=228";
 
         String category = "";
 
@@ -48,14 +53,15 @@ public class NewsController {
 
         Connection conn = Jsoup.connect(URL);
         String imageURL = "";
-//        url = "",
         int index = 0;
 
         try {
             Document document = conn.get();
-            Elements urlTest = document.getElementsByClass("photo");
+//            Elements urlTest = document.getElementsByClass("photo");
+            Elements urlTest = document.select("dl > dt").not(".photo");
 
 
+                document.select("dt");
             for (Element element : urlTest) {
                 index = 0;
                 imageURL = "";
@@ -72,6 +78,7 @@ public class NewsController {
                 Elements text = document.getElementsByClass("go_trans _article_content");
 
 
+                if(imageUrl.size() == 0) imageURL = "";
                 for(Element ele : imageUrl) {
                     if(index == 0) imageURL += ele.select("img").attr("abs:data-src");
                     else imageURL += ", " + ele.select("img").attr("abs:data-src");
@@ -79,18 +86,18 @@ public class NewsController {
                 }
 
 
-//                if(URL.contains("sid=105"))
-//                    category = "IT/과학";
-//                else if(URL.contains("sid=101"))
-//                    category = "경제";
-//                else if(URL.contains("sid=103"))
-//                    category = "생활/문화";
+                if(URL.contains("sid=105"))
+                    category = "IT/과학";
+                else if(URL.contains("sid=101"))
+                    category = "경제";
+                else if(URL.contains("sid=103"))
+                    category = "생활/문화";
 
                 newsDto.setUrl((String) URL);
                 newsDto.setTitle(title.text());
                 newsDto.setReporter(author.text());
                 newsDto.setImageURL(imageURL);
-                newsDto.setCategory("카테고리");
+                newsDto.setCategory(category);
                 newsDto.setDatetime(date.text());
                 newsDto.setText(text.text());
 

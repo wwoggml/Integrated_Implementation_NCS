@@ -34,14 +34,11 @@ public class ResultController {
 
 
         for(int i = 0; i<newsDtoListlist.size(); i++) {
-//            imageURL = new ArrayList<>();
             newsDtoListlist.get(i).setImageURL(newsDtoListlist.get(i).getImageURL().split(",")[0]);
         }
-//        imageURL.add(newsDtoListlist.get(i).getImageURL().split(",")[0]);
 
 
         model.addAttribute("newsDtoListlist", newsDtoListlist);
-//        model.addAttribute("imageURL", imageURL);
 
         return "testCraw";
 
