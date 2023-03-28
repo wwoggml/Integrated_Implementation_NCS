@@ -1,0 +1,175 @@
+2023-03-28 14:59:16  INFO [com.ncs.NcsApplication] Starting NcsApplication using Java 11.0.17 on gimjaehuis-MacBook-Pro.local with PID 56265 (/Users/kimjaehee/Desktop/학교/과제/통합구현_NCS/ncs/Integrated_Implementation_NCS/build/classes/java/main started by kimjaehee in /Users/kimjaehee/Desktop/학교/과제/통합구현_NCS/ncs/Integrated_Implementation_NCS)
+2023-03-28 14:59:16  INFO [com.ncs.NcsApplication] No active profile set, falling back to 1 default profile: "default"
+2023-03-28 14:59:17  INFO [org.springframework.data.repository.config.RepositoryConfigurationDelegate] Multiple Spring Data modules found, entering strict repository configuration mode
+2023-03-28 14:59:17  INFO [org.springframework.data.repository.config.RepositoryConfigurationDelegate] Bootstrapping Spring Data Elasticsearch repositories in DEFAULT mode.
+2023-03-28 14:59:17  INFO [org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport] Spring Data Elasticsearch - Could not safely identify store assignment for repository candidate interface com.ncs.repository.NewsRepository; If you want this repository to be a Elasticsearch repository, consider annotating your entities with one of these annotations: org.springframework.data.elasticsearch.annotations.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.elasticsearch.repository.ElasticsearchRepository, org.springframework.data.elasticsearch.repository.ElasticsearchRepository
+2023-03-28 14:59:17  INFO [org.springframework.data.repository.config.RepositoryConfigurationDelegate] Finished Spring Data repository scanning in 20 ms. Found 0 Elasticsearch repository interfaces.
+2023-03-28 14:59:17  INFO [org.springframework.data.repository.config.RepositoryConfigurationDelegate] Multiple Spring Data modules found, entering strict repository configuration mode
+2023-03-28 14:59:17  INFO [org.springframework.data.repository.config.RepositoryConfigurationDelegate] Bootstrapping Spring Data Reactive Elasticsearch repositories in DEFAULT mode.
+2023-03-28 14:59:17  INFO [org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport] Spring Data Reactive Elasticsearch - Could not safely identify store assignment for repository candidate interface com.ncs.repository.NewsRepository; If you want this repository to be a Reactive Elasticsearch repository, consider annotating your entities with one of these annotations: org.springframework.data.elasticsearch.annotations.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.elasticsearch.repository.ReactiveElasticsearchRepository
+2023-03-28 14:59:17  INFO [org.springframework.data.repository.config.RepositoryConfigurationDelegate] Finished Spring Data repository scanning in 2 ms. Found 0 Reactive Elasticsearch repository interfaces.
+2023-03-28 14:59:17  INFO [org.springframework.data.repository.config.RepositoryConfigurationDelegate] Multiple Spring Data modules found, entering strict repository configuration mode
+2023-03-28 14:59:17  INFO [org.springframework.data.repository.config.RepositoryConfigurationDelegate] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-03-28 14:59:17  INFO [org.springframework.data.repository.config.RepositoryConfigurationDelegate] Finished Spring Data repository scanning in 16 ms. Found 1 JPA repository interfaces.
+2023-03-28 14:59:17  INFO [org.springframework.boot.web.embedded.tomcat.TomcatWebServer] Tomcat initialized with port(s): 8080 (http)
+2023-03-28 14:59:17  INFO [org.apache.coyote.http11.Http11NioProtocol] Initializing ProtocolHandler ["http-nio-8080"]
+2023-03-28 14:59:17  INFO [org.apache.catalina.core.StandardService] Starting service [Tomcat]
+2023-03-28 14:59:17  INFO [org.apache.catalina.core.StandardEngine] Starting Servlet engine: [Apache Tomcat/9.0.71]
+2023-03-28 14:59:17  INFO [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]] Initializing Spring embedded WebApplicationContext
+2023-03-28 14:59:17  INFO [org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext] Root WebApplicationContext: initialization completed in 1006 ms
+2023-03-28 14:59:17  INFO [org.hibernate.jpa.internal.util.LogHelper] HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-03-28 14:59:17  INFO [org.hibernate.Version] HHH000412: Hibernate ORM core version 5.6.15.Final
+2023-03-28 14:59:18  INFO [org.hibernate.annotations.common.Version] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-03-28 14:59:18 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration boolean -> org.hibernate.type.BooleanType@60816371
+2023-03-28 14:59:18 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration boolean -> org.hibernate.type.BooleanType@60816371
+2023-03-28 14:59:18 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration java.lang.Boolean -> org.hibernate.type.BooleanType@60816371
+2023-03-28 14:59:18 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration numeric_boolean -> org.hibernate.type.NumericBooleanType@3316527e
+2023-03-28 14:59:18 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration true_false -> org.hibernate.type.TrueFalseType@75dd0f94
+2023-03-28 14:59:18 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration yes_no -> org.hibernate.type.YesNoType@4751cd3
+2023-03-28 14:59:18 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration byte -> org.hibernate.type.ByteType@1109730f
+2023-03-28 14:59:18 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration byte -> org.hibernate.type.ByteType@1109730f
+2023-03-28 14:59:18 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration java.lang.Byte -> org.hibernate.type.ByteType@1109730f
+2023-03-28 14:59:18 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration character -> org.hibernate.type.CharacterType@60652518
+2023-03-28 14:59:18 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration char -> org.hibernate.type.CharacterType@60652518
+2023-03-28 14:59:18 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration java.lang.Character -> org.hibernate.type.CharacterType@60652518
+2023-03-28 14:59:18 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration short -> org.hibernate.type.ShortType@40bf0e15
+2023-03-28 14:59:18 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration short -> org.hibernate.type.ShortType@40bf0e15
+2023-03-28 14:59:18 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration java.lang.Short -> org.hibernate.type.ShortType@40bf0e15
+2023-03-28 14:59:18 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration integer -> org.hibernate.type.IntegerType@f4f843f
+2023-03-28 14:59:18 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration int -> org.hibernate.type.IntegerType@f4f843f
+2023-03-28 14:59:18 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration java.lang.Integer -> org.hibernate.type.IntegerType@f4f843f
+2023-03-28 14:59:18 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration long -> org.hibernate.type.LongType@5fde1d64
+2023-03-28 14:59:18 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration long -> org.hibernate.type.LongType@5fde1d64
+2023-03-28 14:59:18 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration java.lang.Long -> org.hibernate.type.LongType@5fde1d64
+2023-03-28 14:59:18 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration float -> org.hibernate.type.FloatType@3bab95ca
+2023-03-28 14:59:18 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration float -> org.hibernate.type.FloatType@3bab95ca
+2023-03-28 14:59:18 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration java.lang.Float -> org.hibernate.type.FloatType@3bab95ca
+2023-03-28 14:59:18 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration double -> org.hibernate.type.DoubleType@18b40fe6
+2023-03-28 14:59:18 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration double -> org.hibernate.type.DoubleType@18b40fe6
+2023-03-28 14:59:18 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration java.lang.Double -> org.hibernate.type.DoubleType@18b40fe6
+2023-03-28 14:59:18 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration big_decimal -> org.hibernate.type.BigDecimalType@42ecc554
+2023-03-28 14:59:18 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration java.math.BigDecimal -> org.hibernate.type.BigDecimalType@42ecc554
+2023-03-28 14:59:18 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration big_integer -> org.hibernate.type.BigIntegerType@24aedcc5
+2023-03-28 14:59:18 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration java.math.BigInteger -> org.hibernate.type.BigIntegerType@24aedcc5
+2023-03-28 14:59:18 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration string -> org.hibernate.type.StringType@464400b3
+2023-03-28 14:59:18 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration java.lang.String -> org.hibernate.type.StringType@464400b3
+2023-03-28 14:59:18 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration nstring -> org.hibernate.type.StringNVarcharType@6e517c9e
+2023-03-28 14:59:18 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration ncharacter -> org.hibernate.type.CharacterNCharType@2e8b24a1
+2023-03-28 14:59:18 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration url -> org.hibernate.type.UrlType@601f264d
+2023-03-28 14:59:18 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration java.net.URL -> org.hibernate.type.UrlType@601f264d
+2023-03-28 14:59:18 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration Duration -> org.hibernate.type.DurationType@15e8c040
+2023-03-28 14:59:18 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration java.time.Duration -> org.hibernate.type.DurationType@15e8c040
+2023-03-28 14:59:18 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration Instant -> org.hibernate.type.InstantType@382d549a
+2023-03-28 14:59:18 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration java.time.Instant -> org.hibernate.type.InstantType@382d549a
+2023-03-28 14:59:18 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration LocalDateTime -> org.hibernate.type.LocalDateTimeType@6f106af8
+2023-03-28 14:59:18 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration java.time.LocalDateTime -> org.hibernate.type.LocalDateTimeType@6f106af8
+2023-03-28 14:59:18 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration LocalDate -> org.hibernate.type.LocalDateType@485451d8
+2023-03-28 14:59:18 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration java.time.LocalDate -> org.hibernate.type.LocalDateType@485451d8
+2023-03-28 14:59:18 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration LocalTime -> org.hibernate.type.LocalTimeType@399af6dc
+2023-03-28 14:59:18 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration java.time.LocalTime -> org.hibernate.type.LocalTimeType@399af6dc
+2023-03-28 14:59:18 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration OffsetDateTime -> org.hibernate.type.OffsetDateTimeType@2b35c7aa
+2023-03-28 14:59:18 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration java.time.OffsetDateTime -> org.hibernate.type.OffsetDateTimeType@2b35c7aa
+2023-03-28 14:59:18 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration OffsetTime -> org.hibernate.type.OffsetTimeType@35010a6b
+2023-03-28 14:59:18 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration java.time.OffsetTime -> org.hibernate.type.OffsetTimeType@35010a6b
+2023-03-28 14:59:18 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration ZonedDateTime -> org.hibernate.type.ZonedDateTimeType@4756e5cc
+2023-03-28 14:59:18 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration java.time.ZonedDateTime -> org.hibernate.type.ZonedDateTimeType@4756e5cc
+2023-03-28 14:59:18 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration date -> org.hibernate.type.DateType@350d26f3
+2023-03-28 14:59:18 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration java.sql.Date -> org.hibernate.type.DateType@350d26f3
+2023-03-28 14:59:18 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration time -> org.hibernate.type.TimeType@7645e64
+2023-03-28 14:59:18 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration java.sql.Time -> org.hibernate.type.TimeType@7645e64
+2023-03-28 14:59:18 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration timestamp -> org.hibernate.type.TimestampType@2e929182
+2023-03-28 14:59:18 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration java.sql.Timestamp -> org.hibernate.type.TimestampType@2e929182
+2023-03-28 14:59:18 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration java.util.Date -> org.hibernate.type.TimestampType@2e929182
+2023-03-28 14:59:18 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration dbtimestamp -> org.hibernate.type.DbTimestampType@13234ac9
+2023-03-28 14:59:18 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration calendar -> org.hibernate.type.CalendarType@60f662bd
+2023-03-28 14:59:18 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration java.util.Calendar -> org.hibernate.type.CalendarType@60f662bd
+2023-03-28 14:59:18 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration java.util.GregorianCalendar -> org.hibernate.type.CalendarType@60f662bd
+2023-03-28 14:59:18 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration calendar_date -> org.hibernate.type.CalendarDateType@42576db9
+2023-03-28 14:59:18 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration calendar_time -> org.hibernate.type.CalendarTimeType@110620d
+2023-03-28 14:59:18 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration locale -> org.hibernate.type.LocaleType@a357c3e
+2023-03-28 14:59:18 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration java.util.Locale -> org.hibernate.type.LocaleType@a357c3e
+2023-03-28 14:59:18 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration currency -> org.hibernate.type.CurrencyType@323e026d
+2023-03-28 14:59:18 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration java.util.Currency -> org.hibernate.type.CurrencyType@323e026d
+2023-03-28 14:59:18 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration timezone -> org.hibernate.type.TimeZoneType@10b87ff6
+2023-03-28 14:59:18 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration java.util.TimeZone -> org.hibernate.type.TimeZoneType@10b87ff6
+2023-03-28 14:59:18 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration class -> org.hibernate.type.ClassType@33187485
+2023-03-28 14:59:18 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration java.lang.Class -> org.hibernate.type.ClassType@33187485
+2023-03-28 14:59:18 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration uuid-binary -> org.hibernate.type.UUIDBinaryType@7ba06506
+2023-03-28 14:59:18 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration java.util.UUID -> org.hibernate.type.UUIDBinaryType@7ba06506
+2023-03-28 14:59:18 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration uuid-char -> org.hibernate.type.UUIDCharType@6caa4dc5
+2023-03-28 14:59:18 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration binary -> org.hibernate.type.BinaryType@53f495f0
+2023-03-28 14:59:18 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration byte[] -> org.hibernate.type.BinaryType@53f495f0
+2023-03-28 14:59:18 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration [B -> org.hibernate.type.BinaryType@53f495f0
+2023-03-28 14:59:18 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration wrapper-binary -> org.hibernate.type.WrapperBinaryType@6c5ae8fd
+2023-03-28 14:59:18 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration Byte[] -> org.hibernate.type.WrapperBinaryType@6c5ae8fd
+2023-03-28 14:59:18 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration [Ljava.lang.Byte; -> org.hibernate.type.WrapperBinaryType@6c5ae8fd
+2023-03-28 14:59:18 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration row_version -> org.hibernate.type.RowVersionType@5dd6a4c8
+2023-03-28 14:59:18 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration image -> org.hibernate.type.ImageType@7b3a6e95
+2023-03-28 14:59:18 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration characters -> org.hibernate.type.CharArrayType@4bbc21bd
+2023-03-28 14:59:18 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration char[] -> org.hibernate.type.CharArrayType@4bbc21bd
+2023-03-28 14:59:18 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration [C -> org.hibernate.type.CharArrayType@4bbc21bd
+2023-03-28 14:59:18 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration wrapper-characters -> org.hibernate.type.CharacterArrayType@55e91e61
+2023-03-28 14:59:18 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration [Ljava.lang.Character; -> org.hibernate.type.CharacterArrayType@55e91e61
+2023-03-28 14:59:18 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration Character[] -> org.hibernate.type.CharacterArrayType@55e91e61
+2023-03-28 14:59:18 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration text -> org.hibernate.type.TextType@606b53a3
+2023-03-28 14:59:18 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration ntext -> org.hibernate.type.NTextType@1201e064
+2023-03-28 14:59:18 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration blob -> org.hibernate.type.BlobType@75d97e18
+2023-03-28 14:59:18 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration java.sql.Blob -> org.hibernate.type.BlobType@75d97e18
+2023-03-28 14:59:18 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration materialized_blob -> org.hibernate.type.MaterializedBlobType@7540160e
+2023-03-28 14:59:18 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration clob -> org.hibernate.type.ClobType@a84338a
+2023-03-28 14:59:18 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration java.sql.Clob -> org.hibernate.type.ClobType@a84338a
+2023-03-28 14:59:18 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration nclob -> org.hibernate.type.NClobType@61957d9c
+2023-03-28 14:59:18 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration java.sql.NClob -> org.hibernate.type.NClobType@61957d9c
+2023-03-28 14:59:18 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration materialized_clob -> org.hibernate.type.MaterializedClobType@213835b6
+2023-03-28 14:59:18 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration materialized_nclob -> org.hibernate.type.MaterializedNClobType@6248cfab
+2023-03-28 14:59:18 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration serializable -> org.hibernate.type.SerializableType@377dbc50
+2023-03-28 14:59:18 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration object -> org.hibernate.type.ObjectType@6ac756b
+2023-03-28 14:59:18 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration java.lang.Object -> org.hibernate.type.ObjectType@6ac756b
+2023-03-28 14:59:18 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration imm_date -> org.hibernate.type.AdaptedImmutableType@7b4b8199
+2023-03-28 14:59:18 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration imm_time -> org.hibernate.type.AdaptedImmutableType@4bbf20d1
+2023-03-28 14:59:18 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration imm_timestamp -> org.hibernate.type.AdaptedImmutableType@6fced25c
+2023-03-28 14:59:18 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration imm_dbtimestamp -> org.hibernate.type.AdaptedImmutableType@3cf4dec7
+2023-03-28 14:59:18 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration imm_calendar -> org.hibernate.type.AdaptedImmutableType@1b94c789
+2023-03-28 14:59:18 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration imm_calendar_date -> org.hibernate.type.AdaptedImmutableType@299fc582
+2023-03-28 14:59:18 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration imm_binary -> org.hibernate.type.AdaptedImmutableType@305aaedf
+2023-03-28 14:59:18 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration imm_serializable -> org.hibernate.type.AdaptedImmutableType@2a425cf5
+2023-03-28 14:59:18  INFO [com.zaxxer.hikari.HikariDataSource] HikariPool-1 - Starting...
+2023-03-28 14:59:18  INFO [com.zaxxer.hikari.HikariDataSource] HikariPool-1 - Start completed.
+2023-03-28 14:59:18  INFO [org.hibernate.dialect.Dialect] HHH000400: Using dialect: org.hibernate.dialect.MariaDB53Dialect
+2023-03-28 14:59:18 DEBUG [org.hibernate.type.spi.TypeConfiguration$Scope] Scoping TypeConfiguration [org.hibernate.type.spi.TypeConfiguration@35536760] to MetadataBuildingContext [org.hibernate.boot.internal.MetadataBuildingContextRootImpl@1c8f71a7]
+2023-03-28 14:59:18 DEBUG [org.hibernate.type.spi.TypeConfiguration$Scope] Scoping TypeConfiguration [org.hibernate.type.spi.TypeConfiguration@35536760] to SessionFactoryImpl [org.hibernate.internal.SessionFactoryImpl@413eaf5d]
+2023-03-28 14:59:18 DEBUG [org.hibernate.SQL] 
+    
+    drop table if exists news
+2023-03-28 14:59:18 DEBUG [org.hibernate.SQL] 
+    
+    create table news (
+       news_id bigint not null auto_increment,
+        category varchar(255),
+        datetime varchar(255),
+        imageurl longtext,
+        reporter varchar(255),
+        text longtext,
+        title longtext,
+        url varchar(255),
+        primary key (news_id)
+    ) engine=InnoDB
+2023-03-28 14:59:18  INFO [org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-03-28 14:59:18 TRACE [org.hibernate.type.spi.TypeConfiguration$Scope] Handling #sessionFactoryCreated from [org.hibernate.internal.SessionFactoryImpl@413eaf5d] for TypeConfiguration
+2023-03-28 14:59:18  INFO [org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-03-28 14:59:18  WARN [org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-03-28 14:59:19  WARN [org.elasticsearch.client.RestClient] request [GET http://localhost:9200/] returned 1 warnings: [299 Elasticsearch-7.17.9-ef48222227ee6b9e70e502f0f0daa52435ee634d "Elasticsearch built-in security features are not enabled. Without authentication, your cluster could be accessible to anyone. See https://www.elastic.co/guide/en/elasticsearch/reference/7.17/security-minimal-setup.html to enable security."]
+2023-03-28 14:59:19  WARN [org.elasticsearch.client.RestClient] request [GET http://localhost:9200/] returned 1 warnings: [299 Elasticsearch-7.17.9-ef48222227ee6b9e70e502f0f0daa52435ee634d "Elasticsearch built-in security features are not enabled. Without authentication, your cluster could be accessible to anyone. See https://www.elastic.co/guide/en/elasticsearch/reference/7.17/security-minimal-setup.html to enable security."]
+2023-03-28 14:59:19  INFO [org.springframework.data.elasticsearch.support.VersionInfo] Version Spring Data Elasticsearch: 4.2.2
+2023-03-28 14:59:19  INFO [org.springframework.data.elasticsearch.support.VersionInfo] Version Elasticsearch Client in build: 7.12.1
+2023-03-28 14:59:19  INFO [org.springframework.data.elasticsearch.support.VersionInfo] Version Elasticsearch Client used: 7.17.9
+2023-03-28 14:59:19  WARN [org.springframework.data.elasticsearch.support.VersionInfo] Version mismatch in between Elasticsearch Clients build/use: 7.12.1 - 7.17.9
+2023-03-28 14:59:19  INFO [org.springframework.data.elasticsearch.support.VersionInfo] Version Elasticsearch cluster: 7.17.9
+2023-03-28 14:59:19  INFO [org.apache.coyote.http11.Http11NioProtocol] Starting ProtocolHandler ["http-nio-8080"]
+2023-03-28 14:59:19  INFO [org.springframework.boot.web.embedded.tomcat.TomcatWebServer] Tomcat started on port(s): 8080 (http) with context path ''
+2023-03-28 14:59:19  INFO [com.ncs.NcsApplication] Started NcsApplication in 3.442 seconds (JVM running for 4.476)
+2023-03-28 14:59:22  INFO [org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean] Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-03-28 14:59:22 TRACE [org.hibernate.type.spi.TypeConfiguration$Scope] Handling #sessionFactoryClosed from [org.hibernate.internal.SessionFactoryImpl@413eaf5d] for TypeConfiguration
+2023-03-28 14:59:22 DEBUG [org.hibernate.type.spi.TypeConfiguration$Scope] Un-scoping TypeConfiguration [org.hibernate.type.spi.TypeConfiguration$Scope@86b35bb] from SessionFactory [org.hibernate.internal.SessionFactoryImpl@413eaf5d]
+2023-03-28 14:59:22  INFO [com.zaxxer.hikari.HikariDataSource] HikariPool-1 - Shutdown initiated...
+2023-03-28 14:59:22  INFO [com.zaxxer.hikari.HikariDataSource] HikariPool-1 - Shutdown completed.

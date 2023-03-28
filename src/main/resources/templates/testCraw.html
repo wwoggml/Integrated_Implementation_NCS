@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/layout1}">
+
+<div layout:fragment="content">
+  <p><a th:href="@{/}">Main으로 이동</a> </p>
+  <p><a th:href="@{/api}">NaverApiSearch로 이동</a> </p>
+  <p><a th:href="@{/craw}">CrawlingSearch로 이동</a></p>
+  <p><a th:href="@{/mining}">Mining으로 이동</a></p>
+
+  <h3>크롤링 테스트</h3>
+
+
+  <div class="row" th:each="dto : ${newsDtoListlist}">
+    <div class="col-md-2">
+      <dt><img th:src="${dto.imageURL}" onerror="this.style.display='none'" style="width: 100px;height: 70px"></dt>
+    </div>
+    <div class="col-md-10">
+      <dt th:text="${dto.title}"></dt>
+      <dd th:text="${dto.reporter}"></dd>
+    </div>
+  </div>
+</div>
+</body>
+</html>
