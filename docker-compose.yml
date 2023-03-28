@@ -33,7 +33,7 @@ services:
     extra_hosts:
       - host.docker.internal:host-gateway
     volumes:
-      - /Users/kimjaehee/Github/test/config-dir:/config-dir
+      - ./config-dir:/config-dir
     command: logstash -f /config-dir/logstash.conf
 
 networks:
