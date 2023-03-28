@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/layout1}">
+
+<div layout:fragment="content">
+
+<!--    <table>-->
+<!--        <tr th:each="arr:${arrs}">-->
+<!--            <span th:text="${arrStat.index+1}"></span>-->
+<!--            <a th:href="${arr}" th:text="${arr}"></a>-->
+<!--            <br>-->
+<!--        </tr>-->
+<!--    </table>-->
+<!--    <form action="/api" method="post" style="width: 100%">-->
+<!--        <input type="text" name="keyword" placeholder="키워드 입력" style="width: 70%">-->
+<!--        <button type="submit" style="width: 20%">검색</button>-->
+<!--    </form>-->
+    <p><a th:href="@{/}">Main으로 이동</a> </p>
+    <p><a th:href="@{/api}">NaverApiSearch로 이동</a> </p>
+    <p><a th:href="@{/craw}">CrawlingSearch로 이동</a></p>
+    <p><a th:href="@{/mining}">Mining으로 이동</a></p>
+    <p><a th:href="@{/craw2}">크롤링 반복 테스트로 이동</a></p>
+    <h3>메인 페이지</h3>
+</div>
+</body>
+</html>

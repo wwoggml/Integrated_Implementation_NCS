@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+
+<p><a th:href="@{/}">Main으로 이동</a> </p>
+<p><a th:href="@{/api}">NaverApiSearch로 이동</a> </p>
+<p><a th:href="@{/craw}">CrawlingSearch로 이동</a></p>
+<p><a th:href="@{/mining}">Mining으로 이동</a></p>
+
+<h3>크롤링 반복 테스트</h3>
+
+<table>
+  <tr th:each="arr:${arrs}">
+    <td th:text="${arrStat.index}"></td>
+    <td><a th:href="${arr}" th:text="${arr}"></a></td>
+  </tr>
+</table>
+</body>
+</html>

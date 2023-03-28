@@ -1,0 +1,8 @@
+{
+  "properties" : {
+    "age" : {"type" : "keyword"},
+    "id" : {"type" : "keyword"},
+    "name" : {"type" : "keyword"},
+    "nickname" : {"type" : "text"}
+  }
+}
