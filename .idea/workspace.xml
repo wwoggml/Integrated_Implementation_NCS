@@ -6,8 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="3caeb72c-7433-43e4-b8b0-986abf753e8a" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_logs/log4j2.log" beforeDir="false" afterPath="$PROJECT_DIR$/test_logs/log4j2.log" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,6 +41,7 @@
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
     "spring.configuration.checksum": "c0097f1f0a4805fa838a4e2ad53f2bd0",
     "vue.rearranger.settings.migration": "true"
   }
@@ -66,7 +65,7 @@
       <option name="presentableId" value="Default" />
       <updated>1680041622352</updated>
       <workItem from="1680041624242" duration="42000" />
-      <workItem from="1680058514036" duration="478000" />
+      <workItem from="1680058514036" duration="1436000" />
     </task>
     <servers />
   </component>

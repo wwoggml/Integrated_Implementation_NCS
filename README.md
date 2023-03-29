@@ -13,19 +13,19 @@
 
 <br>
 
-#### 4. Naver Api 구현 샘플 코드 (키워드 입력)
+#### 3. Naver Api 구현 샘플 코드 (키워드 입력)
 ==> http://localhost:8080/api
 
 
 <br>
 
-#### 5. 텍스트 마이닝 구현 샘플 코드 
+#### 4. 텍스트 마이닝 구현 샘플 코드 
 ==> http://localhost:8080/mining
 
 
 <br>
 
-#### 6. elasticsearch 검색 샘플 코드
+#### 5. elasticsearch 검색 샘플 코드
 ==> localhost:8080/search
 
 
