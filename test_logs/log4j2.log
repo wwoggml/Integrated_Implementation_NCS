@@ -2007,3 +2007,4 @@ Caused by: org.hibernate.HibernateException: Access to DialectResolutionInfo can
 2023-03-29 12:14:50  INFO [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]] Initializing Spring DispatcherServlet 'dispatcherServlet'
 2023-03-29 12:14:50  INFO [org.springframework.web.servlet.DispatcherServlet] Initializing Servlet 'dispatcherServlet'
 2023-03-29 12:14:50  INFO [org.springframework.web.servlet.DispatcherServlet] Completed initialization in 2 ms
+2023-03-29 13:10:20  WARN [com.zaxxer.hikari.pool.HikariPool] HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=30m51s235ms304µs100ns).
