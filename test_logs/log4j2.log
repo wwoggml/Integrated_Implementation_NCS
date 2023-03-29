@@ -1969,3 +1969,41 @@ Caused by: org.hibernate.HibernateException: Access to DialectResolutionInfo can
 2023-03-29 12:02:55  INFO [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]] Initializing Spring DispatcherServlet 'dispatcherServlet'
 2023-03-29 12:02:55  INFO [org.springframework.web.servlet.DispatcherServlet] Initializing Servlet 'dispatcherServlet'
 2023-03-29 12:02:55  INFO [org.springframework.web.servlet.DispatcherServlet] Completed initialization in 1 ms
+2023-03-29 12:14:24  INFO [com.ncs.NcsApplication] Starting NcsApplication using Java 11.0.13 on LAPTOP-KFTOKS9H with PID 15704 (C:\NCS\build\classes\java\main started by parks in C:\NCS)
+2023-03-29 12:14:24  INFO [com.ncs.NcsApplication] The following 1 profile is active: "-Dspring.profiles.active=sy-local"
+2023-03-29 12:14:26  INFO [org.springframework.data.repository.config.RepositoryConfigurationDelegate] Multiple Spring Data modules found, entering strict repository configuration mode
+2023-03-29 12:14:26  INFO [org.springframework.data.repository.config.RepositoryConfigurationDelegate] Bootstrapping Spring Data Elasticsearch repositories in DEFAULT mode.
+2023-03-29 12:14:26  INFO [org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport] Spring Data Elasticsearch - Could not safely identify store assignment for repository candidate interface com.ncs.repository.NewsRepository; If you want this repository to be a Elasticsearch repository, consider annotating your entities with one of these annotations: org.springframework.data.elasticsearch.annotations.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.elasticsearch.repository.ElasticsearchRepository, org.springframework.data.elasticsearch.repository.ElasticsearchRepository
+2023-03-29 12:14:26  INFO [org.springframework.data.repository.config.RepositoryConfigurationDelegate] Finished Spring Data repository scanning in 40 ms. Found 0 Elasticsearch repository interfaces.
+2023-03-29 12:14:26  INFO [org.springframework.data.repository.config.RepositoryConfigurationDelegate] Multiple Spring Data modules found, entering strict repository configuration mode
+2023-03-29 12:14:26  INFO [org.springframework.data.repository.config.RepositoryConfigurationDelegate] Bootstrapping Spring Data Reactive Elasticsearch repositories in DEFAULT mode.
+2023-03-29 12:14:26  INFO [org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport] Spring Data Reactive Elasticsearch - Could not safely identify store assignment for repository candidate interface com.ncs.repository.NewsRepository; If you want this repository to be a Reactive Elasticsearch repository, consider annotating your entities with one of these annotations: org.springframework.data.elasticsearch.annotations.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.elasticsearch.repository.ReactiveElasticsearchRepository
+2023-03-29 12:14:26  INFO [org.springframework.data.repository.config.RepositoryConfigurationDelegate] Finished Spring Data repository scanning in 11 ms. Found 0 Reactive Elasticsearch repository interfaces.
+2023-03-29 12:14:26  INFO [org.springframework.data.repository.config.RepositoryConfigurationDelegate] Multiple Spring Data modules found, entering strict repository configuration mode
+2023-03-29 12:14:26  INFO [org.springframework.data.repository.config.RepositoryConfigurationDelegate] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-03-29 12:14:26  INFO [org.springframework.data.repository.config.RepositoryConfigurationDelegate] Finished Spring Data repository scanning in 63 ms. Found 1 JPA repository interfaces.
+2023-03-29 12:14:27  INFO [org.springframework.boot.web.embedded.tomcat.TomcatWebServer] Tomcat initialized with port(s): 8080 (http)
+2023-03-29 12:14:27  INFO [org.apache.coyote.http11.Http11NioProtocol] Initializing ProtocolHandler ["http-nio-8080"]
+2023-03-29 12:14:27  INFO [org.apache.catalina.core.StandardService] Starting service [Tomcat]
+2023-03-29 12:14:27  INFO [org.apache.catalina.core.StandardEngine] Starting Servlet engine: [Apache Tomcat/9.0.71]
+2023-03-29 12:14:27  INFO [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]] Initializing Spring embedded WebApplicationContext
+2023-03-29 12:14:27  INFO [org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext] Root WebApplicationContext: initialization completed in 2454 ms
+2023-03-29 12:14:27  INFO [com.zaxxer.hikari.HikariDataSource] HikariPool-1 - Starting...
+2023-03-29 12:14:28  INFO [com.zaxxer.hikari.HikariDataSource] HikariPool-1 - Start completed.
+2023-03-29 12:14:28  INFO [org.hibernate.jpa.internal.util.LogHelper] HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-03-29 12:14:28  INFO [org.hibernate.Version] HHH000412: Hibernate ORM core version 5.6.15.Final
+2023-03-29 12:14:28  INFO [org.hibernate.annotations.common.Version] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-03-29 12:14:29  INFO [org.hibernate.dialect.Dialect] HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2023-03-29 12:14:31  INFO [org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-03-29 12:14:31  INFO [org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-03-29 12:14:33  WARN [org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-03-29 12:14:35  INFO [org.springframework.data.elasticsearch.support.VersionInfo] Version Spring Data Elasticsearch: 4.2.2
+2023-03-29 12:14:35  INFO [org.springframework.data.elasticsearch.support.VersionInfo] Version Elasticsearch Client in build: 7.12.1
+2023-03-29 12:14:35  INFO [org.springframework.data.elasticsearch.support.VersionInfo] Version Elasticsearch Client used: 7.17.9
+2023-03-29 12:14:35  WARN [org.springframework.data.elasticsearch.support.VersionInfo] Version mismatch in between Elasticsearch Clients build/use: 7.12.1 - 7.17.9
+2023-03-29 12:14:35  INFO [org.apache.coyote.http11.Http11NioProtocol] Starting ProtocolHandler ["http-nio-8080"]
+2023-03-29 12:14:35  INFO [org.springframework.boot.web.embedded.tomcat.TomcatWebServer] Tomcat started on port(s): 8080 (http) with context path ''
+2023-03-29 12:14:36  INFO [com.ncs.NcsApplication] Started NcsApplication in 11.87 seconds (JVM running for 15.29)
+2023-03-29 12:14:50  INFO [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-03-29 12:14:50  INFO [org.springframework.web.servlet.DispatcherServlet] Initializing Servlet 'dispatcherServlet'
+2023-03-29 12:14:50  INFO [org.springframework.web.servlet.DispatcherServlet] Completed initialization in 2 ms
