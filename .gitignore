@@ -23,6 +23,7 @@ bin/
 *.iml
 *.ipr
 .idea/workspace.xml
+test_logs/
 
 out/
 !**/src/main/**/out/
