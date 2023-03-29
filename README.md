@@ -1,3 +1,5 @@
+hello
+
 # git
 
 git pull origin main - 다운받는 명령어
