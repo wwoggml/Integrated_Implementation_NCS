@@ -1,4 +1,22 @@
 spring:
+  profiles:
+    group:
+      jh-local: "jh-local,common"
+---
+spring:
+  profiles:
+    group:
+      sy-local: "sy-local,common"
+---
+spring:
+  profiles:
+    group:
+      nh-local: "nh-local,common"
+---
+spring:
+  config:
+    activate:
+      on-profile: jh-local
   datasource:
     url: jdbc:mysql://localhost:3306/ncs?useSSL=false&useUnicode=true&serverTimezone=Asia/Seoul&allowPublicKeyRetrieval=true
     driver-class-name: com.mysql.cj.jdbc.Driver
@@ -17,5 +35,50 @@ logging:
     org.hibernate.SQL: debug
     org.hibernate.type: trace
     org.springframework.data.elasticsearch.client.WIRE: TRACE
-
+---
+spring:
+  config:
+    activate:
+      on-profile: sy-local
+  datasource:
+    url: jdbc:mysql://localhost:3306/ncs?useSSL=false&useUnicode=true&serverTimezone=Asia/Seoul&allowPublicKeyRetrieval=true
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: 1234
+  thymeleaf:
+    cache: false
+  jpa:
+    hibernate:
+      ddl-auto: create
+    properties:
+      hibernate:
+        format_sql: true
+logging:
+  level:
+    org.hibernate.SQL: debug
+    org.hibernate.type: trace
+    org.springframework.data.elasticsearch.client.WIRE: TRACE
+---
+spring:
+  config:
+    activate:
+      on-profile: nh-local
+  datasource:
+    url: jdbc:mysql://localhost:3306/ncs?useSSL=false&useUnicode=true&serverTimezone=Asia/Seoul&allowPublicKeyRetrieval=true
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: 1234
+  thymeleaf:
+    cache: false
+  jpa:
+    hibernate:
+      ddl-auto: create
+    properties:
+      hibernate:
+        format_sql: true
+logging:
+  level:
+    org.hibernate.SQL: debug
+    org.hibernate.type: trace
+    org.springframework.data.elasticsearch.client.WIRE: TRACE
 

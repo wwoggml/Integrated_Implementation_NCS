@@ -1421,3 +1421,551 @@
 2023-03-29 00:36:00 DEBUG [org.hibernate.type.spi.TypeConfiguration$Scope] Un-scoping TypeConfiguration [org.hibernate.type.spi.TypeConfiguration$Scope@1ed264b7] from SessionFactory [org.hibernate.internal.SessionFactoryImpl@3c826498]
 2023-03-29 00:36:00  INFO [com.zaxxer.hikari.HikariDataSource] HikariPool-1 - Shutdown initiated...
 2023-03-29 00:36:00  INFO [com.zaxxer.hikari.HikariDataSource] HikariPool-1 - Shutdown completed.
+2023-03-29 11:53:17  INFO [com.ncs.NcsApplication] Starting NcsApplication using Java 11.0.17 on gimjaehuis-MacBook-Pro.local with PID 21422 (/Users/kimjaehee/Desktop/학교/과제/통합구현_NCS/ncs/Integrated_Implementation_NCS/build/classes/java/main started by kimjaehee in /Users/kimjaehee/Desktop/학교/과제/통합구현_NCS/ncs/Integrated_Implementation_NCS)
+2023-03-29 11:53:17  INFO [com.ncs.NcsApplication] No active profile set, falling back to 1 default profile: "default"
+2023-03-29 11:53:18  INFO [org.springframework.data.repository.config.RepositoryConfigurationDelegate] Multiple Spring Data modules found, entering strict repository configuration mode
+2023-03-29 11:53:18  INFO [org.springframework.data.repository.config.RepositoryConfigurationDelegate] Bootstrapping Spring Data Elasticsearch repositories in DEFAULT mode.
+2023-03-29 11:53:18  INFO [org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport] Spring Data Elasticsearch - Could not safely identify store assignment for repository candidate interface com.ncs.repository.NewsRepository; If you want this repository to be a Elasticsearch repository, consider annotating your entities with one of these annotations: org.springframework.data.elasticsearch.annotations.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.elasticsearch.repository.ElasticsearchRepository, org.springframework.data.elasticsearch.repository.ElasticsearchRepository
+2023-03-29 11:53:18  INFO [org.springframework.data.repository.config.RepositoryConfigurationDelegate] Finished Spring Data repository scanning in 16 ms. Found 0 Elasticsearch repository interfaces.
+2023-03-29 11:53:18  INFO [org.springframework.data.repository.config.RepositoryConfigurationDelegate] Multiple Spring Data modules found, entering strict repository configuration mode
+2023-03-29 11:53:18  INFO [org.springframework.data.repository.config.RepositoryConfigurationDelegate] Bootstrapping Spring Data Reactive Elasticsearch repositories in DEFAULT mode.
+2023-03-29 11:53:18  INFO [org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport] Spring Data Reactive Elasticsearch - Could not safely identify store assignment for repository candidate interface com.ncs.repository.NewsRepository; If you want this repository to be a Reactive Elasticsearch repository, consider annotating your entities with one of these annotations: org.springframework.data.elasticsearch.annotations.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.elasticsearch.repository.ReactiveElasticsearchRepository
+2023-03-29 11:53:18  INFO [org.springframework.data.repository.config.RepositoryConfigurationDelegate] Finished Spring Data repository scanning in 2 ms. Found 0 Reactive Elasticsearch repository interfaces.
+2023-03-29 11:53:18  INFO [org.springframework.data.repository.config.RepositoryConfigurationDelegate] Multiple Spring Data modules found, entering strict repository configuration mode
+2023-03-29 11:53:18  INFO [org.springframework.data.repository.config.RepositoryConfigurationDelegate] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-03-29 11:53:18  INFO [org.springframework.data.repository.config.RepositoryConfigurationDelegate] Finished Spring Data repository scanning in 16 ms. Found 1 JPA repository interfaces.
+2023-03-29 11:53:19  INFO [org.springframework.boot.web.embedded.tomcat.TomcatWebServer] Tomcat initialized with port(s): 8080 (http)
+2023-03-29 11:53:19  INFO [org.apache.coyote.http11.Http11NioProtocol] Initializing ProtocolHandler ["http-nio-8080"]
+2023-03-29 11:53:19  INFO [org.apache.catalina.core.StandardService] Starting service [Tomcat]
+2023-03-29 11:53:19  INFO [org.apache.catalina.core.StandardEngine] Starting Servlet engine: [Apache Tomcat/9.0.71]
+2023-03-29 11:53:19  INFO [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]] Initializing Spring embedded WebApplicationContext
+2023-03-29 11:53:19  INFO [org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext] Root WebApplicationContext: initialization completed in 1006 ms
+2023-03-29 11:53:19  INFO [com.zaxxer.hikari.HikariDataSource] HikariPool-1 - Starting...
+2023-03-29 11:53:19  INFO [com.ncs.NcsApplication] Starting NcsApplication using Java 11.0.17 on gimjaehuis-MacBook-Pro.local with PID 21432 (/Users/kimjaehee/Desktop/학교/과제/통합구현_NCS/ncs/Integrated_Implementation_NCS/build/classes/java/main started by kimjaehee in /Users/kimjaehee/Desktop/학교/과제/통합구현_NCS/ncs/Integrated_Implementation_NCS)
+2023-03-29 11:53:19  INFO [com.ncs.NcsApplication] No active profile set, falling back to 1 default profile: "default"
+2023-03-29 11:53:19  INFO [com.zaxxer.hikari.HikariDataSource] HikariPool-1 - Start completed.
+2023-03-29 11:53:19  INFO [org.hibernate.jpa.internal.util.LogHelper] HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-03-29 11:53:19  INFO [org.hibernate.Version] HHH000412: Hibernate ORM core version 5.6.15.Final
+2023-03-29 11:53:19  INFO [org.hibernate.annotations.common.Version] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-03-29 11:53:19  INFO [org.hibernate.dialect.Dialect] HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2023-03-29 11:53:19  INFO [org.springframework.data.repository.config.RepositoryConfigurationDelegate] Multiple Spring Data modules found, entering strict repository configuration mode
+2023-03-29 11:53:19  INFO [org.springframework.data.repository.config.RepositoryConfigurationDelegate] Bootstrapping Spring Data Elasticsearch repositories in DEFAULT mode.
+2023-03-29 11:53:19  INFO [org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport] Spring Data Elasticsearch - Could not safely identify store assignment for repository candidate interface com.ncs.repository.NewsRepository; If you want this repository to be a Elasticsearch repository, consider annotating your entities with one of these annotations: org.springframework.data.elasticsearch.annotations.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.elasticsearch.repository.ElasticsearchRepository, org.springframework.data.elasticsearch.repository.ElasticsearchRepository
+2023-03-29 11:53:19  INFO [org.springframework.data.repository.config.RepositoryConfigurationDelegate] Finished Spring Data repository scanning in 14 ms. Found 0 Elasticsearch repository interfaces.
+2023-03-29 11:53:19  INFO [org.springframework.data.repository.config.RepositoryConfigurationDelegate] Multiple Spring Data modules found, entering strict repository configuration mode
+2023-03-29 11:53:19  INFO [org.springframework.data.repository.config.RepositoryConfigurationDelegate] Bootstrapping Spring Data Reactive Elasticsearch repositories in DEFAULT mode.
+2023-03-29 11:53:19  INFO [org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport] Spring Data Reactive Elasticsearch - Could not safely identify store assignment for repository candidate interface com.ncs.repository.NewsRepository; If you want this repository to be a Reactive Elasticsearch repository, consider annotating your entities with one of these annotations: org.springframework.data.elasticsearch.annotations.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.elasticsearch.repository.ReactiveElasticsearchRepository
+2023-03-29 11:53:19  INFO [org.springframework.data.repository.config.RepositoryConfigurationDelegate] Finished Spring Data repository scanning in 2 ms. Found 0 Reactive Elasticsearch repository interfaces.
+2023-03-29 11:53:19  INFO [org.springframework.data.repository.config.RepositoryConfigurationDelegate] Multiple Spring Data modules found, entering strict repository configuration mode
+2023-03-29 11:53:19  INFO [org.springframework.data.repository.config.RepositoryConfigurationDelegate] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-03-29 11:53:19  INFO [org.springframework.data.repository.config.RepositoryConfigurationDelegate] Finished Spring Data repository scanning in 15 ms. Found 1 JPA repository interfaces.
+2023-03-29 11:53:19  INFO [org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-03-29 11:53:19  INFO [org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-03-29 11:53:20  INFO [org.springframework.boot.web.embedded.tomcat.TomcatWebServer] Tomcat initialized with port(s): 8080 (http)
+2023-03-29 11:53:20  INFO [org.apache.coyote.http11.Http11NioProtocol] Initializing ProtocolHandler ["http-nio-8080"]
+2023-03-29 11:53:20  INFO [org.apache.catalina.core.StandardService] Starting service [Tomcat]
+2023-03-29 11:53:20  INFO [org.apache.catalina.core.StandardEngine] Starting Servlet engine: [Apache Tomcat/9.0.71]
+2023-03-29 11:53:20  INFO [com.ncs.NcsApplication] Starting NcsApplication using Java 11.0.17 on gimjaehuis-MacBook-Pro.local with PID 21433 (/Users/kimjaehee/Desktop/학교/과제/통합구현_NCS/ncs/Integrated_Implementation_NCS/build/classes/java/main started by kimjaehee in /Users/kimjaehee/Desktop/학교/과제/통합구현_NCS/ncs/Integrated_Implementation_NCS)
+2023-03-29 11:53:20  INFO [com.ncs.NcsApplication] No active profile set, falling back to 1 default profile: "default"
+2023-03-29 11:53:20  INFO [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]] Initializing Spring embedded WebApplicationContext
+2023-03-29 11:53:20  INFO [org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext] Root WebApplicationContext: initialization completed in 883 ms
+2023-03-29 11:53:20  INFO [com.zaxxer.hikari.HikariDataSource] HikariPool-1 - Starting...
+2023-03-29 11:53:20  WARN [org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-03-29 11:53:20  INFO [com.zaxxer.hikari.HikariDataSource] HikariPool-1 - Start completed.
+2023-03-29 11:53:20  INFO [org.hibernate.jpa.internal.util.LogHelper] HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-03-29 11:53:20  INFO [org.hibernate.Version] HHH000412: Hibernate ORM core version 5.6.15.Final
+2023-03-29 11:53:20  INFO [org.hibernate.annotations.common.Version] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-03-29 11:53:20  INFO [org.hibernate.dialect.Dialect] HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2023-03-29 11:53:20  INFO [org.springframework.data.repository.config.RepositoryConfigurationDelegate] Multiple Spring Data modules found, entering strict repository configuration mode
+2023-03-29 11:53:20  INFO [org.springframework.data.repository.config.RepositoryConfigurationDelegate] Bootstrapping Spring Data Elasticsearch repositories in DEFAULT mode.
+2023-03-29 11:53:20  INFO [org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport] Spring Data Elasticsearch - Could not safely identify store assignment for repository candidate interface com.ncs.repository.NewsRepository; If you want this repository to be a Elasticsearch repository, consider annotating your entities with one of these annotations: org.springframework.data.elasticsearch.annotations.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.elasticsearch.repository.ElasticsearchRepository, org.springframework.data.elasticsearch.repository.ElasticsearchRepository
+2023-03-29 11:53:20  INFO [org.springframework.data.repository.config.RepositoryConfigurationDelegate] Finished Spring Data repository scanning in 14 ms. Found 0 Elasticsearch repository interfaces.
+2023-03-29 11:53:20  INFO [org.springframework.data.repository.config.RepositoryConfigurationDelegate] Multiple Spring Data modules found, entering strict repository configuration mode
+2023-03-29 11:53:20  INFO [org.springframework.data.repository.config.RepositoryConfigurationDelegate] Bootstrapping Spring Data Reactive Elasticsearch repositories in DEFAULT mode.
+2023-03-29 11:53:20  INFO [org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport] Spring Data Reactive Elasticsearch - Could not safely identify store assignment for repository candidate interface com.ncs.repository.NewsRepository; If you want this repository to be a Reactive Elasticsearch repository, consider annotating your entities with one of these annotations: org.springframework.data.elasticsearch.annotations.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.elasticsearch.repository.ReactiveElasticsearchRepository
+2023-03-29 11:53:20  INFO [org.springframework.data.repository.config.RepositoryConfigurationDelegate] Finished Spring Data repository scanning in 2 ms. Found 0 Reactive Elasticsearch repository interfaces.
+2023-03-29 11:53:20  INFO [org.springframework.data.repository.config.RepositoryConfigurationDelegate] Multiple Spring Data modules found, entering strict repository configuration mode
+2023-03-29 11:53:20  INFO [org.springframework.data.repository.config.RepositoryConfigurationDelegate] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-03-29 11:53:20  INFO [org.springframework.data.repository.config.RepositoryConfigurationDelegate] Finished Spring Data repository scanning in 15 ms. Found 1 JPA repository interfaces.
+2023-03-29 11:53:20  INFO [org.springframework.data.elasticsearch.support.VersionInfo] Version Spring Data Elasticsearch: 4.2.2
+2023-03-29 11:53:20  INFO [org.springframework.data.elasticsearch.support.VersionInfo] Version Elasticsearch Client in build: 7.12.1
+2023-03-29 11:53:20  INFO [org.springframework.data.elasticsearch.support.VersionInfo] Version Elasticsearch Client used: 7.17.9
+2023-03-29 11:53:20  WARN [org.springframework.data.elasticsearch.support.VersionInfo] Version mismatch in between Elasticsearch Clients build/use: 7.12.1 - 7.17.9
+2023-03-29 11:53:21  INFO [org.apache.coyote.http11.Http11NioProtocol] Starting ProtocolHandler ["http-nio-8080"]
+2023-03-29 11:53:21  INFO [org.springframework.boot.web.embedded.tomcat.TomcatWebServer] Tomcat started on port(s): 8080 (http) with context path ''
+2023-03-29 11:53:21  INFO [com.ncs.NcsApplication] Started NcsApplication in 3.596 seconds (JVM running for 4.38)
+2023-03-29 11:53:21  INFO [org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-03-29 11:53:21  INFO [org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-03-29 11:53:21  INFO [org.springframework.boot.web.embedded.tomcat.TomcatWebServer] Tomcat initialized with port(s): 8080 (http)
+2023-03-29 11:53:21  INFO [org.apache.coyote.http11.Http11NioProtocol] Initializing ProtocolHandler ["http-nio-8080"]
+2023-03-29 11:53:21  INFO [org.apache.catalina.core.StandardService] Starting service [Tomcat]
+2023-03-29 11:53:21  INFO [org.apache.catalina.core.StandardEngine] Starting Servlet engine: [Apache Tomcat/9.0.71]
+2023-03-29 11:53:21  INFO [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]] Initializing Spring embedded WebApplicationContext
+2023-03-29 11:53:21  INFO [org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext] Root WebApplicationContext: initialization completed in 847 ms
+2023-03-29 11:53:21  INFO [com.zaxxer.hikari.HikariDataSource] HikariPool-1 - Starting...
+2023-03-29 11:53:21  INFO [com.zaxxer.hikari.HikariDataSource] HikariPool-1 - Start completed.
+2023-03-29 11:53:21  INFO [org.hibernate.jpa.internal.util.LogHelper] HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-03-29 11:53:21  INFO [org.hibernate.Version] HHH000412: Hibernate ORM core version 5.6.15.Final
+2023-03-29 11:53:21  WARN [org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-03-29 11:53:21  INFO [org.hibernate.annotations.common.Version] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-03-29 11:53:21  INFO [org.hibernate.dialect.Dialect] HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2023-03-29 11:53:21  INFO [org.springframework.data.elasticsearch.support.VersionInfo] Version Spring Data Elasticsearch: 4.2.2
+2023-03-29 11:53:21  INFO [org.springframework.data.elasticsearch.support.VersionInfo] Version Elasticsearch Client in build: 7.12.1
+2023-03-29 11:53:21  INFO [org.springframework.data.elasticsearch.support.VersionInfo] Version Elasticsearch Client used: 7.17.9
+2023-03-29 11:53:21  WARN [org.springframework.data.elasticsearch.support.VersionInfo] Version mismatch in between Elasticsearch Clients build/use: 7.12.1 - 7.17.9
+2023-03-29 11:53:21  INFO [org.apache.coyote.http11.Http11NioProtocol] Starting ProtocolHandler ["http-nio-8080"]
+2023-03-29 11:53:21  WARN [org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'; nested exception is org.springframework.boot.web.server.PortInUseException: Port 8080 is already in use
+2023-03-29 11:53:21  INFO [org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-03-29 11:53:21  INFO [org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean] Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-03-29 11:53:21  INFO [org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl] HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2023-03-29 11:53:21  INFO [org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-03-29 11:53:21  INFO [com.zaxxer.hikari.HikariDataSource] HikariPool-1 - Shutdown initiated...
+2023-03-29 11:53:22  INFO [com.zaxxer.hikari.HikariDataSource] HikariPool-1 - Shutdown completed.
+2023-03-29 11:53:22  INFO [org.apache.coyote.http11.Http11NioProtocol] Pausing ProtocolHandler ["http-nio-8080"]
+2023-03-29 11:53:22  INFO [org.apache.catalina.core.StandardService] Stopping service [Tomcat]
+2023-03-29 11:53:22  INFO [org.apache.coyote.http11.Http11NioProtocol] Stopping ProtocolHandler ["http-nio-8080"]
+2023-03-29 11:53:22  INFO [org.apache.coyote.http11.Http11NioProtocol] Destroying ProtocolHandler ["http-nio-8080"]
+2023-03-29 11:53:22  INFO [org.springframework.boot.autoconfigure.logging.ConditionEvaluationReportLoggingListener] 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2023-03-29 11:53:22 ERROR [org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter] 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8080 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
+
+2023-03-29 11:53:22  WARN [org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-03-29 11:53:22  INFO [org.springframework.data.elasticsearch.support.VersionInfo] Version Spring Data Elasticsearch: 4.2.2
+2023-03-29 11:53:22  INFO [org.springframework.data.elasticsearch.support.VersionInfo] Version Elasticsearch Client in build: 7.12.1
+2023-03-29 11:53:22  INFO [org.springframework.data.elasticsearch.support.VersionInfo] Version Elasticsearch Client used: 7.17.9
+2023-03-29 11:53:22  WARN [org.springframework.data.elasticsearch.support.VersionInfo] Version mismatch in between Elasticsearch Clients build/use: 7.12.1 - 7.17.9
+2023-03-29 11:53:22  INFO [org.apache.coyote.http11.Http11NioProtocol] Starting ProtocolHandler ["http-nio-8080"]
+2023-03-29 11:53:22  WARN [org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'; nested exception is org.springframework.boot.web.server.PortInUseException: Port 8080 is already in use
+2023-03-29 11:53:22  INFO [org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean] Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-03-29 11:53:22  INFO [org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl] HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2023-03-29 11:53:22  INFO [com.zaxxer.hikari.HikariDataSource] HikariPool-1 - Shutdown initiated...
+2023-03-29 11:53:22  INFO [com.zaxxer.hikari.HikariDataSource] HikariPool-1 - Shutdown completed.
+2023-03-29 11:53:22  INFO [org.apache.coyote.http11.Http11NioProtocol] Pausing ProtocolHandler ["http-nio-8080"]
+2023-03-29 11:53:22  INFO [org.apache.catalina.core.StandardService] Stopping service [Tomcat]
+2023-03-29 11:53:22  INFO [org.apache.coyote.http11.Http11NioProtocol] Stopping ProtocolHandler ["http-nio-8080"]
+2023-03-29 11:53:22  INFO [org.apache.coyote.http11.Http11NioProtocol] Destroying ProtocolHandler ["http-nio-8080"]
+2023-03-29 11:53:22  INFO [org.springframework.boot.autoconfigure.logging.ConditionEvaluationReportLoggingListener] 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2023-03-29 11:53:22 ERROR [org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter] 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8080 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
+
+2023-03-29 11:53:25  INFO [org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean] Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-03-29 11:53:25  INFO [org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl] HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2023-03-29 11:53:26  INFO [com.zaxxer.hikari.HikariDataSource] HikariPool-1 - Shutdown initiated...
+2023-03-29 11:53:26  INFO [com.zaxxer.hikari.HikariDataSource] HikariPool-1 - Shutdown completed.
+2023-03-29 11:57:36  INFO [com.ncs.NcsApplication] Starting NcsApplication using Java 11.0.17 on gimjaehuis-MacBook-Pro.local with PID 27962 (/Users/kimjaehee/Desktop/학교/과제/통합구현_NCS/ncs/Integrated_Implementation_NCS/build/classes/java/main started by kimjaehee in /Users/kimjaehee/Desktop/학교/과제/통합구현_NCS/ncs/Integrated_Implementation_NCS)
+2023-03-29 11:57:36  INFO [com.ncs.NcsApplication] No active profile set, falling back to 1 default profile: "default"
+2023-03-29 11:57:36  INFO [org.springframework.data.repository.config.RepositoryConfigurationDelegate] Multiple Spring Data modules found, entering strict repository configuration mode
+2023-03-29 11:57:36  INFO [org.springframework.data.repository.config.RepositoryConfigurationDelegate] Bootstrapping Spring Data Elasticsearch repositories in DEFAULT mode.
+2023-03-29 11:57:36  INFO [org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport] Spring Data Elasticsearch - Could not safely identify store assignment for repository candidate interface com.ncs.repository.NewsRepository; If you want this repository to be a Elasticsearch repository, consider annotating your entities with one of these annotations: org.springframework.data.elasticsearch.annotations.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.elasticsearch.repository.ElasticsearchRepository, org.springframework.data.elasticsearch.repository.ElasticsearchRepository
+2023-03-29 11:57:36  INFO [org.springframework.data.repository.config.RepositoryConfigurationDelegate] Finished Spring Data repository scanning in 14 ms. Found 0 Elasticsearch repository interfaces.
+2023-03-29 11:57:36  INFO [org.springframework.data.repository.config.RepositoryConfigurationDelegate] Multiple Spring Data modules found, entering strict repository configuration mode
+2023-03-29 11:57:36  INFO [org.springframework.data.repository.config.RepositoryConfigurationDelegate] Bootstrapping Spring Data Reactive Elasticsearch repositories in DEFAULT mode.
+2023-03-29 11:57:36  INFO [org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport] Spring Data Reactive Elasticsearch - Could not safely identify store assignment for repository candidate interface com.ncs.repository.NewsRepository; If you want this repository to be a Reactive Elasticsearch repository, consider annotating your entities with one of these annotations: org.springframework.data.elasticsearch.annotations.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.elasticsearch.repository.ReactiveElasticsearchRepository
+2023-03-29 11:57:36  INFO [org.springframework.data.repository.config.RepositoryConfigurationDelegate] Finished Spring Data repository scanning in 2 ms. Found 0 Reactive Elasticsearch repository interfaces.
+2023-03-29 11:57:36  INFO [org.springframework.data.repository.config.RepositoryConfigurationDelegate] Multiple Spring Data modules found, entering strict repository configuration mode
+2023-03-29 11:57:36  INFO [org.springframework.data.repository.config.RepositoryConfigurationDelegate] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-03-29 11:57:36  INFO [org.springframework.data.repository.config.RepositoryConfigurationDelegate] Finished Spring Data repository scanning in 14 ms. Found 1 JPA repository interfaces.
+2023-03-29 11:57:37  INFO [org.springframework.boot.web.embedded.tomcat.TomcatWebServer] Tomcat initialized with port(s): 8080 (http)
+2023-03-29 11:57:37  INFO [org.apache.coyote.http11.Http11NioProtocol] Initializing ProtocolHandler ["http-nio-8080"]
+2023-03-29 11:57:37  INFO [org.apache.catalina.core.StandardService] Starting service [Tomcat]
+2023-03-29 11:57:37  INFO [org.apache.catalina.core.StandardEngine] Starting Servlet engine: [Apache Tomcat/9.0.71]
+2023-03-29 11:57:37  INFO [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]] Initializing Spring embedded WebApplicationContext
+2023-03-29 11:57:37  INFO [org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext] Root WebApplicationContext: initialization completed in 829 ms
+2023-03-29 11:57:37  INFO [org.hibernate.jpa.internal.util.LogHelper] HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-03-29 11:57:37  INFO [org.hibernate.Version] HHH000412: Hibernate ORM core version 5.6.15.Final
+2023-03-29 11:57:37  INFO [org.hibernate.annotations.common.Version] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-03-29 11:57:37 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration boolean -> org.hibernate.type.BooleanType@678586f0
+2023-03-29 11:57:37 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration boolean -> org.hibernate.type.BooleanType@678586f0
+2023-03-29 11:57:37 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration java.lang.Boolean -> org.hibernate.type.BooleanType@678586f0
+2023-03-29 11:57:37 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration numeric_boolean -> org.hibernate.type.NumericBooleanType@786ff0ea
+2023-03-29 11:57:37 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration true_false -> org.hibernate.type.TrueFalseType@72324965
+2023-03-29 11:57:37 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration yes_no -> org.hibernate.type.YesNoType@64ec1459
+2023-03-29 11:57:37 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration byte -> org.hibernate.type.ByteType@1f42366
+2023-03-29 11:57:37 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration byte -> org.hibernate.type.ByteType@1f42366
+2023-03-29 11:57:37 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration java.lang.Byte -> org.hibernate.type.ByteType@1f42366
+2023-03-29 11:57:37 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration character -> org.hibernate.type.CharacterType@438aaa9f
+2023-03-29 11:57:37 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration char -> org.hibernate.type.CharacterType@438aaa9f
+2023-03-29 11:57:37 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration java.lang.Character -> org.hibernate.type.CharacterType@438aaa9f
+2023-03-29 11:57:37 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration short -> org.hibernate.type.ShortType@2c77344f
+2023-03-29 11:57:37 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration short -> org.hibernate.type.ShortType@2c77344f
+2023-03-29 11:57:37 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration java.lang.Short -> org.hibernate.type.ShortType@2c77344f
+2023-03-29 11:57:37 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration integer -> org.hibernate.type.IntegerType@7b5833ee
+2023-03-29 11:57:37 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration int -> org.hibernate.type.IntegerType@7b5833ee
+2023-03-29 11:57:37 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration java.lang.Integer -> org.hibernate.type.IntegerType@7b5833ee
+2023-03-29 11:57:37 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration long -> org.hibernate.type.LongType@5350ab17
+2023-03-29 11:57:37 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration long -> org.hibernate.type.LongType@5350ab17
+2023-03-29 11:57:37 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration java.lang.Long -> org.hibernate.type.LongType@5350ab17
+2023-03-29 11:57:37 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration float -> org.hibernate.type.FloatType@71ad959b
+2023-03-29 11:57:37 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration float -> org.hibernate.type.FloatType@71ad959b
+2023-03-29 11:57:37 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration java.lang.Float -> org.hibernate.type.FloatType@71ad959b
+2023-03-29 11:57:37 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration double -> org.hibernate.type.DoubleType@7198ab9a
+2023-03-29 11:57:37 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration double -> org.hibernate.type.DoubleType@7198ab9a
+2023-03-29 11:57:37 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration java.lang.Double -> org.hibernate.type.DoubleType@7198ab9a
+2023-03-29 11:57:37 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration big_decimal -> org.hibernate.type.BigDecimalType@443af394
+2023-03-29 11:57:37 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration java.math.BigDecimal -> org.hibernate.type.BigDecimalType@443af394
+2023-03-29 11:57:37 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration big_integer -> org.hibernate.type.BigIntegerType@74ebd159
+2023-03-29 11:57:37 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration java.math.BigInteger -> org.hibernate.type.BigIntegerType@74ebd159
+2023-03-29 11:57:37 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration string -> org.hibernate.type.StringType@58182b96
+2023-03-29 11:57:37 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration java.lang.String -> org.hibernate.type.StringType@58182b96
+2023-03-29 11:57:37 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration nstring -> org.hibernate.type.StringNVarcharType@770cae59
+2023-03-29 11:57:37 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration ncharacter -> org.hibernate.type.CharacterNCharType@3ce7394f
+2023-03-29 11:57:37 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration url -> org.hibernate.type.UrlType@4403bff8
+2023-03-29 11:57:37 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration java.net.URL -> org.hibernate.type.UrlType@4403bff8
+2023-03-29 11:57:37 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration Duration -> org.hibernate.type.DurationType@1f71e024
+2023-03-29 11:57:37 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration java.time.Duration -> org.hibernate.type.DurationType@1f71e024
+2023-03-29 11:57:37 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration Instant -> org.hibernate.type.InstantType@2eb6d34a
+2023-03-29 11:57:37 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration java.time.Instant -> org.hibernate.type.InstantType@2eb6d34a
+2023-03-29 11:57:37 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration LocalDateTime -> org.hibernate.type.LocalDateTimeType@1edf71d9
+2023-03-29 11:57:37 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration java.time.LocalDateTime -> org.hibernate.type.LocalDateTimeType@1edf71d9
+2023-03-29 11:57:37 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration LocalDate -> org.hibernate.type.LocalDateType@35e07e19
+2023-03-29 11:57:37 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration java.time.LocalDate -> org.hibernate.type.LocalDateType@35e07e19
+2023-03-29 11:57:37 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration LocalTime -> org.hibernate.type.LocalTimeType@48fc0211
+2023-03-29 11:57:37 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration java.time.LocalTime -> org.hibernate.type.LocalTimeType@48fc0211
+2023-03-29 11:57:37 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration OffsetDateTime -> org.hibernate.type.OffsetDateTimeType@6dd20ec9
+2023-03-29 11:57:37 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration java.time.OffsetDateTime -> org.hibernate.type.OffsetDateTimeType@6dd20ec9
+2023-03-29 11:57:37 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration OffsetTime -> org.hibernate.type.OffsetTimeType@4d4b019e
+2023-03-29 11:57:37 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration java.time.OffsetTime -> org.hibernate.type.OffsetTimeType@4d4b019e
+2023-03-29 11:57:37 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration ZonedDateTime -> org.hibernate.type.ZonedDateTimeType@2e349cf2
+2023-03-29 11:57:37 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration java.time.ZonedDateTime -> org.hibernate.type.ZonedDateTimeType@2e349cf2
+2023-03-29 11:57:37 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration date -> org.hibernate.type.DateType@c6a692e
+2023-03-29 11:57:37 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration java.sql.Date -> org.hibernate.type.DateType@c6a692e
+2023-03-29 11:57:37 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration time -> org.hibernate.type.TimeType@7de6549d
+2023-03-29 11:57:37 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration java.sql.Time -> org.hibernate.type.TimeType@7de6549d
+2023-03-29 11:57:37 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration timestamp -> org.hibernate.type.TimestampType@5423a17
+2023-03-29 11:57:37 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration java.sql.Timestamp -> org.hibernate.type.TimestampType@5423a17
+2023-03-29 11:57:37 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration java.util.Date -> org.hibernate.type.TimestampType@5423a17
+2023-03-29 11:57:37 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration dbtimestamp -> org.hibernate.type.DbTimestampType@7254838
+2023-03-29 11:57:37 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration calendar -> org.hibernate.type.CalendarType@5df2023c
+2023-03-29 11:57:37 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration java.util.Calendar -> org.hibernate.type.CalendarType@5df2023c
+2023-03-29 11:57:37 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration java.util.GregorianCalendar -> org.hibernate.type.CalendarType@5df2023c
+2023-03-29 11:57:37 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration calendar_date -> org.hibernate.type.CalendarDateType@30358dc7
+2023-03-29 11:57:37 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration calendar_time -> org.hibernate.type.CalendarTimeType@4f402027
+2023-03-29 11:57:37 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration locale -> org.hibernate.type.LocaleType@7740b0ab
+2023-03-29 11:57:37 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration java.util.Locale -> org.hibernate.type.LocaleType@7740b0ab
+2023-03-29 11:57:37 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration currency -> org.hibernate.type.CurrencyType@1716c037
+2023-03-29 11:57:37 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration java.util.Currency -> org.hibernate.type.CurrencyType@1716c037
+2023-03-29 11:57:37 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration timezone -> org.hibernate.type.TimeZoneType@63262071
+2023-03-29 11:57:37 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration java.util.TimeZone -> org.hibernate.type.TimeZoneType@63262071
+2023-03-29 11:57:37 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration class -> org.hibernate.type.ClassType@41938e1e
+2023-03-29 11:57:37 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration java.lang.Class -> org.hibernate.type.ClassType@41938e1e
+2023-03-29 11:57:37 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration uuid-binary -> org.hibernate.type.UUIDBinaryType@63dc3420
+2023-03-29 11:57:37 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration java.util.UUID -> org.hibernate.type.UUIDBinaryType@63dc3420
+2023-03-29 11:57:37 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration uuid-char -> org.hibernate.type.UUIDCharType@6ed51944
+2023-03-29 11:57:37 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration binary -> org.hibernate.type.BinaryType@5efe5b25
+2023-03-29 11:57:37 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration byte[] -> org.hibernate.type.BinaryType@5efe5b25
+2023-03-29 11:57:37 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration [B -> org.hibernate.type.BinaryType@5efe5b25
+2023-03-29 11:57:37 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration wrapper-binary -> org.hibernate.type.WrapperBinaryType@17354708
+2023-03-29 11:57:37 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration Byte[] -> org.hibernate.type.WrapperBinaryType@17354708
+2023-03-29 11:57:37 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration [Ljava.lang.Byte; -> org.hibernate.type.WrapperBinaryType@17354708
+2023-03-29 11:57:37 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration row_version -> org.hibernate.type.RowVersionType@47be41c6
+2023-03-29 11:57:37 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration image -> org.hibernate.type.ImageType@4ebfb045
+2023-03-29 11:57:37 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration characters -> org.hibernate.type.CharArrayType@14e3d439
+2023-03-29 11:57:37 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration char[] -> org.hibernate.type.CharArrayType@14e3d439
+2023-03-29 11:57:37 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration [C -> org.hibernate.type.CharArrayType@14e3d439
+2023-03-29 11:57:37 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration wrapper-characters -> org.hibernate.type.CharacterArrayType@166e5a6d
+2023-03-29 11:57:37 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration [Ljava.lang.Character; -> org.hibernate.type.CharacterArrayType@166e5a6d
+2023-03-29 11:57:37 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration Character[] -> org.hibernate.type.CharacterArrayType@166e5a6d
+2023-03-29 11:57:37 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration text -> org.hibernate.type.TextType@432c0f1
+2023-03-29 11:57:37 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration ntext -> org.hibernate.type.NTextType@a69f9d
+2023-03-29 11:57:37 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration blob -> org.hibernate.type.BlobType@5fdb7394
+2023-03-29 11:57:37 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration java.sql.Blob -> org.hibernate.type.BlobType@5fdb7394
+2023-03-29 11:57:37 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration materialized_blob -> org.hibernate.type.MaterializedBlobType@71039ce1
+2023-03-29 11:57:37 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration clob -> org.hibernate.type.ClobType@4070ace9
+2023-03-29 11:57:37 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration java.sql.Clob -> org.hibernate.type.ClobType@4070ace9
+2023-03-29 11:57:37 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration nclob -> org.hibernate.type.NClobType@29c59b6e
+2023-03-29 11:57:37 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration java.sql.NClob -> org.hibernate.type.NClobType@29c59b6e
+2023-03-29 11:57:37 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration materialized_clob -> org.hibernate.type.MaterializedClobType@24a3d414
+2023-03-29 11:57:37 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration materialized_nclob -> org.hibernate.type.MaterializedNClobType@5871a482
+2023-03-29 11:57:37 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration serializable -> org.hibernate.type.SerializableType@531ec2ca
+2023-03-29 11:57:37 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration object -> org.hibernate.type.ObjectType@156324b
+2023-03-29 11:57:37 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration java.lang.Object -> org.hibernate.type.ObjectType@156324b
+2023-03-29 11:57:37 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration imm_date -> org.hibernate.type.AdaptedImmutableType@4bbf20d1
+2023-03-29 11:57:37 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration imm_time -> org.hibernate.type.AdaptedImmutableType@6fced25c
+2023-03-29 11:57:37 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration imm_timestamp -> org.hibernate.type.AdaptedImmutableType@3cf4dec7
+2023-03-29 11:57:37 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration imm_dbtimestamp -> org.hibernate.type.AdaptedImmutableType@1b94c789
+2023-03-29 11:57:37 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration imm_calendar -> org.hibernate.type.AdaptedImmutableType@299fc582
+2023-03-29 11:57:37 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration imm_calendar_date -> org.hibernate.type.AdaptedImmutableType@305aaedf
+2023-03-29 11:57:37 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration imm_binary -> org.hibernate.type.AdaptedImmutableType@2a425cf5
+2023-03-29 11:57:37 DEBUG [org.hibernate.type.BasicTypeRegistry] Adding type registration imm_serializable -> org.hibernate.type.AdaptedImmutableType@17d76ebb
+2023-03-29 11:57:37  INFO [com.zaxxer.hikari.HikariDataSource] HikariPool-1 - Starting...
+2023-03-29 11:57:38 ERROR [com.zaxxer.hikari.pool.HikariPool] HikariPool-1 - Exception during pool initialization.
+java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: YES)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:828) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:448) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:241) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:198) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138) ~[HikariCP-4.0.3.jar:?]
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:364) ~[HikariCP-4.0.3.jar:?]
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:206) ~[HikariCP-4.0.3.jar:?]
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:476) ~[HikariCP-4.0.3.jar:?]
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:561) ~[HikariCP-4.0.3.jar:?]
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115) ~[HikariCP-4.0.3.jar:?]
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112) ~[HikariCP-4.0.3.jar:?]
+	at org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:122) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess.obtainConnection(JdbcEnvironmentInitiator.java:181) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:68) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:35) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:101) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:272) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:246) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:223) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
+	at org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory.injectServices(DefaultIdentifierGeneratorFactory.java:175) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.injectDependencies(AbstractServiceRegistryImpl.java:295) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:252) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:223) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.<init>(InFlightMetadataCollectorImpl.java:173) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:127) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1460) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1494) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58) ~[spring-orm-5.3.25.jar:5.3.25]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365) ~[spring-orm-5.3.25.jar:5.3.25]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409) ~[spring-orm-5.3.25.jar:5.3.25]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396) ~[spring-orm-5.3.25.jar:5.3.25]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341) ~[spring-orm-5.3.25.jar:5.3.25]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1863) ~[spring-beans-5.3.25.jar:5.3.25]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1800) ~[spring-beans-5.3.25.jar:5.3.25]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620) ~[spring-beans-5.3.25.jar:5.3.25]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542) ~[spring-beans-5.3.25.jar:5.3.25]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.25.jar:5.3.25]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.25.jar:5.3.25]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.25.jar:5.3.25]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.25.jar:5.3.25]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1154) ~[spring-context-5.3.25.jar:5.3.25]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:908) ~[spring-context-5.3.25.jar:5.3.25]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583) ~[spring-context-5.3.25.jar:5.3.25]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147) ~[spring-boot-2.7.9.jar:2.7.9]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:731) ~[spring-boot-2.7.9.jar:2.7.9]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408) ~[spring-boot-2.7.9.jar:2.7.9]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:307) ~[spring-boot-2.7.9.jar:2.7.9]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1303) ~[spring-boot-2.7.9.jar:2.7.9]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1292) ~[spring-boot-2.7.9.jar:2.7.9]
+	at com.ncs.NcsApplication.main(NcsApplication.java:18) ~[main/:?]
+2023-03-29 11:57:38  WARN [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator] HHH000342: Could not obtain connection to query metadata
+java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: YES)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:828) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:448) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:241) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:198) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138) ~[HikariCP-4.0.3.jar:?]
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:364) ~[HikariCP-4.0.3.jar:?]
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:206) ~[HikariCP-4.0.3.jar:?]
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:476) ~[HikariCP-4.0.3.jar:?]
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:561) ~[HikariCP-4.0.3.jar:?]
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115) ~[HikariCP-4.0.3.jar:?]
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112) ~[HikariCP-4.0.3.jar:?]
+	at org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:122) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess.obtainConnection(JdbcEnvironmentInitiator.java:181) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:68) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:35) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:101) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:272) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:246) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:223) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
+	at org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory.injectServices(DefaultIdentifierGeneratorFactory.java:175) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.injectDependencies(AbstractServiceRegistryImpl.java:295) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:252) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:223) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.<init>(InFlightMetadataCollectorImpl.java:173) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:127) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1460) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1494) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58) ~[spring-orm-5.3.25.jar:5.3.25]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365) ~[spring-orm-5.3.25.jar:5.3.25]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409) ~[spring-orm-5.3.25.jar:5.3.25]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396) ~[spring-orm-5.3.25.jar:5.3.25]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341) ~[spring-orm-5.3.25.jar:5.3.25]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1863) ~[spring-beans-5.3.25.jar:5.3.25]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1800) ~[spring-beans-5.3.25.jar:5.3.25]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620) ~[spring-beans-5.3.25.jar:5.3.25]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542) ~[spring-beans-5.3.25.jar:5.3.25]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.25.jar:5.3.25]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.25.jar:5.3.25]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.25.jar:5.3.25]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.25.jar:5.3.25]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1154) ~[spring-context-5.3.25.jar:5.3.25]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:908) ~[spring-context-5.3.25.jar:5.3.25]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583) ~[spring-context-5.3.25.jar:5.3.25]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147) ~[spring-boot-2.7.9.jar:2.7.9]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:731) ~[spring-boot-2.7.9.jar:2.7.9]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408) ~[spring-boot-2.7.9.jar:2.7.9]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:307) ~[spring-boot-2.7.9.jar:2.7.9]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1303) ~[spring-boot-2.7.9.jar:2.7.9]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1292) ~[spring-boot-2.7.9.jar:2.7.9]
+	at com.ncs.NcsApplication.main(NcsApplication.java:18) ~[main/:?]
+2023-03-29 11:57:38 ERROR [org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean] Failed to initialize JPA EntityManagerFactory: Unable to create requested service [org.hibernate.engine.jdbc.env.spi.JdbcEnvironment]
+2023-03-29 11:57:38  WARN [org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is org.hibernate.service.spi.ServiceException: Unable to create requested service [org.hibernate.engine.jdbc.env.spi.JdbcEnvironment]
+2023-03-29 11:57:38  INFO [org.apache.catalina.core.StandardService] Stopping service [Tomcat]
+2023-03-29 11:57:38  INFO [org.springframework.boot.autoconfigure.logging.ConditionEvaluationReportLoggingListener] 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2023-03-29 11:57:38 ERROR [org.springframework.boot.SpringApplication] Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is org.hibernate.service.spi.ServiceException: Unable to create requested service [org.hibernate.engine.jdbc.env.spi.JdbcEnvironment]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1804) ~[spring-beans-5.3.25.jar:5.3.25]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620) ~[spring-beans-5.3.25.jar:5.3.25]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542) ~[spring-beans-5.3.25.jar:5.3.25]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.25.jar:5.3.25]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.25.jar:5.3.25]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.25.jar:5.3.25]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.25.jar:5.3.25]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1154) ~[spring-context-5.3.25.jar:5.3.25]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:908) ~[spring-context-5.3.25.jar:5.3.25]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583) ~[spring-context-5.3.25.jar:5.3.25]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147) ~[spring-boot-2.7.9.jar:2.7.9]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:731) ~[spring-boot-2.7.9.jar:2.7.9]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408) ~[spring-boot-2.7.9.jar:2.7.9]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:307) ~[spring-boot-2.7.9.jar:2.7.9]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1303) ~[spring-boot-2.7.9.jar:2.7.9]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1292) ~[spring-boot-2.7.9.jar:2.7.9]
+	at com.ncs.NcsApplication.main(NcsApplication.java:18) ~[main/:?]
+Caused by: org.hibernate.service.spi.ServiceException: Unable to create requested service [org.hibernate.engine.jdbc.env.spi.JdbcEnvironment]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:284) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:246) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:223) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
+	at org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory.injectServices(DefaultIdentifierGeneratorFactory.java:175) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.injectDependencies(AbstractServiceRegistryImpl.java:295) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:252) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:223) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.<init>(InFlightMetadataCollectorImpl.java:173) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:127) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1460) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1494) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58) ~[spring-orm-5.3.25.jar:5.3.25]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365) ~[spring-orm-5.3.25.jar:5.3.25]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409) ~[spring-orm-5.3.25.jar:5.3.25]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396) ~[spring-orm-5.3.25.jar:5.3.25]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341) ~[spring-orm-5.3.25.jar:5.3.25]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1863) ~[spring-beans-5.3.25.jar:5.3.25]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1800) ~[spring-beans-5.3.25.jar:5.3.25]
+	... 16 more
+Caused by: org.hibernate.HibernateException: Access to DialectResolutionInfo cannot be null when 'hibernate.dialect' not set
+	at org.hibernate.engine.jdbc.dialect.internal.DialectFactoryImpl.determineDialect(DialectFactoryImpl.java:100) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
+	at org.hibernate.engine.jdbc.dialect.internal.DialectFactoryImpl.buildDialect(DialectFactoryImpl.java:54) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:138) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:35) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:101) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:272) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:246) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:223) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
+	at org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory.injectServices(DefaultIdentifierGeneratorFactory.java:175) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.injectDependencies(AbstractServiceRegistryImpl.java:295) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:252) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:223) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.<init>(InFlightMetadataCollectorImpl.java:173) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:127) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1460) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1494) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58) ~[spring-orm-5.3.25.jar:5.3.25]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365) ~[spring-orm-5.3.25.jar:5.3.25]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409) ~[spring-orm-5.3.25.jar:5.3.25]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396) ~[spring-orm-5.3.25.jar:5.3.25]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341) ~[spring-orm-5.3.25.jar:5.3.25]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1863) ~[spring-beans-5.3.25.jar:5.3.25]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1800) ~[spring-beans-5.3.25.jar:5.3.25]
+	... 16 more
+2023-03-29 12:01:28  INFO [com.ncs.NcsApplication] Starting NcsApplication using Java 11.0.17 on gimjaehuis-MacBook-Pro.local with PID 33838 (/Users/kimjaehee/Desktop/학교/과제/통합구현_NCS/ncs/Integrated_Implementation_NCS/build/classes/java/main started by kimjaehee in /Users/kimjaehee/Desktop/학교/과제/통합구현_NCS/ncs/Integrated_Implementation_NCS)
+2023-03-29 12:01:28  INFO [com.ncs.NcsApplication] No active profile set, falling back to 1 default profile: "default"
+2023-03-29 12:01:29  INFO [org.springframework.data.repository.config.RepositoryConfigurationDelegate] Multiple Spring Data modules found, entering strict repository configuration mode
+2023-03-29 12:01:29  INFO [org.springframework.data.repository.config.RepositoryConfigurationDelegate] Bootstrapping Spring Data Elasticsearch repositories in DEFAULT mode.
+2023-03-29 12:01:29  INFO [org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport] Spring Data Elasticsearch - Could not safely identify store assignment for repository candidate interface com.ncs.repository.NewsRepository; If you want this repository to be a Elasticsearch repository, consider annotating your entities with one of these annotations: org.springframework.data.elasticsearch.annotations.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.elasticsearch.repository.ElasticsearchRepository, org.springframework.data.elasticsearch.repository.ElasticsearchRepository
+2023-03-29 12:01:29  INFO [org.springframework.data.repository.config.RepositoryConfigurationDelegate] Finished Spring Data repository scanning in 20 ms. Found 0 Elasticsearch repository interfaces.
+2023-03-29 12:01:29  INFO [org.springframework.data.repository.config.RepositoryConfigurationDelegate] Multiple Spring Data modules found, entering strict repository configuration mode
+2023-03-29 12:01:29  INFO [org.springframework.data.repository.config.RepositoryConfigurationDelegate] Bootstrapping Spring Data Reactive Elasticsearch repositories in DEFAULT mode.
+2023-03-29 12:01:29  INFO [org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport] Spring Data Reactive Elasticsearch - Could not safely identify store assignment for repository candidate interface com.ncs.repository.NewsRepository; If you want this repository to be a Reactive Elasticsearch repository, consider annotating your entities with one of these annotations: org.springframework.data.elasticsearch.annotations.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.elasticsearch.repository.ReactiveElasticsearchRepository
+2023-03-29 12:01:29  INFO [org.springframework.data.repository.config.RepositoryConfigurationDelegate] Finished Spring Data repository scanning in 2 ms. Found 0 Reactive Elasticsearch repository interfaces.
+2023-03-29 12:01:29  INFO [org.springframework.data.repository.config.RepositoryConfigurationDelegate] Multiple Spring Data modules found, entering strict repository configuration mode
+2023-03-29 12:01:29  INFO [org.springframework.data.repository.config.RepositoryConfigurationDelegate] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-03-29 12:01:29  INFO [org.springframework.data.repository.config.RepositoryConfigurationDelegate] Finished Spring Data repository scanning in 17 ms. Found 1 JPA repository interfaces.
+2023-03-29 12:01:29  INFO [org.springframework.boot.web.embedded.tomcat.TomcatWebServer] Tomcat initialized with port(s): 8080 (http)
+2023-03-29 12:01:29  INFO [org.apache.coyote.http11.Http11NioProtocol] Initializing ProtocolHandler ["http-nio-8080"]
+2023-03-29 12:01:29  INFO [org.apache.catalina.core.StandardService] Starting service [Tomcat]
+2023-03-29 12:01:29  INFO [org.apache.catalina.core.StandardEngine] Starting Servlet engine: [Apache Tomcat/9.0.71]
+2023-03-29 12:01:29  INFO [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]] Initializing Spring embedded WebApplicationContext
+2023-03-29 12:01:29  INFO [org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext] Root WebApplicationContext: initialization completed in 1024 ms
+2023-03-29 12:01:29  INFO [com.zaxxer.hikari.HikariDataSource] HikariPool-1 - Starting...
+2023-03-29 12:01:29  INFO [com.zaxxer.hikari.HikariDataSource] HikariPool-1 - Start completed.
+2023-03-29 12:01:30  INFO [org.hibernate.jpa.internal.util.LogHelper] HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-03-29 12:01:30  INFO [org.hibernate.Version] HHH000412: Hibernate ORM core version 5.6.15.Final
+2023-03-29 12:01:30  INFO [org.hibernate.annotations.common.Version] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-03-29 12:01:30  INFO [org.hibernate.dialect.Dialect] HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2023-03-29 12:01:30  INFO [org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-03-29 12:01:30  INFO [org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-03-29 12:01:31  WARN [org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-03-29 12:01:31  INFO [org.springframework.data.elasticsearch.support.VersionInfo] Version Spring Data Elasticsearch: 4.2.2
+2023-03-29 12:01:31  INFO [org.springframework.data.elasticsearch.support.VersionInfo] Version Elasticsearch Client in build: 7.12.1
+2023-03-29 12:01:31  INFO [org.springframework.data.elasticsearch.support.VersionInfo] Version Elasticsearch Client used: 7.17.9
+2023-03-29 12:01:31  WARN [org.springframework.data.elasticsearch.support.VersionInfo] Version mismatch in between Elasticsearch Clients build/use: 7.12.1 - 7.17.9
+2023-03-29 12:01:31  INFO [org.apache.coyote.http11.Http11NioProtocol] Starting ProtocolHandler ["http-nio-8080"]
+2023-03-29 12:01:31  INFO [org.springframework.boot.web.embedded.tomcat.TomcatWebServer] Tomcat started on port(s): 8080 (http) with context path ''
+2023-03-29 12:01:31  INFO [com.ncs.NcsApplication] Started NcsApplication in 3.798 seconds (JVM running for 4.631)
+2023-03-29 12:01:47  INFO [org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean] Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-03-29 12:01:47  INFO [org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl] HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2023-03-29 12:01:47  INFO [com.zaxxer.hikari.HikariDataSource] HikariPool-1 - Shutdown initiated...
+2023-03-29 12:01:47  INFO [com.zaxxer.hikari.HikariDataSource] HikariPool-1 - Shutdown completed.
+2023-03-29 12:02:31  INFO [com.ncs.NcsApplication] Starting NcsApplication using Java 11.0.17 on gimjaehuis-MacBook-Pro.local with PID 35438 (/Users/kimjaehee/Desktop/학교/과제/통합구현_NCS/ncs/Integrated_Implementation_NCS/build/classes/java/main started by kimjaehee in /Users/kimjaehee/Desktop/학교/과제/통합구현_NCS/ncs/Integrated_Implementation_NCS)
+2023-03-29 12:02:31  INFO [com.ncs.NcsApplication] The following 1 profile is active: "-Dspring.profiles.active=jh-local"
+2023-03-29 12:02:32  INFO [org.springframework.data.repository.config.RepositoryConfigurationDelegate] Multiple Spring Data modules found, entering strict repository configuration mode
+2023-03-29 12:02:32  INFO [org.springframework.data.repository.config.RepositoryConfigurationDelegate] Bootstrapping Spring Data Elasticsearch repositories in DEFAULT mode.
+2023-03-29 12:02:32  INFO [org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport] Spring Data Elasticsearch - Could not safely identify store assignment for repository candidate interface com.ncs.repository.NewsRepository; If you want this repository to be a Elasticsearch repository, consider annotating your entities with one of these annotations: org.springframework.data.elasticsearch.annotations.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.elasticsearch.repository.ElasticsearchRepository, org.springframework.data.elasticsearch.repository.ElasticsearchRepository
+2023-03-29 12:02:32  INFO [org.springframework.data.repository.config.RepositoryConfigurationDelegate] Finished Spring Data repository scanning in 13 ms. Found 0 Elasticsearch repository interfaces.
+2023-03-29 12:02:32  INFO [org.springframework.data.repository.config.RepositoryConfigurationDelegate] Multiple Spring Data modules found, entering strict repository configuration mode
+2023-03-29 12:02:32  INFO [org.springframework.data.repository.config.RepositoryConfigurationDelegate] Bootstrapping Spring Data Reactive Elasticsearch repositories in DEFAULT mode.
+2023-03-29 12:02:32  INFO [org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport] Spring Data Reactive Elasticsearch - Could not safely identify store assignment for repository candidate interface com.ncs.repository.NewsRepository; If you want this repository to be a Reactive Elasticsearch repository, consider annotating your entities with one of these annotations: org.springframework.data.elasticsearch.annotations.Document (preferred), or consider extending one of the following types with your repository: org.springframework.data.elasticsearch.repository.ReactiveElasticsearchRepository
+2023-03-29 12:02:32  INFO [org.springframework.data.repository.config.RepositoryConfigurationDelegate] Finished Spring Data repository scanning in 2 ms. Found 0 Reactive Elasticsearch repository interfaces.
+2023-03-29 12:02:32  INFO [org.springframework.data.repository.config.RepositoryConfigurationDelegate] Multiple Spring Data modules found, entering strict repository configuration mode
+2023-03-29 12:02:32  INFO [org.springframework.data.repository.config.RepositoryConfigurationDelegate] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-03-29 12:02:32  INFO [org.springframework.data.repository.config.RepositoryConfigurationDelegate] Finished Spring Data repository scanning in 14 ms. Found 1 JPA repository interfaces.
+2023-03-29 12:02:32  INFO [org.springframework.boot.web.embedded.tomcat.TomcatWebServer] Tomcat initialized with port(s): 8080 (http)
+2023-03-29 12:02:32  INFO [org.apache.coyote.http11.Http11NioProtocol] Initializing ProtocolHandler ["http-nio-8080"]
+2023-03-29 12:02:32  INFO [org.apache.catalina.core.StandardService] Starting service [Tomcat]
+2023-03-29 12:02:32  INFO [org.apache.catalina.core.StandardEngine] Starting Servlet engine: [Apache Tomcat/9.0.71]
+2023-03-29 12:02:32  INFO [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]] Initializing Spring embedded WebApplicationContext
+2023-03-29 12:02:32  INFO [org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext] Root WebApplicationContext: initialization completed in 784 ms
+2023-03-29 12:02:32  INFO [com.zaxxer.hikari.HikariDataSource] HikariPool-1 - Starting...
+2023-03-29 12:02:32  INFO [com.zaxxer.hikari.HikariDataSource] HikariPool-1 - Start completed.
+2023-03-29 12:02:32  INFO [org.hibernate.jpa.internal.util.LogHelper] HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-03-29 12:02:32  INFO [org.hibernate.Version] HHH000412: Hibernate ORM core version 5.6.15.Final
+2023-03-29 12:02:32  INFO [org.hibernate.annotations.common.Version] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-03-29 12:02:32  INFO [org.hibernate.dialect.Dialect] HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2023-03-29 12:02:33  INFO [org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-03-29 12:02:33  INFO [org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-03-29 12:02:33  WARN [org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-03-29 12:02:34  INFO [org.springframework.data.elasticsearch.support.VersionInfo] Version Spring Data Elasticsearch: 4.2.2
+2023-03-29 12:02:34  INFO [org.springframework.data.elasticsearch.support.VersionInfo] Version Elasticsearch Client in build: 7.12.1
+2023-03-29 12:02:34  INFO [org.springframework.data.elasticsearch.support.VersionInfo] Version Elasticsearch Client used: 7.17.9
+2023-03-29 12:02:34  WARN [org.springframework.data.elasticsearch.support.VersionInfo] Version mismatch in between Elasticsearch Clients build/use: 7.12.1 - 7.17.9
+2023-03-29 12:02:34  INFO [org.apache.coyote.http11.Http11NioProtocol] Starting ProtocolHandler ["http-nio-8080"]
+2023-03-29 12:02:34  INFO [org.springframework.boot.web.embedded.tomcat.TomcatWebServer] Tomcat started on port(s): 8080 (http) with context path ''
+2023-03-29 12:02:34  INFO [com.ncs.NcsApplication] Started NcsApplication in 2.747 seconds (JVM running for 3.372)
+2023-03-29 12:02:55  INFO [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-03-29 12:02:55  INFO [org.springframework.web.servlet.DispatcherServlet] Initializing Servlet 'dispatcherServlet'
+2023-03-29 12:02:55  INFO [org.springframework.web.servlet.DispatcherServlet] Completed initialization in 1 ms
