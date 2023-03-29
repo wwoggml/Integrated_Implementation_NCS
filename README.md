@@ -48,7 +48,8 @@ docker-compose down : 컨테이너 다 내릴 때 사용하는 명령어.
 
 <br>
 
-#### 2. https://news.naver.com/main/list.naver?mode=LS2D&mid=shm&sid1=105&sid2=731 에 있는 뉴스기사 크롤링한 예제
+#### 2. https://news.naver.com/main/main.naver?mode=LSD&mid=shm&sid1=105, https://news.naver.com/main/main.naver?mode=LSD&mid=shm&sid1=103, https://news.naver.com/main/main.naver?mode=LSD&mid=shm&sid1=101
+에 있는 뉴스기사 크롤링한 예제
 ==> localhost:8080/news/search -> localhost:8080/news/add -> localhost:8080/news/result  
 
 <br>
