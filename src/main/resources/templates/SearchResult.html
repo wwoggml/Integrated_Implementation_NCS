@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/layout1}">
+
+<th:block layout:fragment="css">
+  <style>
+    .logo_image {
+      margin-top: 50px;
+      width: 100px;
+    }
+    .searchInput {
+      margin-top: 50px;
+    }
+
+    input {
+      height: 50px;
+      border-radius: 25px;
+      width: 100%;
+      border: 1px solid #ccc;
+      text-indent: 10px;
+    }
+    .search_image {
+      width: 50px;
+    }
+
+    .searchResult {
+      margin-top: 50px;
+      margin-bottom: 50px;
+    }
+
+    .paging {
+      display: flex;
+      justify-content: center;
+    }
+
+
+  </style>
+</th:block>
+<div layout:fragment="content">
+
+  <div class="container">
+    <img src="/img/RNSE_LOGO.png" class="logo_image">
+    <div class="searchInput">
+      <form>
+        <div class="row">
+          <div class="col-10">
+            <input type="text" placeholder=" 검색어를 입력하세요" aria-describedby="searchText">
+          </div>
+          <div class="col-1">
+            <img src="/img/search.png" class="search_image" id="searchText">
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="searchResult">
+      <div class="row m-5" th:each="i : ${arr}">
+        <div class="col-md-2">
+          <dt><img th:src="${i.imageURL}" onerror="this.style.display='none'" style="width: 100px;height: 70px"></dt>
+        </div>
+        <div class="col-md-10">
+          <dt th:text="${i.title}"></dt>
+          <dd th:text="${i.reporter}"></dd>
+        </div>
+      </div>
+    </div>
+    <div class="paging">
+      <nav aria-label="Page navigation example">
+        <ul class="pagination">
+          <li class="page-item">
+            <a class="page-link" href="#" aria-label="Previous">
+              <span aria-hidden="true">&laquo;</span>
+              <span class="sr-only">Previous</span>
+            </a>
+          </li>
+          <li class="page-item"><a class="page-link" href="#">1</a></li>
+          <li class="page-item"><a class="page-link" href="#">2</a></li>
+          <li class="page-item"><a class="page-link" href="#">3</a></li>
+          <li class="page-item">
+            <a class="page-link" href="#" aria-label="Next">
+              <span aria-hidden="true">&raquo;</span>
+              <span class="sr-only">Next</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+</html>
