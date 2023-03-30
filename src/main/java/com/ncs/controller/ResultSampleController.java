@@ -10,7 +10,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,7 +18,7 @@ import java.util.List;
 @RequiredArgsConstructor
 @Log4j2
 @RequestMapping("/news")
-public class ResultController {
+public class ResultSampleController {
     private final NewsService newsService;
 
     @Autowired
@@ -43,8 +42,6 @@ public class ResultController {
 
 
         model.addAttribute("newsDtoListlist", newsDtoListlist);
-
         return "testCraw";
-
     }
 }
