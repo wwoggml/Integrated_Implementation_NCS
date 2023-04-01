@@ -74,4 +74,10 @@ public class SearchController {
 
         return "SearchResult";
     }
+
+    @GetMapping("/Second")
+    public String Second(Model model){
+        model.addAttribute("data" , "SecondPage");
+        return "SecondPage";
+    }
 }
