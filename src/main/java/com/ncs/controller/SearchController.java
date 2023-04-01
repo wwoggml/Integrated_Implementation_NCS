@@ -1,6 +1,5 @@
 package com.ncs.controller;
 
-import com.google.gson.*;
 import com.ncs.dto.NewsDto;
 import com.ncs.elasticsearch.NewsDocument;
 import com.ncs.elasticsearch.NewsDocumentRepository;
@@ -73,5 +72,10 @@ public class SearchController {
 
 
         return "SearchResult";
+    }
+
+    @GetMapping("/newsMain")
+    public String newsMain(Model model) {
+        return "NewsMain";
     }
 }
