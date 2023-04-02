@@ -45,6 +45,11 @@ public class News {
     @Column(name = "imageurl")
     private String imageURL;
 
+    @Lob
+    @Column(name = "img_desc")
+    private String img_desc;
+
+
 
     @Lob
     @Column(name = "text")
@@ -59,6 +64,7 @@ public class News {
         news.setUrl(newsDtos.getUrl());
         news.setCategory(newsDtos.getCategory());
         news.setImageURL(newsDtos.getImageURL());
+        news.setImg_desc(news.getImg_desc());
         news.setDatetime(newsDtos.getDatetime());
         news.setText(newsDtos.getText());
 
