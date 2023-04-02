@@ -1,6 +1,5 @@
 package com.ncs.controller;
 
-import com.google.gson.*;
 import com.ncs.dto.NewsDto;
 import com.ncs.elasticsearch.NewsDocument;
 import com.ncs.elasticsearch.NewsDocumentRepository;
@@ -50,18 +49,18 @@ public class SearchController {
     @GetMapping("/search")
     public String test(HttpServletRequest httpServletRequest, Model model,
                        @RequestParam(defaultValue = "10") int size,
-                       @RequestParam(value="page", defaultValue="1") int page) {
+                       @RequestParam(value = "page", defaultValue = "1") int page) {
         String keyword = httpServletRequest.getParameter("keyword");
 
 
         Pageable pageable = PageRequest.of(page - 1, size);
         Page<NewsDocument> news = newsService.searchNews(keyword, pageable);
 
-        if(keyword == null) {
+        if (keyword == null) {
             return "SearchResult";
         }
 
-        if(news.getContent().size() == 0) {
+        if (news.getContent().size() == 0) {
             String none_result = "검색 결과가 없습니다.";
             model.addAttribute("none_result", none_result);
             return "SearchResult";
@@ -75,9 +74,20 @@ public class SearchController {
         return "SearchResult";
     }
 
+    @GetMapping("/searchMain")
+    public String newsMain(Model model) {
+        return "SearchMain";
+    }
+
     @GetMapping("/Second")
+<<<<<<< HEAD
     public String Second(Model model){
         model.addAttribute("data" , "SecondPage");
         return "asdfgh";
+=======
+    public String Second(Model model) {
+        model.addAttribute("data", "SecondPage");
+        return "SecondPage";
+>>>>>>> 126ad022d3c48e4d5b2cb5f3de4fe27a2fe22233
     }
 }
