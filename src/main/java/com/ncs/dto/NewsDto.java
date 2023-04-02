@@ -11,6 +11,9 @@ import java.sql.Array;
 import java.util.List;
 import org.modelmapper.ModelMapper;
 
+import javax.persistence.Column;
+import javax.persistence.Lob;
+
 
 @Data
 @Getter
@@ -24,6 +27,8 @@ public class NewsDto {
     private String category;
     private String datetime;
     private String imageURL;
+    private String img_desc;
+
     private String text;
 
 

@@ -20,8 +20,13 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.time.ZonedDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
 @RestController
 @RequiredArgsConstructor
@@ -66,6 +71,7 @@ public class NewsAddSampleController {
                 Elements author = document.getElementsByClass("byline_s");
                 Elements date = document.getElementsByClass("media_end_head_info_datestamp_time");
                 Elements imageUrl = document.getElementsByClass("nbd_a _LAZY_LOADING_ERROR_HIDE");
+                Elements img_desc = document.getElementsByClass("img_desc");
                 Elements text = document.getElementsByClass("go_trans _article_content");
 
                 List<String> imageurl = new ArrayList<>();
@@ -73,7 +79,6 @@ public class NewsAddSampleController {
 
                 for(Element ele : imageUrl) {
                     if(index == 0) imageURL += ele.select("img").attr("abs:data-src");
-                    else imageURL += ", " + ele.select("img").attr("abs:data-src");
                     index++;
                 }
 
@@ -84,12 +89,25 @@ public class NewsAddSampleController {
                 else if(URL.contains("sid=103"))
                     category = "생활/문화";
 
+                String dateString = date.text().split(" ")[0] + " " + date.text().split(" ")[1] + " " + date.text().split(" ")[2];
+
+
+                SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy.MM.dd. a hh:mm");
+                Date timestamp = dateFormat.parse(dateString);
+
+                DateTimeFormatter formatter = DateTimeFormatter.ofPattern("EEE MMM dd HH:mm:ss zzz yyyy", Locale.ENGLISH);
+                ZonedDateTime dateTime = ZonedDateTime.parse(timestamp.toString(), formatter);
+                String iso8601String = dateTime.toOffsetDateTime().toString();
+
+
+
                 newsDto.setUrl((String) URL);
                 newsDto.setTitle(title.text());
                 newsDto.setReporter(author.text());
                 newsDto.setImageURL(imageURL);
                 newsDto.setCategory(category);
-                newsDto.setDatetime(date.text());
+                newsDto.setImg_desc(img_desc.text());
+                newsDto.setDatetime(iso8601String);
                 newsDto.setText(text.text());
 
                 newsService.saveNews(newsDto);

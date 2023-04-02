@@ -74,6 +74,7 @@ public class SearchController {
         return "SearchResult";
     }
 
+
     @GetMapping("/Second")
     public String Second(Model model){
 

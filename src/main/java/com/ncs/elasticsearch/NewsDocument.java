@@ -44,6 +44,11 @@ public class NewsDocument {
     @Column(name = "imageurl")
     private String imageurl;
 
+    @Lob
+    @Column(name = "img_desc")
+    private String img_desc;
+
+
 
     @Lob
     @Column(name = "text")
@@ -68,6 +73,7 @@ public class NewsDocument {
         doc.setImageurl(imageurl);
         doc.setReporter(reporter);
         doc.setUrl(url);
+        doc.setImg_desc(img_desc);
         doc.setDatetime(datetime);
         doc.setCategory(category);
         return doc;
