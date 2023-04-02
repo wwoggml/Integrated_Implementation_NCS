@@ -49,18 +49,18 @@ public class SearchController {
     @GetMapping("/search")
     public String test(HttpServletRequest httpServletRequest, Model model,
                        @RequestParam(defaultValue = "10") int size,
-                       @RequestParam(value="page", defaultValue="1") int page) {
+                       @RequestParam(value = "page", defaultValue = "1") int page) {
         String keyword = httpServletRequest.getParameter("keyword");
 
 
         Pageable pageable = PageRequest.of(page - 1, size);
         Page<NewsDocument> news = newsService.searchNews(keyword, pageable);
 
-        if(keyword == null) {
+        if (keyword == null) {
             return "SearchResult";
         }
 
-        if(news.getContent().size() == 0) {
+        if (news.getContent().size() == 0) {
             String none_result = "검색 결과가 없습니다.";
             model.addAttribute("none_result", none_result);
             return "SearchResult";
@@ -74,8 +74,14 @@ public class SearchController {
         return "SearchResult";
     }
 
-    @GetMapping("/newsMain")
+    @GetMapping("/searchMain")
     public String newsMain(Model model) {
-        return "NewsMain";
+        return "SearchMain";
+    }
+
+    @GetMapping("/Second")
+    public String Second(Model model) {
+        model.addAttribute("data", "SecondPage");
+        return "SecondPage";
     }
 }
