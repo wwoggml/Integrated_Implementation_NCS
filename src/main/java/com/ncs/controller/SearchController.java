@@ -74,20 +74,14 @@ public class SearchController {
         return "SearchResult";
     }
 
+    @GetMapping("/Second")
+    public String Second(Model model){
+
+        return "asdfgh";
+    }
+
     @GetMapping("/searchMain")
     public String newsMain(Model model) {
         return "SearchMain";
-    }
-
-    @GetMapping("/Second")
-<<<<<<< HEAD
-    public String Second(Model model){
-        model.addAttribute("data" , "SecondPage");
-        return "asdfgh";
-=======
-    public String Second(Model model) {
-        model.addAttribute("data", "SecondPage");
-        return "SecondPage";
->>>>>>> 126ad022d3c48e4d5b2cb5f3de4fe27a2fe22233
     }
 }
