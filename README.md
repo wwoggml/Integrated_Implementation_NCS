@@ -1,6 +1,4 @@
-hello test
-
-# git
+## git
 
 git pull origin main - 다운받는 명령어
 
@@ -20,7 +18,7 @@ git commit -m "aaaa"
 
 git pull origin main
 
-# 도커
+## 도커
 
 [실행]
 
