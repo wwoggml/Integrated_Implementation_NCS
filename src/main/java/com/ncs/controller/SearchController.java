@@ -78,6 +78,6 @@ public class SearchController {
     @GetMapping("/Second")
     public String Second(Model model){
         model.addAttribute("data" , "SecondPage");
-        return "SecondPage";
+        return "asdfgh";
     }
 }
