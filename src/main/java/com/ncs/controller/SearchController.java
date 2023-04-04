@@ -32,7 +32,7 @@ import java.util.List;
 
 
 @Log4j2
-//@RestController
+
 @Controller
 public class SearchController {
 
@@ -81,8 +81,9 @@ public class SearchController {
         return "asdfgh";
     }
 
-    @GetMapping("/searchMain")
-    public String newsMain(Model model) {
+    @GetMapping("/main")
+    public String main() {
         return "SearchMain";
     }
+
 }
