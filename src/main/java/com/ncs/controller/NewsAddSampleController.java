@@ -51,10 +51,10 @@ public class NewsAddSampleController {
     public String CrawlingCategory(String URL) {
         Connection conn = Jsoup.connect(URL);
         Elements TestURL = null;
-        int index = 0;
-        String imageURL = "", category = "";
+        String imageURL = "", category = "", imageDesc = "";
         NewsDto newsDto = new NewsDto();
         ArrayList<NewsDto> dtoList = new ArrayList<NewsDto>();
+
 
         try {
             Document document = conn.get();
@@ -69,18 +69,20 @@ public class NewsAddSampleController {
 
                 Elements title = document.getElementsByClass("media_end_head_headline");
                 Elements author = document.getElementsByClass("byline_s");
-                Elements date = document.getElementsByClass("media_end_head_info_datestamp_time");
+                Elements date = document.getElementsByClass("media_end_head_info_datestamp_time _ARTICLE_DATE_TIME");
                 Elements imageUrl = document.getElementsByClass("nbd_a _LAZY_LOADING_ERROR_HIDE");
                 Elements img_desc = document.getElementsByClass("img_desc");
                 Elements text = document.getElementsByClass("go_trans _article_content");
 
-                List<String> imageurl = new ArrayList<>();
-                if(imageUrl.size() == 0) imageURL = "";
-
-                for(Element ele : imageUrl) {
-                    if(index == 0) imageURL += ele.select("img").attr("abs:data-src");
-                    index++;
+                if(imageUrl.size() == 0 || img_desc.size() == 0) {
+                    imageURL = "";
+                    imageDesc = "";
                 }
+                else {
+                    imageURL = imageUrl.get(0).select("img").attr("abs:data-src");
+                    imageDesc = img_desc.get(0).text();
+                }
+
 
                 if(URL.contains("sid=105"))
                     category = "IT/과학";
@@ -106,11 +108,12 @@ public class NewsAddSampleController {
                 newsDto.setReporter(author.text());
                 newsDto.setImageURL(imageURL);
                 newsDto.setCategory(category);
-                newsDto.setImg_desc(img_desc.text());
+                newsDto.setImg_desc(imageDesc);
                 newsDto.setDatetime(iso8601String);
                 newsDto.setText(text.text());
 
                 newsService.saveNews(newsDto);
+
                 return "Save Database Successful!";
             }
 
