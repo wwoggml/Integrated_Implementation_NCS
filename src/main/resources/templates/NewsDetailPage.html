@@ -5,12 +5,9 @@
 
 <th:block layout:fragment="css">
   <style>
-
     .container {
       min-width: 1140px;
     }
-
-
     input{
       position: relative;
       margin: 0px 0px 20px 20px;
@@ -26,13 +23,17 @@
       position: relative;
       border: 1px solid #CCCCCC;
       border-radius: 50px;
-      width: 550px;
+      width: 300px;
       height: 45px;
       margin-top: 20px;
       margin: 25px auto;
+      left: 530px;
 
     }
 
+    .category {
+      padding: 30px;
+    }
     button {
       background-color: transparent;
       border: none;
@@ -48,10 +49,6 @@
       top: 25px;
     }
 
-    .category_image {
-      width: 100%;
-      height: 150px;
-    }
 
     .article-image {
       text-align: center;
@@ -104,62 +101,129 @@
           </div>
         </div>
       </div>
-      <div class="col-4">
+      <div class="col-4 category">
 
-        <div class="card mt-4">
-          <img src="https://imgnews.pstatic.net/image/003/2023/04/01/NISI20230331_0019840699_web_20230331145332_20230401174304552.jpg?type=w647" class="category_image card-img-top">
-          <div class="card-body">
-            <h6 class="card-title"><b>생활문화</b></h6>
-            <p class="card-text"><small>[내일날씨]봄나들이 좋은 맑은 날씨…미세먼지도 오후 해소</small></p>
+<!--        <div class="card mt-4">-->
+<!--          <img src="https://imgnews.pstatic.net/image/003/2023/04/01/NISI20230331_0019840699_web_20230331145332_20230401174304552.jpg?type=w647" class="category_image card-img-top">-->
+<!--          <div class="card-body">-->
+<!--            <h6 class="card-title"><b>생활문화</b></h6>-->
+<!--            <p class="card-text"><small>[내일날씨]봄나들이 좋은 맑은 날씨…미세먼지도 오후 해소</small></p>-->
+<!--          </div>-->
+<!--        </div>-->
+
+<!--        <div class="card mt-4">-->
+<!--          <img src="https://imgnews.pstatic.net/image/293/2023/03/31/0000043091_001_20230331145001439.jpg?type=w647" class="category_image card-img-top">-->
+<!--          <div class="card-body">-->
+<!--            <h6 class="card-title"><b>경제</b></h6>-->
+<!--            <p class="card-text"><small>HMM 주총, 개미들 '성토의 장'됐다…김경배 사장 "자사주 매입 검토</small></p>-->
+<!--          </div>-->
+<!--        </div>-->
+
+<!--        <div class="card mt-4">-->
+<!--          <img src="https://imgnews.pstatic.net/image/015/2023/03/31/0004827400_001_20230401012903364.jpg?type=w647" class="category_image card-img-top">-->
+<!--          <div class="card-body">-->
+<!--            <h6 class="card-title"><b>IT/과학</b></h6>-->
+<!--            <p class="card-text"><small>KT 이사 단 1명…"새 대표 선임, 최소 5개월</small></p>-->
+<!--          </div>-->
+<!--        </div>-->
+
+          <div class="row mt-2">
+            <div class="col-1"></div>
+            <div class="col-11">
+            <h6><b>생활/문화</b> <i class="fas fa-angle-right float-right text-secondary mr-2"></i></h6>
+              <div class="row mt-3">
+                <div class="col-8 mt-1"> <small>봄나들이 좋은 맑은 날씨…미세먼지도 오후 해소</small></div>
+                <div class="col-4">
+                  <img data-scroll="true" alt="" src="https://imgnews.pstatic.net/image/003/2023/04/01/NISI20230331_0019840699_web_20230331145332_20230401174304552.jpg?type=w647" style="width: 100%;">
+                </div>
+              </div>
+              <div class="row mt-3">
+                <div class="col-8 mt-1"> <small>봄나들이 좋은 맑은 날씨…미세먼지도 오후 해소</small></div>
+                <div class="col-4">
+                  <img data-scroll="true" alt="" src="https://imgnews.pstatic.net/image/003/2023/04/01/NISI20230331_0019840699_web_20230331145332_20230401174304552.jpg?type=w647" style="width: 100%;">
+                </div>
+              </div>
+              <hr>
+            </div>
+
           </div>
+        <div class="row mt-3">
+          <div class="col-1"></div>
+          <div class="col-11">
+            <h6><b>경제</b> <i class="fas fa-angle-right float-right text-secondary mr-2"></i></h6>
+            <div class="row mt-3">
+              <div class="col-8 mt-1"> <small>HMM 주총, 개미들 '성토의 장'됐다…김경배 사장 "자사주 매입 검토</small></div>
+              <div class="col-4">
+                <img data-scroll="true" alt="" src="https://imgnews.pstatic.net/image/293/2023/03/31/0000043091_001_20230331145001439.jpg?type=w647" style="width: 100%;">
+              </div>
+            </div>
+            <div class="row mt-3">
+              <div class="col-8 mt-1"> <small>HMM 주총, 개미들 '성토의 장'됐다…김경배 사장 "자사주 매입 검토</small></div>
+              <div class="col-4">
+                <img data-scroll="true" alt="" src="https://imgnews.pstatic.net/image/293/2023/03/31/0000043091_001_20230331145001439.jpg?type=w647" style="width: 100%;">
+              </div>
+            </div>
+            <hr>
+          </div>
+
+        </div>
+        <div class="row mt-3">
+          <div class="col-1"></div>
+          <div class="col-11">
+            <h6><b>IT/과학</b> <i class="fas fa-angle-right float-right text-secondary mr-2"></i></h6>
+            <div class="row mt-3">
+              <div class="col-8 mt-1"> <small>KT 이사 단 1명…"새 대표 선임, 최소 5개월</small></div>
+              <div class="col-4">
+                <img data-scroll="true" alt="" src="https://imgnews.pstatic.net/image/015/2023/03/31/0004827400_001_20230401012903364.jpg?type=w647" style="width: 100%;">
+              </div>
+            </div>
+            <div class="row mt-3">
+              <div class="col-8 mt-1"> <small>KT 이사 단 1명…"새 대표 선임, 최소 5개월</small></div>
+              <div class="col-4">
+                <img data-scroll="true" alt="" src="https://imgnews.pstatic.net/image/015/2023/03/31/0004827400_001_20230401012903364.jpg?type=w647" style="width: 100%;">
+              </div>
+            </div>
+            <hr>
+          </div>
+
         </div>
 
-        <div class="card mt-4">
-          <img src="https://imgnews.pstatic.net/image/293/2023/03/31/0000043091_001_20230331145001439.jpg?type=w647" class="category_image card-img-top">
-          <div class="card-body">
-            <h6 class="card-title"><b>경제</b></h6>
-            <p class="card-text"><small>HMM 주총, 개미들 '성토의 장'됐다…김경배 사장 "자사주 매입 검토</small></p>
-          </div>
-        </div>
 
-        <div class="card mt-4">
-          <img src="https://imgnews.pstatic.net/image/015/2023/03/31/0004827400_001_20230401012903364.jpg?type=w647" class="category_image card-img-top">
-          <div class="card-body">
-            <h6 class="card-title"><b>IT/과학</b></h6>
-            <p class="card-text"><small>KT 이사 단 1명…"새 대표 선임, 최소 5개월</small></p>
-          </div>
-        </div>
+          <div class="row mt-5">
+            <div class="col-1"></div>
+            <div class="col-11">
+              <h6><b>실시간 순위</b> <i class="fas fa-angle-right float-right text-secondary mr-2"></i></h6>
+              <div class="row mt-3">
+                  <div class="col-1">1</div>
+                  <div class="col-7"> <small>"능숙한 플레이어" 강남 홀덤펍서 포커치던 김새론 포착</small></div>
+                  <div class="col-3 p-0">
+                    <img data-scroll="true" alt="" src="https://mimgnews.pstatic.net/image/origin/031/2023/04/05/738856.jpg?type=nf190_130&amp;ut=1680651181000" style="width: 100%;">
+                  </div>
+                </div>
+              <hr>
+              <div class="row mt-3">
+                <div class="col-1">2</div>
+                <div class="col-7"> <small>"능숙한 플레이어" 강남 홀덤펍서 포커치던 김새론 포착</small></div>
+                <div class="col-3 p-0">
+                  <img data-scroll="true" alt="" src="https://mimgnews.pstatic.net/image/origin/031/2023/04/05/738856.jpg?type=nf190_130&amp;ut=1680651181000" style="width: 100%;">
+                </div>
+              </div>
+              <hr>
+              <div class="row mt-3">
+                <div class="col-1">3</div>
+                <div class="col-7"> <small>"능숙한 플레이어" 강남 홀덤펍서 포커치던 김새론 포착</small></div>
+                <div class="col-3 p-0">
+                  <img data-scroll="true" alt="" src="https://mimgnews.pstatic.net/image/origin/031/2023/04/05/738856.jpg?type=nf190_130&amp;ut=1680651181000" style="width: 100%;">
+                </div>
+              </div>
+              <hr>
+              </div>
+            </div>
 
-        <div class="mt-5">
-          <h6><b>실시간 순위</b></h6>
-          <div class="row">
-            <div class="col-1 mt-3">1</div>
-            <div class="col-7 mt-2"> <small>"능숙한 플레이어" 강남 홀덤펍서 포커치던 김새론 포착</small></div>
-            <div class="col-4">
-              <img data-scroll="true" alt="" src="https://mimgnews.pstatic.net/image/origin/031/2023/04/05/738856.jpg?type=nf190_130&amp;ut=1680651181000" style="width: 100%;">
-            </div>
-          </div>
-          <hr>
-          <div class="row">
-            <div class="col-1 mt-3">2</div>
-            <div class="col-7 mt-2"> <small>"등기부등본 보고 '화들짝'…"1억 깎아줘도 계약 안해요"</small></div>
-            <div class="col-4">
-              <img data-scroll="true" alt="" src="https://mimgnews.pstatic.net/image/origin/031/2023/04/05/738923.jpg?type=nf190_130&ut=1680658201000" style="width: 100%;">
-            </div>
-          </div>
-          <hr>
-          <div class="row">
-            <div class="col-1 mt-3">3</div>
-            <div class="col-7 mt-2"> <small>"[단독] KB, 고객 돈 동의 없이 재투자하고 뒤통수</small></div>
-            <div class="col-4">
-              <img data-scroll="true" alt="" src="https://imgnews.pstatic.net/image/031/2023/04/05/0000738852_001_20230405112301107.jpg?type=w647" style="width: 100%;">
-            </div>
-          </div>
-          <hr>
 
         </div>
       </div>
-    </div>
+
   </div>
 </div>
 </html>
