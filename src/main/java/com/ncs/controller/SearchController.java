@@ -14,11 +14,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-
 import javax.servlet.http.HttpServletRequest;
-import java.util.ArrayList;
+import java.io.UnsupportedEncodingException;
+import java.net.URLDecoder;
+import java.net.URLEncoder;
 import java.util.List;
-import java.util.Optional;
+
 
 
 @Log4j2
@@ -39,9 +40,18 @@ public class SearchController {
     @GetMapping("/search")
     public String test(HttpServletRequest httpServletRequest, Model model,
                        @RequestParam(defaultValue = "10") int size,
-                       @RequestParam(value = "page", defaultValue = "1") int page) {
+                       @RequestParam(value = "page", defaultValue = "1") int page) throws UnsupportedEncodingException {
         String keyword = httpServletRequest.getParameter("keyword");
 
+        try {
+            // URL 디코딩 수행
+            keyword = URLDecoder.decode(keyword, "UTF-8");
+        } catch (Exception e) {
+            e.printStackTrace();
+            // 디코딩 실패 시 예외 처리
+        }
+
+                log.info("keyword = " + keyword);
 
         Pageable pageable = PageRequest.of(page - 1, size);
         Page<NewsDocument> news = newsService.searchNews(keyword, pageable);
