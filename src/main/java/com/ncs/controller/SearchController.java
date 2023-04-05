@@ -1,17 +1,11 @@
 package com.ncs.controller;
 
-import com.ncs.dto.NewsDto;
 import com.ncs.elasticsearch.NewsDocument;
 import com.ncs.elasticsearch.NewsDocumentRepository;
 import com.ncs.entity.News;
 import com.ncs.service.NewsService;
 import lombok.extern.log4j.Log4j2;
-import org.elasticsearch.action.search.SearchRequest;
-import org.elasticsearch.client.RequestOptions;
 import org.elasticsearch.client.RestHighLevelClient;
-import org.elasticsearch.index.query.BoolQueryBuilder;
-import org.elasticsearch.index.query.QueryBuilders;
-import org.elasticsearch.search.builder.SearchSourceBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -19,16 +13,12 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 
 @Log4j2
@@ -75,15 +65,19 @@ public class SearchController {
     }
 
 
-    @GetMapping("/detail")
-    public String Detail(){
-
-        return "NewsDetailPage";
-    }
     @GetMapping("/Second")
     public String Second(Model model){
 
         return "asdfgh";
+    }
+
+    @GetMapping("/detail")
+    public String Detail(HttpServletRequest httpServletRequest, Model model, @RequestParam Long id){
+        List<News> newsDetail;
+        newsDetail = newsService.getIdNews(id);
+
+        model.addAttribute("newsDetail", newsDetail);
+        return "NewsDetailPage";
     }
 
     @GetMapping("/main")

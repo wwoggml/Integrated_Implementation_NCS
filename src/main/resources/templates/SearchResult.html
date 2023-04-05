@@ -53,9 +53,9 @@
       justify-content: center;
     }
 
-    button {
-      border: none;
-      background: none;
+    .h5, .summary, .summary:hover {
+      text-decoration-line: none;
+      color:black;
     }
 
   </style>
@@ -83,18 +83,18 @@
           <li class="nav-item"><a class="nav-link" href="#" style="color: black">• <small> 관련도순</small></a> </li>
           <li class="nav-item"><a class="nav-link" href="#" style="color: black">• <small> 최신순</small></a> </li>
           <li class="nav-item"><a class="nav-link" href="#" style="color: black">• <small> 오래된순</small></a> </li>
-          <!--          •-->
         </ul>
       </div>
       <hr>
       <p th:text="${none_result}"></p>
       <div class="row mt-5 mb-5" th:each="i : ${news}">
         <div class="col-2">
-          <dt><img th:inline="none" th:src="${i.imageurl}" onerror="this.style.display='none'" style="width: 150px;height: 100px"></dt>
+          <dt><a th:href="@{/detail(id=${i.id})}"><img th:inline="none" th:src="${i.imageurl}" onerror="this.style.display='none'" style="width: 150px;height: 100px"></a></dt>
         </div>
         <div class="col-10">
-          <dt th:utext="${i.title}" class="h5"></dt>
-          <dd th:utext="${i.text}" class="summary"></dd>
+          <dt><a th:href="@{/detail(id=${i.id})}" th:utext="${i.title}" class="h5"></a></dt>
+
+          <dd><a th:href="@{/detail(id=${i.id})}" th:utext="${i.text}" class="summary"></a></dd>
           <dd><small th:utext="${i.datetime}" class="datetime"></small></dd>
         </div>
       </div>
