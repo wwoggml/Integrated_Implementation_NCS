@@ -75,6 +75,11 @@ public class SearchController {
     }
 
 
+    @GetMapping("/detail")
+    public String Detail(){
+
+        return "NewsDetailPage";
+    }
     @GetMapping("/Second")
     public String Second(Model model){
 
