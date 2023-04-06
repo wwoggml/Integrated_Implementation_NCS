@@ -5,12 +5,9 @@
 
 <th:block layout:fragment="css">
   <style>
-
     .container {
       min-width: 1140px;
     }
-
-
     input{
       position: relative;
       margin: 0px 0px 20px 20px;
@@ -26,13 +23,17 @@
       position: relative;
       border: 1px solid #CCCCCC;
       border-radius: 50px;
-      width: 550px;
+      width: 300px;
       height: 45px;
       margin-top: 20px;
       margin: 25px auto;
+      left: 530px;
 
     }
 
+    .category {
+      padding: 30px;
+    }
     button {
       background-color: transparent;
       border: none;
@@ -48,10 +49,6 @@
       top: 25px;
     }
 
-    .category_image {
-      width: 100%;
-      height: 150px;
-    }
 
     .article-image {
       text-align: center;
@@ -84,82 +81,136 @@
     <hr>
     <div class="row mt-4">
       <div class="col-8">
-        <h2><b>이 삼성폰 진짜 2만원?...파격가격 알아보니</b></h2>
+        <h2 th:text="${newsDetail.get(0).title}"><b></b></h2>
         <div class="info">
-          <span class="date"><small>작성 날짜 : 2023.04.01. 오후 3:50</small></span><br>
-          <span class="author mt-1">윤진섭 기자</span>
+          <span class="date"><small>작성 날짜 : </small><small th:text="${newsDetail.get(0).datetime}" class="datetime"></small></span><br>
+          <span class="author mt-1" th:text="${newsDetail.get(0).reporter}"></span>
         </div>
         <div class="article-content">
           <div class="article-image m-5">
-            <img src="https://imgnews.pstatic.net/image/374/2023/04/01/0000329790_001_20230401155001457.jpg?type=w647" alt="Article Image">
+            <img th:src="${newsDetail.get(0).imageURL}" onerror="this.style.display='none'" alt="Article Image">
           </div>
           <div class="article-text">
-            <p>BC 제휴카드 전월 30만원 이용하면 총 48만원 할인 KT가 삼성전자 새 보급형 스마트폰 '갤럭시 A34 5G'를 출시한다고 1일 밝혔습니다.
-              <br><br>
-              전국 KT 매장과 공식 온라인몰 KT샵에서 구매할 수 있습니다. 갤럭시 A34는 6.6인치(166.5㎜) 대화면 슈퍼 아몰레드 120㎐(헤르츠) 디스플레이, 광학손떨림방지(OIS) 탑재한 4800만 화소 메인 카메라, 5000mAh 대용량 배터리, 온스크린 지문인식, IP67 등급 방수·방진, 삼성페이 기능 등을 갖췄습니다.
-              <br><br>
-              색상은 '어썸 그라파이트', '어썸 실버', '어썸 라임', '어썸 바이올렛' 총 4가지인데, 출고가는 49만9400원입니다. KT는 자사에서 갤럭시 A34 5G 구매 시 제휴카드를 활용하면 저렴하게 구매할 수 있다고 전했습니다.
-              <br><br>
-              예컨대 BC 제휴카드로 납부 시 전월 30만원만 이용하면 최대 월 2만원씩 24개월간 총 48만원 할인받을 수 있습니다. 선택약정 25% 할인과 프리미엄 가족결합 25%를 적용 시에는 월 4만원대로 이용가능하며 VIP 멤버십과 데이터 쉐어링 1회선 무료 혜택까지 받습니다.</p>
+            <p th:text="${newsDetail.get(0).text}" class="newsMain"></p>
           </div>
         </div>
       </div>
-      <div class="col-4">
-
-        <div class="card mt-4">
-          <img src="https://imgnews.pstatic.net/image/003/2023/04/01/NISI20230331_0019840699_web_20230331145332_20230401174304552.jpg?type=w647" class="category_image card-img-top">
-          <div class="card-body">
-            <h6 class="card-title"><b>생활문화</b></h6>
-            <p class="card-text"><small>[내일날씨]봄나들이 좋은 맑은 날씨…미세먼지도 오후 해소</small></p>
-          </div>
-        </div>
-
-        <div class="card mt-4">
-          <img src="https://imgnews.pstatic.net/image/293/2023/03/31/0000043091_001_20230331145001439.jpg?type=w647" class="category_image card-img-top">
-          <div class="card-body">
-            <h6 class="card-title"><b>경제</b></h6>
-            <p class="card-text"><small>HMM 주총, 개미들 '성토의 장'됐다…김경배 사장 "자사주 매입 검토</small></p>
-          </div>
-        </div>
-
-        <div class="card mt-4">
-          <img src="https://imgnews.pstatic.net/image/015/2023/03/31/0004827400_001_20230401012903364.jpg?type=w647" class="category_image card-img-top">
-          <div class="card-body">
-            <h6 class="card-title"><b>IT/과학</b></h6>
-            <p class="card-text"><small>KT 이사 단 1명…"새 대표 선임, 최소 5개월</small></p>
-          </div>
-        </div>
-
-        <div class="mt-5">
-          <h6><b>실시간 순위</b></h6>
-          <div class="row">
-            <div class="col-1 mt-3">1</div>
-            <div class="col-7 mt-2"> <small>"능숙한 플레이어" 강남 홀덤펍서 포커치던 김새론 포착</small></div>
-            <div class="col-4">
-              <img data-scroll="true" alt="" src="https://mimgnews.pstatic.net/image/origin/031/2023/04/05/738856.jpg?type=nf190_130&amp;ut=1680651181000" style="width: 100%;">
+      <div class="col-4 category">
+        <div class="row mt-2">
+          <div class="col-1"></div>
+          <div class="col-11">
+            <h6><b>생활/문화</b> <i class="fas fa-angle-right float-right text-secondary mr-2"></i></h6>
+            <div class="row mt-3">
+              <div class="col-8 mt-1"> <small>봄나들이 좋은 맑은 날씨…미세먼지도 오후 해소</small></div>
+              <div class="col-4">
+                <img data-scroll="true" alt="" src="https://imgnews.pstatic.net/image/003/2023/04/01/NISI20230331_0019840699_web_20230331145332_20230401174304552.jpg?type=w647" style="width: 100%;">
+              </div>
             </div>
-          </div>
-          <hr>
-          <div class="row">
-            <div class="col-1 mt-3">2</div>
-            <div class="col-7 mt-2"> <small>"등기부등본 보고 '화들짝'…"1억 깎아줘도 계약 안해요"</small></div>
-            <div class="col-4">
-              <img data-scroll="true" alt="" src="https://mimgnews.pstatic.net/image/origin/031/2023/04/05/738923.jpg?type=nf190_130&ut=1680658201000" style="width: 100%;">
+            <div class="row mt-3">
+              <div class="col-8 mt-1"> <small>봄나들이 좋은 맑은 날씨…미세먼지도 오후 해소</small></div>
+              <div class="col-4">
+                <img data-scroll="true" alt="" src="https://imgnews.pstatic.net/image/003/2023/04/01/NISI20230331_0019840699_web_20230331145332_20230401174304552.jpg?type=w647" style="width: 100%;">
+              </div>
             </div>
+            <hr>
           </div>
-          <hr>
-          <div class="row">
-            <div class="col-1 mt-3">3</div>
-            <div class="col-7 mt-2"> <small>"[단독] KB, 고객 돈 동의 없이 재투자하고 뒤통수</small></div>
-            <div class="col-4">
-              <img data-scroll="true" alt="" src="https://imgnews.pstatic.net/image/031/2023/04/05/0000738852_001_20230405112301107.jpg?type=w647" style="width: 100%;">
-            </div>
-          </div>
-          <hr>
 
+        </div>
+        <div class="row mt-3">
+          <div class="col-1"></div>
+          <div class="col-11">
+            <h6><b>경제</b> <i class="fas fa-angle-right float-right text-secondary mr-2"></i></h6>
+            <div class="row mt-3">
+              <div class="col-8 mt-1"> <small>HMM 주총, 개미들 '성토의 장'됐다…김경배 사장 "자사주 매입 검토</small></div>
+              <div class="col-4">
+                <img data-scroll="true" alt="" src="https://imgnews.pstatic.net/image/293/2023/03/31/0000043091_001_20230331145001439.jpg?type=w647" style="width: 100%;">
+              </div>
+            </div>
+            <div class="row mt-3">
+              <div class="col-8 mt-1"> <small>HMM 주총, 개미들 '성토의 장'됐다…김경배 사장 "자사주 매입 검토</small></div>
+              <div class="col-4">
+                <img data-scroll="true" alt="" src="https://imgnews.pstatic.net/image/293/2023/03/31/0000043091_001_20230331145001439.jpg?type=w647" style="width: 100%;">
+              </div>
+            </div>
+            <hr>
+          </div>
+
+        </div>
+        <div class="row mt-3">
+          <div class="col-1"></div>
+          <div class="col-11">
+            <h6><b>IT/과학</b> <i class="fas fa-angle-right float-right text-secondary mr-2"></i></h6>
+            <div class="row mt-3">
+              <div class="col-8 mt-1"> <small>KT 이사 단 1명…"새 대표 선임, 최소 5개월</small></div>
+              <div class="col-4">
+                <img data-scroll="true" alt="" src="https://imgnews.pstatic.net/image/015/2023/03/31/0004827400_001_20230401012903364.jpg?type=w647" style="width: 100%;">
+              </div>
+            </div>
+            <div class="row mt-3">
+              <div class="col-8 mt-1"> <small>KT 이사 단 1명…"새 대표 선임, 최소 5개월</small></div>
+              <div class="col-4">
+                <img data-scroll="true" alt="" src="https://imgnews.pstatic.net/image/015/2023/03/31/0004827400_001_20230401012903364.jpg?type=w647" style="width: 100%;">
+              </div>
+            </div>
+            <hr>
+          </div>
+
+        </div>
+        <div class="row mt-5">
+          <div class="col-1"></div>
+          <div class="col-11">
+            <h6><b>실시간 순위</b> <i class="fas fa-angle-right float-right text-secondary mr-2"></i></h6>
+            <div class="row mt-3">
+              <div class="col-1">1</div>
+              <div class="col-7"> <small>"능숙한 플레이어" 강남 홀덤펍서 포커치던 김새론 포착</small></div>
+              <div class="col-3 p-0">
+                <img data-scroll="true" alt="" src="https://mimgnews.pstatic.net/image/origin/031/2023/04/05/738856.jpg?type=nf190_130&amp;ut=1680651181000" style="width: 100%;">
+              </div>
+            </div>
+            <hr>
+            <div class="row mt-3">
+              <div class="col-1">2</div>
+              <div class="col-7"> <small>"능숙한 플레이어" 강남 홀덤펍서 포커치던 김새론 포착</small></div>
+              <div class="col-3 p-0">
+                <img data-scroll="true" alt="" src="https://mimgnews.pstatic.net/image/origin/031/2023/04/05/738856.jpg?type=nf190_130&amp;ut=1680651181000" style="width: 100%;">
+              </div>
+            </div>
+            <hr>
+            <div class="row mt-3">
+              <div class="col-1">3</div>
+              <div class="col-7"> <small>"능숙한 플레이어" 강남 홀덤펍서 포커치던 김새론 포착</small></div>
+              <div class="col-3 p-0">
+                <img data-scroll="true" alt="" src="https://mimgnews.pstatic.net/image/origin/031/2023/04/05/738856.jpg?type=nf190_130&amp;ut=1680651181000" style="width: 100%;">
+              </div>
+            </div>
+            <hr>
+          </div>
         </div>
       </div>
     </div>
   </div>
+
+  <script th:inline="javascript">
+    let datetime = document.querySelector('.datetime');
+
+    let dateChangeStr;
+    dateChangeStr = datetime.innerText.split('T')[0].replaceAll('-','.') + " ";
+    if(Number(datetime.innerText.split('T')[1].split('+')[0].split(':')[0]) > 12) {
+      dateChangeStr += " 오후  " + (Number(datetime.innerText.split('T')[1].split('+')[0].split(':')[0]) - 12) + '시' + datetime.innerText.split('T')[1].split('+')[0].split(':')[1] + '분'
+    } else if(Number(datetime.innerText.split('T')[1].split('+')[0].split(':')[0]) == 12) {
+      dateChangeStr += " 오후  " + (Number(datetime.innerText.split('T')[1].split('+')[0].split(':')[0])) + '시' + datetime.innerText.split('T')[1].split('+')[0].split(':')[1] + '분'
+    } else {
+      dateChangeStr += " 오전  " + (Number(datetime.innerText.split('T')[1].split('+')[0].split(':')[0])) + '시' + datetime.innerText.split('T')[1].split('+')[0].split(':')[1] + '분'
+    }
+
+    datetime.innerText = dateChangeStr;
+
+    let news_text = document.querySelector('.newsMain');
+    let news_textStr;
+    let news_textSize = news_text.innerText.split('.').length;
+    news_text.innerText.split('.')
+    news_textStr = news_text.innerText.split('.')[0] + "<br><br>"  + news_text.innerText.split('.').slice(1,news_textSize/4) + "<br><br>" + news_text.innerText.split('.').slice(news_textSize/4+1,news_textSize/2) + "<br><br>" + news_text.innerText.split('.').slice(news_textSize/2+1,news_textSize - 1)
+    news_text.innerHTML = news_textStr;
+  </script>
 </div>
 </html>

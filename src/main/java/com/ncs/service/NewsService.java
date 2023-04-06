@@ -15,6 +15,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @Log4j2
@@ -63,6 +64,17 @@ public class NewsService {
         return newsDocumentRepository.findByTitleOrText(keyword, pageable);
     }
 
+
+    public List<News> getIdNews(Long id) {
+        Optional<News> newsList = newsRepository.findById(id);
+        List<News> list = new ArrayList<>();
+        if (newsList.isPresent()) {
+            list.add(newsList.get());
+        }
+
+
+        return list;
+    }
 }
 
 
