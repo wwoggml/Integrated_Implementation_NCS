@@ -83,7 +83,8 @@
       <div class="col-8">
         <h2 th:text="${newsDetail.get(0).title}"><b></b></h2>
         <div class="info">
-          <span class="date"><small>작성 날짜 : </small><small th:text="${newsDetail.get(0).datetime}" class="datetime"></small></span><br>
+          <span class="date mb-1"><small>작성 날짜 : </small><small th:text="${newsDetail.get(0).datetime}" class="datetime"></small></span><br>
+          <span><i class="fas fa-user-edit mr-1"></i></span>
           <span class="author mt-1" th:text="${newsDetail.get(0).reporter}"></span>
         </div>
         <div class="article-content">
@@ -100,16 +101,11 @@
           <div class="col-1"></div>
           <div class="col-11">
             <h6><b>생활/문화</b> <i class="fas fa-angle-right float-right text-secondary mr-2"></i></h6>
-            <div class="row mt-3">
-              <div class="col-8 mt-1"> <small>봄나들이 좋은 맑은 날씨…미세먼지도 오후 해소</small></div>
+            <div class="row mt-3" th:each="culture : ${cultureCategory}">
+              <div class="col-8 mt-1"> <a th:href="@{/detail(id=${culture.id})}"> <small th:text="${culture.title}">봄나들이 좋은 맑은 날씨…미세먼지도 오후 해소</small></a></div>
               <div class="col-4">
-                <img data-scroll="true" alt="" src="https://imgnews.pstatic.net/image/003/2023/04/01/NISI20230331_0019840699_web_20230331145332_20230401174304552.jpg?type=w647" style="width: 100%;">
-              </div>
-            </div>
-            <div class="row mt-3">
-              <div class="col-8 mt-1"> <small>봄나들이 좋은 맑은 날씨…미세먼지도 오후 해소</small></div>
-              <div class="col-4">
-                <img data-scroll="true" alt="" src="https://imgnews.pstatic.net/image/003/2023/04/01/NISI20230331_0019840699_web_20230331145332_20230401174304552.jpg?type=w647" style="width: 100%;">
+                <a th:href="@{/detail(id=${culture.id})}"><img th:if="${culture.imageURL != ''}" th:src="@{${culture.imageURL}}" style="width: 100%; height: 55px"></a>
+                  <a th:href="@{/detail(id=${culture.id})}"><img th:if="${culture.imageURL == ''}" th:src="@{/img/image.png}" style="width: 100%; height: 55px"></a>
               </div>
             </div>
             <hr>
@@ -120,16 +116,11 @@
           <div class="col-1"></div>
           <div class="col-11">
             <h6><b>경제</b> <i class="fas fa-angle-right float-right text-secondary mr-2"></i></h6>
-            <div class="row mt-3">
-              <div class="col-8 mt-1"> <small>HMM 주총, 개미들 '성토의 장'됐다…김경배 사장 "자사주 매입 검토</small></div>
+            <div class="row mt-3" th:each="economy : ${economyCategory}">
+              <div class="col-8 mt-1"><a th:href="@{/detail(id=${economy.id})}"> <small th:text="${economy.title}">HMM 주총, 개미들 '성토의 장'됐다…김경배 사장 "자사주 매입 검토</small></a></div>
               <div class="col-4">
-                <img data-scroll="true" alt="" src="https://imgnews.pstatic.net/image/293/2023/03/31/0000043091_001_20230331145001439.jpg?type=w647" style="width: 100%;">
-              </div>
-            </div>
-            <div class="row mt-3">
-              <div class="col-8 mt-1"> <small>HMM 주총, 개미들 '성토의 장'됐다…김경배 사장 "자사주 매입 검토</small></div>
-              <div class="col-4">
-                <img data-scroll="true" alt="" src="https://imgnews.pstatic.net/image/293/2023/03/31/0000043091_001_20230331145001439.jpg?type=w647" style="width: 100%;">
+                <a th:href="@{/detail(id=${economy.id})}"><img th:if="${economy.imageURL != ''}" th:src="@{${economy.imageURL}}" style="width: 100%; height: 55px"></a>
+                  <a th:href="@{/detail(id=${economy.id})}"><img th:if="${economy.imageURL == ''}" th:src="@{/img/image.png}" style="width: 100%; height: 55px"></a>
               </div>
             </div>
             <hr>
@@ -140,16 +131,11 @@
           <div class="col-1"></div>
           <div class="col-11">
             <h6><b>IT/과학</b> <i class="fas fa-angle-right float-right text-secondary mr-2"></i></h6>
-            <div class="row mt-3">
-              <div class="col-8 mt-1"> <small>KT 이사 단 1명…"새 대표 선임, 최소 5개월</small></div>
+            <div class="row mt-3" th:each="it : ${itCategory}">
+              <div class="col-8 mt-1"> <a th:href="@{/detail(id=${it.id})}"><small th:text="${it.title}">KT 이사 단 1명…"새 대표 선임, 최소 5개월</small></a></div>
               <div class="col-4">
-                <img data-scroll="true" alt="" src="https://imgnews.pstatic.net/image/015/2023/03/31/0004827400_001_20230401012903364.jpg?type=w647" style="width: 100%;">
-              </div>
-            </div>
-            <div class="row mt-3">
-              <div class="col-8 mt-1"> <small>KT 이사 단 1명…"새 대표 선임, 최소 5개월</small></div>
-              <div class="col-4">
-                <img data-scroll="true" alt="" src="https://imgnews.pstatic.net/image/015/2023/03/31/0004827400_001_20230401012903364.jpg?type=w647" style="width: 100%;">
+                <a th:href="@{/detail(id=${it.id})}"><img th:if="${it.imageURL != ''}" th:src="@{${it.imageURL}}" style="width: 100%; height: 55px"></a>
+                <a th:href="@{/detail(id=${it.id})}"><img th:if="${it.imageURL == ''}" th:src="@{/img/image.png}" style="width: 100%; height: 55px"></a>
               </div>
             </div>
             <hr>

@@ -89,7 +89,10 @@
       <p th:text="${none_result}"></p>
       <div class="row mt-5 mb-5" th:each="i : ${news}">
         <div class="col-2">
-          <dt><a th:href="@{/detail(id=${i.id})}"><img th:inline="none" th:src="${i.imageurl}" onerror="this.style.display='none'" style="width: 150px;height: 100px"></a></dt>
+          <dt><a th:href="@{/detail(id=${i.id})}">
+            <img th:if="${i.imageurl != ''}" th:src="@{${i.imageurl}}" style="width: 150px;height: 100px">
+            <img th:if="${i.imageurl == ''}" th:src="@{/img/image.png}" style="width: 150px;height: 100px">
+          </a></dt>
         </div>
         <div class="col-10">
           <dt><a th:href="@{/detail(id=${i.id})}" th:utext="${i.title}" class="h5"></a></dt>

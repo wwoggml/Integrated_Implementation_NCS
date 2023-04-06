@@ -1,5 +1,6 @@
 package com.ncs.controller;
 
+import com.ncs.dto.NewsDto;
 import com.ncs.elasticsearch.NewsDocument;
 import com.ncs.elasticsearch.NewsDocumentRepository;
 import com.ncs.entity.News;
@@ -14,6 +15,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+
+import javax.persistence.TypedQuery;
 import javax.servlet.http.HttpServletRequest;
 import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
@@ -88,6 +91,13 @@ public class SearchController {
         List<News> newsDetail;
         newsDetail = newsService.getIdNews(id);
 
+        List<News> itCategory = newsService.getTwoEntities("IT/과학");
+        List<News> cultureCategory = newsService.getTwoEntities("생활/문화");
+        List<News> economyCategory = newsService.getTwoEntities("경제");
+
+        model.addAttribute("itCategory", itCategory);
+        model.addAttribute("economyCategory", economyCategory);
+        model.addAttribute("cultureCategory", cultureCategory);
         model.addAttribute("newsDetail", newsDetail);
         return "NewsDetailPage";
     }

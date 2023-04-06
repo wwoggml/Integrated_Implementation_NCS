@@ -75,6 +75,11 @@ public class NewsService {
 
         return list;
     }
+
+    public List<News> getTwoEntities(String category) {
+        List<News> resultList = newsRepository.findTop2ByCategory(category);
+        return resultList;
+    }
 }
 
 
