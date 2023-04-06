@@ -29,7 +29,7 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
-
+import java.util.Map;
 
 @Log4j2
 
@@ -87,8 +87,22 @@ public class SearchController {
     }
 
     @GetMapping("/main")
-    public String main() {
+    public String searchMain() {
         return "SearchMain";
+    }
+
+    @GetMapping("/category")
+    public String Category(Model model,
+                           @RequestParam(defaultValue = "10") int size,
+                           @RequestParam(value = "page", defaultValue = "1") int page) {
+
+        List<NewsDto> news = new ArrayList<>();
+        news.addAll(newsService.getAll());
+
+        model.addAttribute("news", news);
+        model.addAttribute("currentPage", page);
+
+        return "SearchCategory1";
     }
 
 }

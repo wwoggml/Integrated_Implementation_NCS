@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/layout1}">
+<meta charset="UTF-8">
+<title>RNSE</title>
+<th:block layout:fragment="css">
+    <style>
+        .logo_image {
+            width: 100px;
+            position: relative;
+            top: 90px;
+        }
+        .container{
+            min-width: 1140px;
+            width: 1190px;
+            margin: 0 auto;
+        }
+        .main{
+            position: relative;
+            margin-top: 120px;
+        }
+        .category{
+            width: auto;
+            height: 40px;
+            background-color: #FFCE44;
+        }
+
+        .category-item{
+            text-align: center;
+            color: white;
+            display: inline-block;
+            margin: 10px 15px 10px 10px;
+        }
+        .category-name{
+            text-align: center;
+            color: #FFB400;
+            display: inline-block;
+            margin: 10px 15px 10px 10px;
+            border-bottom: 4px solid;
+        }
+        a:link, a:visited, a:hover, a:active {
+            color: white;
+            text-decoration: none;
+        }
+    </style>
+</th:block>
+<div layout:fragment="content">
+
+    <div class="container">
+        <div>
+            <a th:href="@{/main}" target="_self"><img src="/src/main/resources/static/img/RNSE_LOGO.png" class="logo_image"></a>
+        </div>
+        <div class="main">
+            <div class="category">
+                <div class="category-name"><a th:href="@{/category}" target="_self">경제</a></div>
+                <div class="category-item">생활/문화</div>
+                <div class="category-item">IT/과학</div>
+            </div>
+            <div class="row mt-5 mb-5" th:each="i : ${news}">
+                <div class="col-2">
+                    <dt><img th:inline="none" th:src="${i.imageurl}" onerror="this.style.display='none'" style="width: 150px;height: 100px"></dt>
+                </div>
+                <div class="col-10">
+                    <dt th:utext="${i.title}" class="h5"></dt>
+                    <dd th:utext="${i.text}" class="summary"></dd>
+                    <dd><small th:utext="${i.datetime}" class="datetime"></small></dd>
+                </div>
+            </div>
+            <div class="paging" th:if="${totalPages > 0}">
+                <nav aria-label="Page navigation example">
+                    <ul class="pagination">
+                        <li class="page-item" th:class="${currentPage == 1} ? disabled : ''">
+                            <a class="page-link" aria-label="Previous" th:if="${currentPage > 1}" th:href="@{/search(page=${currentPage - 1}, keyword=${param.keyword})}">
+                                <span aria-hidden="true">&laquo;</span>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                        </li>
+                        <li class="page-item" th:class="${currentPage == i} ? 'page-item active' : ''" th:each="i : ${#numbers.sequence(1, totalPages)}">
+                            <a class="page-link" th:href="@{/search(page=${i}, keyword=${param.keyword})}" th:text="${i}"></a>
+                        </li>
+
+                        <li class="page-item" th:class="${currentPage == totalPages} ? disabled : ''">
+
+                            <a class="page-link" th:if="${currentPage < totalPages}" th:href="@{/search(page=${currentPage + 1}, keyword=${param.keyword})}" aria-label="Next">
+                                <span aria-hidden="true">&raquo;</span>
+                                <span class="sr-only">Next</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+    <script th:inline="javascript">
+        let datetime = document.querySelectorAll(".datetime");
+        let summary = document.querySelectorAll(".summary");
+
+        for(let i = 0; i<datetime.length; i++) {
+            let diff = new Date().getTime() - new Date(Date.parse(datetime[i].innerText)).getTime()
+
+
+            let minute = 1000 * 60;
+            let hour = minute * 60;
+            let day = hour * 24;
+
+            if (diff < minute) {
+                datetime[i].innerText = "방금 전";
+            } else if (diff < hour) {
+                datetime[i].innerText = Math.floor(diff / minute) + '분 전';
+            } else if (diff < day) {
+                datetime[i].innerText = Math.floor(diff / hour) + '시간 전'
+            } else {
+                datetime[i].innerText = Math.floor(diff / day) + '일 전'
+            }
+
+            summary[i].innerText = summary[i].innerText.substring(0, 155) + "..."
+        }
+    </script>
+</div>
+</html>
+
