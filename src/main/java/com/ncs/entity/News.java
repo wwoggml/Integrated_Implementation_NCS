@@ -37,10 +37,6 @@ public class News {
     @Column(name = "datetime")
     private String datetime;
 
-//    @ElementCollection
-//    @Column(name = "imageurl")
-//    private List<String> imageURL;
-
     @Lob
     @Column(name = "imageurl")
     private String imageURL;
