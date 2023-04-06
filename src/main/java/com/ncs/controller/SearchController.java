@@ -45,13 +45,15 @@ public class SearchController {
 
         try {
             // URL 디코딩 수행
+            keyword = URLEncoder.encode(keyword, "UTF-8");
+            log.info("before keyword = " + keyword);
+            keyword = keyword.replaceAll("%08", "");
             keyword = URLDecoder.decode(keyword, "UTF-8");
         } catch (Exception e) {
             e.printStackTrace();
-            // 디코딩 실패 시 예외 처리
         }
 
-                log.info("keyword = " + keyword);
+        log.info("after keyword = " + keyword);
 
         Pageable pageable = PageRequest.of(page - 1, size);
         Page<NewsDocument> news = newsService.searchNews(keyword, pageable);
