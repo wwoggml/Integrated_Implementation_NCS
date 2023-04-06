@@ -1,5 +1,6 @@
 package com.ncs.controller;
 
+import com.ncs.dto.NewsDto;
 import com.ncs.elasticsearch.NewsDocument;
 import com.ncs.elasticsearch.NewsDocumentRepository;
 import com.ncs.entity.News;
@@ -18,6 +19,7 @@ import javax.servlet.http.HttpServletRequest;
 import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
 import java.net.URLEncoder;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -96,16 +98,11 @@ public class SearchController {
     }
 
     @GetMapping("/category")
-    public String Category(Model model,
-                           @RequestParam(defaultValue = "10") int size,
-                           @RequestParam(value = "page", defaultValue = "1") int page) {
+    public String Category(Model model) {
 
-        List<NewsDto> news = new ArrayList<>();
-        news.addAll(newsService.getAll());
+        List<NewsDto> news = newsService.getAll();
 
         model.addAttribute("news", news);
-        model.addAttribute("currentPage", page);
-
         return "SearchCategory1";
     }
 
