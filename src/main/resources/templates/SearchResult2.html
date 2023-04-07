@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/layout1}">
+
+<th:block layout:fragment="css">
+  <style>
+    .container {
+      min-width: 1140px;
+    }
+    .logo_image {
+      width: 100px;
+      position: relative;
+      top: 20px;
+    }
+    input{
+      position: relative;
+      margin: 0px 0px 20px 20px;
+      left: 15px;
+      top: 7px;
+      font-size: 15px;
+      width: 85%;
+      height: 30px;
+      border: none;
+      outline: none;
+    }
+    .search{
+      position: relative;
+      border: 1px solid #CCCCCC;
+      border-radius: 50px;
+      width: 550px;
+      height: 45px;
+      margin-top: 20px;
+      margin: 25px auto;
+
+    }
+
+    button {
+      background-color: transparent;
+      border: none;
+      position:relative;
+      right: 10px;
+      top:5px;
+    }
+
+    .searchResult {
+      margin-top: 40px;
+      margin-bottom: 50px;
+    }
+
+    .paging {
+      display: flex;
+      justify-content: center;
+    }
+
+    .h5, .summary, .summary:hover {
+      text-decoration-line: none;
+      color:black;
+    }
+
+  </style>
+</th:block>
+<div layout:fragment="content">
+
+  <div class="container">
+
+    <div class="mt-5 row">
+      <div class="col-3">
+        <a th:href="@{/}"> <img src="/img/RNSE_LOGO.png" class="logo_image"></a>
+      </div>
+      <div>
+        <div class="search mt-3">
+          <form action="/search" method="get">
+            <input type="text" name="keyword" placeholder=" 검색어를 입력하세요" th:value="${param.keyword}">
+            <button type="submit" class="float-right"><img class="searchLogo" src="/img/search.png" width="30px" height="30px"></button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="searchResult">
+      <div class="sort_bar mb-0">
+        <ul class="nav justify-content-end mb-0">
+          <li class="nav-item"><a class="nav-link" href="#" style="color: black">• <small> 관련도순</small></a> </li>
+          <li class="nav-item"><a class="nav-link" href="#" style="color: black">• <small> 최신순</small></a> </li>
+          <li class="nav-item"><a class="nav-link" href="#" style="color: black">• <small> 오래된순</small></a> </li>
+        </ul>
+      </div>
+      <hr>
+      <p th:text="${none_result}"></p>
+      <div class="row mt-5 mb-5" th:each="i : ${news}">
+        <div class="col-2">
+          <dt><a th:href="@{/detail(id=${i.id})}">
+            <img th:if="${i.imageURL != ''}" th:src="@{${i.imageURL}}" style="width: 150px;height: 100px">
+            <img th:if="${i.imageURL == ''}" th:src="@{/img/image.png}" style="width: 150px;height: 100px">
+          </a></dt>
+        </div>
+        <div class="col-10">
+          <dt><a th:href="@{/detail(id=${i.id})}" th:utext="${i.title}" class="h5"></a></dt>
+
+          <dd><a th:href="@{/detail(id=${i.id})}" th:utext="${i.text}" class="summary"></a></dd>
+          <dd><small th:utext="${i.datetime}" class="datetime"></small></dd>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <script th:inline="javascript">
+    let datetime = document.querySelectorAll(".datetime");
+    let summary = document.querySelectorAll(".summary");
+
+    for(let i = 0; i<datetime.length; i++) {
+      let diff = new Date().getTime() - new Date(Date.parse(datetime[i].innerText)).getTime()
+
+
+      let minute = 1000 * 60;
+      let hour = minute * 60;
+      let day = hour * 24;
+
+      if (diff < minute) {
+        datetime[i].innerText = "방금 전";
+      } else if (diff < hour) {
+        datetime[i].innerText = Math.floor(diff / minute) + '분 전';
+      } else if (diff < day) {
+        datetime[i].innerText = Math.floor(diff / hour) + '시간 전'
+      } else {
+        datetime[i].innerText = Math.floor(diff / day) + '일 전'
+      }
+
+      summary[i].innerText = summary[i].innerText.substring(0, 155) + "..."
+    }
+  </script>
+</div>
+
+
+
+</html>
+

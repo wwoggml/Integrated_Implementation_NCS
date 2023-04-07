@@ -1,9 +1,14 @@
 package com.ncs.elasticsearch;
 
-import com.ncs.entity.News;
-import org.springframework.data.domain.Page;
+
+
+import org.elasticsearch.index.query.QueryBuilder;
+import org.elasticsearch.search.sort.SortBuilder;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Page;
+
 import org.springframework.data.elasticsearch.annotations.Query;
+
 import org.springframework.data.elasticsearch.repository.ElasticsearchRepository;
 import org.springframework.data.elasticsearch.repository.config.EnableElasticsearchRepositories;
 
