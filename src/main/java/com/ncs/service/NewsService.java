@@ -64,6 +64,9 @@ public class NewsService {
         return newsDocumentRepository.findByTitleOrText(keyword, pageable);
     }
 
+    public Page<News> searchCategory(String category, Pageable pageable){
+        return newsRepository.findByCategory(category, pageable);
+    }
 
     public List<News> getIdNews(Long id) {
         Optional<News> newsList = newsRepository.findById(id);
@@ -71,7 +74,6 @@ public class NewsService {
         if (newsList.isPresent()) {
             list.add(newsList.get());
         }
-
 
         return list;
     }

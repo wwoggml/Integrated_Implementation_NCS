@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/layout1}">
+<meta charset="UTF-8">
+<title>RNSE</title>
+<th:block layout:fragment="css">
+  <style>
+    .logo_image {
+      width: 100px;
+      position: relative;
+      top: 90px;
+    }
+    .container{
+      min-width: 1140px;
+      margin: 0 auto;
+    }
+    .main{
+      margin-top: 120px;
+    }
+    .category{
+      width: auto;
+      height: 40px;
+      background-color: #0288D1;
+    }
+
+    .category-item{
+      text-align: center;
+      color: white;
+      display: inline-block;
+      margin: 10px 15px 10px 10px;
+      text-decoration: none;
+    }
+
+    .category-item a{
+      text-decoration: none;
+      color: white;
+    }
+
+    .category-name{
+      text-align: center;
+      color: #01579B;
+      display: inline-block;
+      margin: 10px 15px 10px 10px;
+      border-bottom: 4px solid;
+    }
+
+    .category-name a{
+      text-decoration: none;
+      color: white;
+    }
+
+    .paging {
+      display: flex;
+      justify-content: center;
+    }
+  </style>
+</th:block>
+<div layout:fragment="content">
+
+  <div class="container">
+    <div>
+      <a th:href="@{/main}" target="_self"><img src="/img/RNSE_LOGO.png" class="logo_image"></a>
+    </div>
+    <div class="main">
+      <div class="category">
+        <div class="category-item"><a th:href="@{/economy}" target="_self">경제</a></div>
+        <div class="category-name"><a th:href="@{/life_culture}" target="_self">생활/문화</a></div>
+        <div class="category-item"><a th:href="@{/it_science}" target="_self">IT/과학</a></div>
+      </div>
+
+      <div class="row mt-5 mb-5" th:each="i : ${list}">
+        <div class="col-2">
+          <dt><img th:inline="none" th:src="${i.imageURL}" onerror="this.style.display='none'" style="width: 150px;height: 100px"></dt>
+        </div>
+        <div class="col-10">
+          <dts th:utext="${i.title}" class="h5"></dts>
+          <dd th:utext="${i.text}" class="summary"></dd>
+          <dd><small th:utext="${i.datetime}" class="datetime"></small></dd>
+        </div>
+      </div>
+
+      <div class="paging" th:if="${totalPages > 0}">
+        <nav aria-label="Page navigation example">
+          <ul class="pagination">
+            <li class="page-item" th:class="${currentPage == 1} ? disabled : ''">
+              <a class="page-link" aria-label="Previous" th:if="${currentPage > 1}" th:href="@{/life_culture(page=${currentPage - 1})}">
+                <span aria-hidden="true">&laquo;</span>
+                <span class="sr-only">Previous</span>
+              </a>
+            </li>
+            <li class="page-item" th:class="${currentPage == i} ? 'page-item active' : ''" th:each="i : ${#numbers.sequence(1, totalPages)}">
+              <a class="page-link" th:href="@{/life_culture(page=${i})}" th:text="${i}"></a>
+            </li>
+
+            <li class="page-item" th:class="${currentPage == totalPages} ? disabled : ''">
+
+              <a class="page-link" th:if="${currentPage < totalPages}" th:href="@{/life_culture(page=${currentPage + 1})}" aria-label="Next">
+                <span aria-hidden="true">&raquo;</span>
+                <span class="sr-only">Next</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+
+    </div>
+  </div>
+
+  <script th:inline="javascript">
+    let datetime = document.querySelectorAll(".datetime");
+    let summary = document.querySelectorAll(".summary");
+
+    for(let i = 0; i<datetime.length; i++) {
+      let diff = new Date().getTime() - new Date(Date.parse(datetime[i].innerText)).getTime()
+
+
+      let minute = 1000 * 60;
+      let hour = minute * 60;
+      let day = hour * 24;
+
+      if (diff < minute) {
+        datetime[i].innerText = "방금 전";
+      } else if (diff < hour) {
+        datetime[i].innerText = Math.floor(diff / minute) + '분 전';
+      } else if (diff < day) {
+        datetime[i].innerText = Math.floor(diff / hour) + '시간 전'
+      } else {
+        datetime[i].innerText = Math.floor(diff / day) + '일 전'
+      }
+
+      summary[i].innerText = summary[i].innerText.substring(0, 155) + "..."
+    }s
+  </script>
+</div>
+</html>
+

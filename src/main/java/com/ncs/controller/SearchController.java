@@ -11,10 +11,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
 import javax.servlet.http.HttpServletRequest;
 import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
@@ -37,7 +42,6 @@ public class SearchController {
 
     @Autowired
     NewsService newsService;
-
 
     @GetMapping("/search")
     public String test(HttpServletRequest httpServletRequest, Model model,
@@ -99,13 +103,48 @@ public class SearchController {
         return "SearchMain";
     }
 
-    @GetMapping("/category")
-    public String Category(Model model) {
+    @GetMapping("/economy")
+    public String Economy(HttpServletRequest httpServletRequest, Model model,
+                           @RequestParam(defaultValue = "10") int size,
+                           @RequestParam(value = "page", defaultValue = "1") int page) {
 
-        List<NewsDto> news = newsService.getAll();
+        Pageable pageable = PageRequest.of(page - 1, size);
+        Page<News> list = newsService.searchCategory("경제", pageable);
 
-        model.addAttribute("news", news);
+        model.addAttribute("list",list);
+        model.addAttribute("currentPage", page);
+        model.addAttribute("totalPages", list.getTotalPages());
+
         return "SearchCategory1";
     }
 
+    @GetMapping("/life_culture")
+    public String Life_culture(HttpServletRequest httpServletRequest, Model model,
+                           @RequestParam(defaultValue = "10") int size,
+                           @RequestParam(value = "page", defaultValue = "1") int page) {
+
+        Pageable pageable = PageRequest.of(page - 1, size);
+        Page<News> list = newsService.searchCategory("생활/문화", pageable);
+
+        model.addAttribute("list",list);
+        model.addAttribute("currentPage", page);
+        model.addAttribute("totalPages", list.getTotalPages());
+
+        return "SearchCategory2";
+    }
+
+    @GetMapping("/it_science")
+    public String It_Science(HttpServletRequest httpServletRequest, Model model,
+                               @RequestParam(defaultValue = "10") int size,
+                               @RequestParam(value = "page", defaultValue = "1") int page) {
+
+        Pageable pageable = PageRequest.of(page - 1, size);
+        Page<News> list = newsService.searchCategory("IT/과학", pageable);
+
+        model.addAttribute("list",list);
+        model.addAttribute("currentPage", page);
+        model.addAttribute("totalPages", list.getTotalPages());
+
+        return "SearchCategory3";
+    }
 }
