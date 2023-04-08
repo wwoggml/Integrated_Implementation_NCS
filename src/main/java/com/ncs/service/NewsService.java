@@ -91,6 +91,17 @@ public class NewsService {
         return resultList;
     }
 
+    public Page<News> getNews(String keyword, Pageable pageable) {
+        return newsRepository.findByKeyword(keyword, pageable);
+    }
+    public Page<News> getSortDesc(String keyword, Pageable pageable) {
+        return newsRepository.findByKeywordOrderByDatetimeDesc(keyword, pageable);
+    }
+
+    public Page<News> getSortAsc(String keyword, Pageable pageable) {
+        return newsRepository.findByKeywordOrderByDatetimeAsc(keyword, pageable);
+    }
+
 }
 
 

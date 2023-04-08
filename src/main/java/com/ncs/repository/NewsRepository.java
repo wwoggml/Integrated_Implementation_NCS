@@ -22,8 +22,14 @@ public interface NewsRepository extends JpaRepository<News, Long> {
 
     List<News> findTop2ByCategory(String category);
 
+    @Query("SELECT n FROM News n WHERE (n.title LIKE %:keyword% OR n.text LIKE %:keyword%)")
+    Page<News> findByKeyword(@Param("keyword") String keyword, Pageable pageable);
+
     @Query("SELECT n FROM News n WHERE (n.title LIKE %:keyword% OR n.text LIKE %:keyword%) ORDER BY CAST(n.datetime AS timestamp) DESC ")
-    List<News> findByKeywordOrderByDatetimeDesc(@Param("keyword") String keyword);
+    Page<News> findByKeywordOrderByDatetimeDesc(@Param("keyword") String keyword, Pageable pageable);
+
+    @Query("SELECT n FROM News n WHERE (n.title LIKE %:keyword% OR n.text LIKE %:keyword%) ORDER BY CAST(n.datetime AS timestamp) ASC ")
+    Page<News> findByKeywordOrderByDatetimeAsc(@Param("keyword") String keyword, Pageable pageable);
 
 }
 

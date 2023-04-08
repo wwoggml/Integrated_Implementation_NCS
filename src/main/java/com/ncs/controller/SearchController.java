@@ -45,6 +45,7 @@ public class SearchController {
     @GetMapping("/search")
     public String test(HttpServletRequest httpServletRequest, Model model,
                        @RequestParam(defaultValue = "10") int size,
+                       @RequestParam(defaultValue = "1") int sort,
                        @RequestParam(value = "page", defaultValue = "1") int page) throws UnsupportedEncodingException {
         String keyword = httpServletRequest.getParameter("keyword");
 
@@ -59,8 +60,18 @@ public class SearchController {
 
 
         Pageable pageable = PageRequest.of(page - 1, size);
-        Page<NewsDocument> news = newsService.searchNews(keyword, pageable);
+//        Page<NewsDocument> news = newsService.searchNews(keyword, pageable);
 //        Page<NewsDocument> news = newsService.searchNewsByTitleOrText(keyword, pageable);
+
+        Page<News> news = null;
+
+        if(sort == 1) {
+            news = newsService.getNews(keyword, pageable);
+        }else if(sort == 2) {
+            news = newsService.getSortDesc(keyword, pageable);
+        }else {
+            news = newsService.getSortAsc(keyword, pageable);
+        }
 
         if (keyword == null) {
             return "SearchResult";
