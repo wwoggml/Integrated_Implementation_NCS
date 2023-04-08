@@ -2,8 +2,10 @@
 <html xmlns:th="http://www.thymeleaf.org"
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
       layout:decorate="~{layouts/layout1}">
-<meta charset="UTF-8">
-<title>RNSE</title>
+<head>
+  <meta charset="UTF-8">
+  <title>RNSE</title>
+</head>
 <th:block layout:fragment="css">
   <style>
     .container {
@@ -89,9 +91,9 @@
     <div class="searchResult">
       <div class="sort_bar mb-0">
         <ul class="nav justify-content-end mb-0">
-          <a class="nav-link sort" id="link1" onclick="handleClick(this)" th:href="@{/search(sort=1, keyword=${param.keyword})}">• <small> 관련도순</small></a>
-          <a class="nav-link sort" id="link2" onclick="handleClick(this)" th:href="@{/search(sort=2, keyword=${param.keyword})}">• <small> 최신순</small></a>
-          <a class="nav-link sort" id="link3" onclick="handleClick(this)" th:href="@{/search(sort=3, keyword=${param.keyword})}">• <small> 오래된순</small></a>
+          <a class="nav-link sort" id="link1" th:href="@{/search(sort=1, keyword=${param.keyword})}">• <small> 관련도순</small></a>
+          <a class="nav-link sort" id="link2"  th:href="@{/search(sort=2, keyword=${param.keyword})}">• <small> 최신순</small></a>
+          <a class="nav-link sort" id="link3"  th:href="@{/search(sort=3, keyword=${param.keyword})}">• <small> 오래된순</small></a>
         </ul>
       </div>
       <hr>
@@ -153,7 +155,7 @@
         datetime[i].innerText = "방금 전";
       } else if (diff < hour) {
         datetime[i].innerText = Math.floor(diff / minute) + '분 전';
-      } else if (diff < day) {
+      } else if (diff < (day * 2)) {
         datetime[i].innerText = Math.floor(diff / hour) + '시간 전'
       } else {
         datetime[i].innerText = Math.floor(diff / day) + '일 전'
@@ -162,31 +164,18 @@
       summary[i].innerText = summary[i].innerText.substring(0, 155) + "..."
     }
 
-    function handleClick(element) {
-      // 선택한 링크에 대한 정보를 localStorage에 저장합니다.
-      localStorage.setItem('selectedLink', element.id);
+    const urlParams = new URLSearchParams(window.location.search);
+    const parameterValue = urlParams.get("sort");
 
-      // 모든 링크의 색상을 초기화
-      const links = document.getElementsByClassName('nav-link sort');
-      for (let i = 0; i < links.length; i++) {
-        links[i].style.color = '#808080';
-      }
-
-      // 선택한 링크의 색상을 변경
-      element.style.color = '#000000';
+    if (parameterValue == 1) {
+      document.getElementById("link1").style.color = "black";
+    } else if(parameterValue == 2) {
+      document.getElementById("link2").style.color = "black";
+    } else if(parameterValue == 3) {
+      document.getElementById("link3").style.color = "black";
+    } else {
+      document.getElementById("link1").style.color = "black";
     }
-
-
-
-    // window.onload = function() {
-    //   const selectedLinkId = localStorage.getItem('selectedLink');
-    //   if (selectedLinkId) {
-    //     const selectedLink = document.getElementById(selectedLinkId);
-    //     if (selectedLink) {
-    //       selectedLink.style.color = '#000000';
-    //     }
-    //   }
-    // }
   </script>
 </div>
 
