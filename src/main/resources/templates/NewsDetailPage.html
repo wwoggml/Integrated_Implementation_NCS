@@ -90,7 +90,8 @@
         </div>
         <div class="article-content">
           <div class="article-image m-5">
-            <img th:src="${newsDetail.get(0).imageURL}" onerror="this.style.display='none'" alt="Article Image">
+            <img th:src="${newsDetail.get(0).imageURL}" onerror="this.style.display='none'" alt="Article Image"><br>
+            <small class="text-center" th:text="${newsDetail.get(0).img_desc}" onerror="this.style.display='none'"></small>
           </div>
           <div class="article-text">
             <p th:text="${newsDetail.get(0).text}" class="newsMain"></p>
@@ -101,7 +102,7 @@
         <div class="row mt-2">
           <div class="col-1"></div>
           <div class="col-11">
-            <h6><b>생활/문화</b> <i class="fas fa-angle-right float-right text-secondary mr-2"></i></h6>
+            <h6><a th:href="@{/life_culture}"><b>생활/문화</b><i class="fas fa-angle-right float-right text-secondary mr-2"></i></a></h6>
             <div class="row mt-3" th:each="culture : ${cultureCategory}">
               <div class="col-8 mt-1"> <a th:href="@{/detail(id=${culture.id})}"> <small th:text="${culture.title}">봄나들이 좋은 맑은 날씨…미세먼지도 오후 해소</small></a></div>
               <div class="col-4">
@@ -116,7 +117,7 @@
         <div class="row mt-3">
           <div class="col-1"></div>
           <div class="col-11">
-            <h6><b>경제</b> <i class="fas fa-angle-right float-right text-secondary mr-2"></i></h6>
+            <h6><a th:href="@{/economy}"><b>경제</b> <i class="fas fa-angle-right float-right text-secondary mr-2"></i></a></h6>
             <div class="row mt-3" th:each="economy : ${economyCategory}">
               <div class="col-8 mt-1"><a th:href="@{/detail(id=${economy.id})}"> <small th:text="${economy.title}">HMM 주총, 개미들 '성토의 장'됐다…김경배 사장 "자사주 매입 검토</small></a></div>
               <div class="col-4">
@@ -131,7 +132,7 @@
         <div class="row mt-3">
           <div class="col-1"></div>
           <div class="col-11">
-            <h6><b>IT/과학</b> <i class="fas fa-angle-right float-right text-secondary mr-2"></i></h6>
+            <h6><a th:href="@{/it_science}"><b>IT/과학</b> <i class="fas fa-angle-right float-right text-secondary mr-2"></i></a></h6>
             <div class="row mt-3" th:each="it : ${itCategory}">
               <div class="col-8 mt-1"> <a th:href="@{/detail(id=${it.id})}"><small th:text="${it.title}">KT 이사 단 1명…"새 대표 선임, 최소 5개월</small></a></div>
               <div class="col-4">

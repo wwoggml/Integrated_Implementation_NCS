@@ -51,6 +51,11 @@
       height: 400px !important;
       border-radius: 20px !important;
     }
+
+    .card2 {
+      width: 270px !important;
+      padding: 0px !important;
+    }
     .card-img-top {
       border-radius: 20px 20px 0px 0px !important;
       height: 150px; !important;
@@ -115,31 +120,31 @@
     </div>
   </div>
   <div class="container">
-    <div class="row row-cols-1 row-cols-md-4 gx-3 mt-4">
+    <div class="row mt-4">
       <div class="col">
         <div class="card">
-          <a th:href="@{/economy}"><img class="card-img-top" src="https://imgnews.pstatic.net/image/029/2023/03/29/0002791774_001_20230329144703482.jpg?type=w647" alt="Card image cap"></a>
+          <a th:href="@{/detail(id=374)}"><img class="card-img-top" src="https://imgnews.pstatic.net/image/417/2023/04/05/0000910137_001_20230405142501399.jpg?type=w647" alt="Card image cap"></a>
           <div class="card-body">
-            <h5 class="card-title"><a th:href="@{/economy}">방역 완화에 소비 `껑충`…작년 신용카드 결제액 13.5%↑ </a></h5>
-            <p class="card-text"><a th:href="@{/economy}">여행 67%·음식점 25% '급증' 대면결제 12% 증가 지난해 코로나19 방역 완화로 신용카드 결제액이 증가했다. 서울 명동거리가 시민과 관광객들로 북적이고 있다.</a></p>
+            <h5 class="card-title"><a th:href="@{/detail(id=374)}">삼성페이 손 잡은 네이버페이, '페이동맹' 업고 인기앱 1위 '우뚝'</a></h5>
+            <p class="card-text"><a th:href="@{/detail(id=374)}">삼성페이 결제가 가능한 전국 300만개 오프라인 가맹점에서도 네이버페이 앱으로 현장결제가 가능해진 것이다. 앞서 지난달 23일에는 온라인 결제 영역에서 서비스를 연동했다.</a></p>
           </div>
         </div>
       </div>
       <div class="col">
         <div class="card">
-          <a th:href="@{/life_culture}"><img class="card-img-top" src="https://imgnews.pstatic.net/image/119/2023/03/29/0002697370_001_20230329144201232.jpeg?type=w647" alt="Card image cap"></a>
+          <a th:href="@{/detail(id=156)}"><img class="card-img-top" src="https://imgnews.pstatic.net/image/119/2023/04/05/0002699724_001_20230405140106842.jpeg?type=w647" alt="Card image cap"></a>
           <div class="card-body">
-            <h5 class="card-title"><a th:href="@{/life_culture}">노연홍 제약바이오협회장 “혁신 위한 혁신 필요할 때” </a> </h5>
-            <p class="card-text"><a th:href="@{/life_culture}">노연홍 제22대 한국제약바이오협회장이 “산업계와 정부가 합심해 역량을 집중할 때 국가 미래를 좌우할 제약바이오 글로벌 중심국가 도약이 빠른 시일 내에 실현될 수 있을 것”이라고 말했다.</a></p>
+            <h5 class="card-title"><a th:href="@{/detail(id=156)}">‘마이크로바이옴’이 뭐길래....4000억 규모 범정부 신사업 나온다 </a> </h5>
+            <p class="card-text"><a th:href="@{/detail(id=156)}">“마이크로바이옴은 만병통치약 수준, 많은 정부부처가 관심 가지고 투자를 진행 중이며 곧 6개 부처가 합동으로 4000억원 규모의 신규 지원 사업을 준비 중이다”</a></p>
           </div>
         </div>
       </div>
       <div class="col">
         <div class="card">
-          <a th:href="@{/it_science}"><img class="card-img-top" src="https://imgnews.pstatic.net/image/029/2023/03/29/0002791774_001_20230329144703482.jpg?type=w647" alt="Card image cap"></a>
+          <a th:href="@{/detail(id=18)}"><img class="card-img-top" src="https://imgnews.pstatic.net/image/009/2023/04/05/0005111859_001_20230405095701021.jpg?type=w647" alt="Card image cap"></a>
           <div class="card-body">
-            <h5 class="card-title"><a th:href="@{/it_science}">방역 완화에 소비 `껑충`…작년 신용카드 결제액 13.5%↑ </a></h5>
-            <p class="card-text"><a th:href="@{/it_science}">여행 67%·음식점 25% '급증' 대면결제 12% 증가 지난해 코로나19 방역 완화로 신용카드 결제액이 증가했다. 서울 명동거리가 시민과 관광객들로 북적이고 있다</a>.</p>
+            <h5 class="card-title"><a th:href="@{/detail(id=18)}">유튜브로 쏠리는 고령층…OTT별 시청 콘텐츠도 ‘차이’</a></h5>
+            <p class="card-text"><a th:href="@{/detail(id=18)}">온라인동영상서비스(OTT) 중 유튜브가 가장 높은 이용률을 나타냈다, OTT별로 보면 유튜브에서는 예능, 넷플릭스 등 나머지 플랫폼에서는 드라마를 주로 이용하는 것으로 조사됐다</a>.</p>
           </div>
         </div>
       </div>
@@ -160,7 +165,9 @@
       </div>
 
     </div>
+
   </div>
+
 </div>
 
 </div>
