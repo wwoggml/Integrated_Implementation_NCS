@@ -54,6 +54,11 @@
       display: flex;
       justify-content: center;
     }
+
+    .h5, .summary, .summary:hover {
+        text-decoration-line: none;
+        color:black;
+    }
   </style>
 </th:block>
 <div layout:fragment="content">
@@ -72,15 +77,16 @@
       <div class="row mt-5 mb-5" th:each="i : ${list}">
         <div class="col-2">
           <dt>
-<!--            <img th:inline="none" th:src="${i.imageURL}" onerror="this.style.display='none'" style="width: 150px;height: 100px">-->
-            <img th:if="${i.imageURL != ''}" th:src="@{${i.imageURL}}" style="width: 150px;height: 100px">
-            <img th:if="${i.imageURL == ''}" th:src="@{/img/image.png}" style="width: 150px;height: 100px">
-          </dt>
+              <a th:href="@{/detail(id=${i.id})}">
+                  <img th:if="${i.imageURL != ''}" th:src="@{${i.imageURL}}" style="width: 150px;height: 100px">
+                  <img th:if="${i.imageURL == ''}" th:src="@{/img/image.png}" style="width: 150px;height: 100px">
+                  <!--                        <img th:inline="none" th:src="${i.imageURL}" onerror="this.style.display='none'" style="width: 150px;height: 100px">-->
+              </a>          </dt>
         </div>
         <div class="col-10">
-          <dts th:utext="${i.title}" class="h5"></dts>
-          <dd th:utext="${i.text}" class="summary"></dd>
-          <dd><small th:utext="${i.datetime}" class="datetime"></small></dd>
+            <a th:href="@{/detail(id=${i.id})}" th:utext="${i.title}" class="h5"></a>
+            <dd><a th:href="@{/detail(id=${i.id})}" th:utext="${i.text}" class="summary"></a></dd>
+            <dd><small th:utext="${i.datetime}" class="datetime"></small></dd>
         </div>
       </div>
 
