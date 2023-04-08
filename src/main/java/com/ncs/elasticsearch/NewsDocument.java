@@ -8,6 +8,7 @@ import lombok.ToString;
 import org.springframework.data.elasticsearch.annotations.Document;
 
 import javax.persistence.*;
+import java.util.Date;
 
 @Getter
 @Setter
@@ -34,7 +35,7 @@ public class NewsDocument {
     private String reporter;
 
     @Column(name = "datetime")
-    private String datetime;
+    private Date datetime;
 
 //    @ElementCollection
 //    @Column(name = "imageurl")

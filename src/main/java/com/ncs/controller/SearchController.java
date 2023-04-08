@@ -4,6 +4,7 @@ import com.ncs.dto.NewsDto;
 import com.ncs.elasticsearch.NewsDocument;
 import com.ncs.elasticsearch.NewsDocumentRepository;
 import com.ncs.entity.News;
+import com.ncs.repository.NewsRepository;
 import com.ncs.service.NewsService;
 import lombok.extern.log4j.Log4j2;
 import org.elasticsearch.client.RestHighLevelClient;
@@ -18,7 +19,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+<<<<<<< HEAD
 import org.springframework.web.bind.annotation.RestController;
+=======
+>>>>>>> ae83bdfe42b2f39fd5bd1704ee862b2e2897a83f
 
 import javax.servlet.http.HttpServletRequest;
 import java.io.UnsupportedEncodingException;
@@ -40,6 +44,8 @@ public class SearchController {
     @Autowired
     private NewsDocumentRepository newsDocumentRepository;
 
+    @Autowired
+    private NewsRepository newsRepository;
     @Autowired
     NewsService newsService;
 
@@ -63,6 +69,7 @@ public class SearchController {
 
         Pageable pageable = PageRequest.of(page - 1, size);
         Page<NewsDocument> news = newsService.searchNews(keyword, pageable);
+//        Page<NewsDocument> news = newsService.searchNewsByTitleOrText(keyword, pageable);
 
         if (keyword == null) {
             return "SearchResult";
@@ -94,6 +101,13 @@ public class SearchController {
         List<News> newsDetail;
         newsDetail = newsService.getIdNews(id);
 
+        List<News> itCategory = newsService.getTwoEntities("IT/과학");
+        List<News> cultureCategory = newsService.getTwoEntities("생활/문화");
+        List<News> economyCategory = newsService.getTwoEntities("경제");
+
+        model.addAttribute("itCategory", itCategory);
+        model.addAttribute("economyCategory", economyCategory);
+        model.addAttribute("cultureCategory", cultureCategory);
         model.addAttribute("newsDetail", newsDetail);
         return "NewsDetailPage";
     }
@@ -103,6 +117,7 @@ public class SearchController {
         return "SearchMain";
     }
 
+<<<<<<< HEAD
     @GetMapping("/economy")
     public String Economy(HttpServletRequest httpServletRequest, Model model,
                            @RequestParam(defaultValue = "10") int size,
@@ -146,5 +161,13 @@ public class SearchController {
         model.addAttribute("totalPages", list.getTotalPages());
 
         return "SearchCategory3";
+=======
+
+    @GetMapping("/test2")
+    public String test(Model model) {
+        List<News> news = newsRepository.findByKeywordOrderByDatetimeDesc("네이버");
+        model.addAttribute("news", news);
+        return "SearchResult2";
+>>>>>>> ae83bdfe42b2f39fd5bd1704ee862b2e2897a83f
     }
 }
