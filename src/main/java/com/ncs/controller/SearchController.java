@@ -12,25 +12,18 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
-import org.springframework.data.domain.Sort;
-import org.springframework.data.web.PageableDefault;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-<<<<<<< HEAD
-import org.springframework.web.bind.annotation.RestController;
-=======
->>>>>>> ae83bdfe42b2f39fd5bd1704ee862b2e2897a83f
 
 import javax.servlet.http.HttpServletRequest;
 import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
 import java.net.URLEncoder;
-import java.util.ArrayList;
+
 import java.util.List;
-import java.util.Map;
+
 
 
 @Log4j2
@@ -58,14 +51,12 @@ public class SearchController {
         try {
             // URL 디코딩 수행
             keyword = URLEncoder.encode(keyword, "UTF-8");
-            log.info("before keyword = " + keyword);
             keyword = keyword.replaceAll("%08", "");
             keyword = URLDecoder.decode(keyword, "UTF-8");
         } catch (Exception e) {
             e.printStackTrace();
         }
 
-        log.info("after keyword = " + keyword);
 
         Pageable pageable = PageRequest.of(page - 1, size);
         Page<NewsDocument> news = newsService.searchNews(keyword, pageable);
@@ -117,7 +108,6 @@ public class SearchController {
         return "SearchMain";
     }
 
-<<<<<<< HEAD
     @GetMapping("/economy")
     public String Economy(HttpServletRequest httpServletRequest, Model model,
                            @RequestParam(defaultValue = "10") int size,
@@ -156,18 +146,11 @@ public class SearchController {
         Pageable pageable = PageRequest.of(page - 1, size);
         Page<News> list = newsService.searchCategory("IT/과학", pageable);
 
-        model.addAttribute("list",list);
+        model.addAttribute("list", list);
         model.addAttribute("currentPage", page);
         model.addAttribute("totalPages", list.getTotalPages());
 
         return "SearchCategory3";
-=======
-
-    @GetMapping("/test2")
-    public String test(Model model) {
-        List<News> news = newsRepository.findByKeywordOrderByDatetimeDesc("네이버");
-        model.addAttribute("news", news);
-        return "SearchResult2";
->>>>>>> ae83bdfe42b2f39fd5bd1704ee862b2e2897a83f
     }
+
 }

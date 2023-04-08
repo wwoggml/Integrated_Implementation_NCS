@@ -2,7 +2,8 @@
 <html xmlns:th="http://www.thymeleaf.org"
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
       layout:decorate="~{layouts/layout1}">
-
+<meta charset="UTF-8">
+<title>RNSE</title>
 <th:block layout:fragment="css">
   <style>
     .container {
@@ -57,6 +58,14 @@
       text-decoration-line: none;
       color:black;
     }
+    .sort {
+      color: grey;
+    }
+
+    /* 마우스 오버 링크 스타일 */
+    a:hover {
+      color: black !important;
+    }
 
   </style>
 </th:block>
@@ -80,9 +89,9 @@
     <div class="searchResult">
       <div class="sort_bar mb-0">
         <ul class="nav justify-content-end mb-0">
-          <li class="nav-item"><a class="nav-link" href="#" style="color: black">• <small> 관련도순</small></a> </li>
-          <li class="nav-item"><a class="nav-link" href="#" style="color: black">• <small> 최신순</small></a> </li>
-          <li class="nav-item"><a class="nav-link" href="#" style="color: black">• <small> 오래된순</small></a> </li>
+          <li class="nav-item"><a class="nav-link sort" onclick="handleClick(this)" href="#">• <small> 관련도순</small></a> </li>
+          <li class="nav-item"><a class="nav-link sort" onclick="handleClick(this)" href="#">• <small> 최신순</small></a> </li>
+          <li class="nav-item"><a class="nav-link sort" onclick="handleClick(this)" href="#">• <small> 오래된순</small></a> </li>
         </ul>
       </div>
       <hr>
@@ -151,6 +160,32 @@
       }
 
       summary[i].innerText = summary[i].innerText.substring(0, 155) + "..."
+    }
+
+    function handleClick(element) {
+      // 선택한 링크에 대한 정보를 localStorage에 저장합니다.
+      localStorage.setItem('selectedLink', element.id);
+
+      // 모든 링크의 색상을 초기화
+      const links = document.getElementsByClassName('nav-link sort');
+      for (let i = 0; i < links.length; i++) {
+        links[i].style.color = '#808080';
+      }
+
+      // 선택한 링크의 색상을 변경
+      element.style.color = '#000000';
+    }
+
+
+
+    window.onload = function() {
+      const selectedLinkId = localStorage.getItem('selectedLink');
+      if (selectedLinkId) {
+        const selectedLink = document.getElementById(selectedLinkId);
+        if (selectedLink) {
+          selectedLink.style.color = '#000000';
+        }
+      }
     }
   </script>
 </div>

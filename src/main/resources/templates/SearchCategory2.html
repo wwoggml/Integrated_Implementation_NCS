@@ -60,7 +60,7 @@
 
   <div class="container">
     <div>
-      <a th:href="@{/main}" target="_self"><img src="/img/RNSE_LOGO.png" class="logo_image"></a>
+      <a th:href="@{/}" target="_self"><img src="/img/RNSE_LOGO.png" class="logo_image"></a>
     </div>
     <div class="main">
       <div class="category">
@@ -71,7 +71,11 @@
 
       <div class="row mt-5 mb-5" th:each="i : ${list}">
         <div class="col-2">
-          <dt><img th:inline="none" th:src="${i.imageURL}" onerror="this.style.display='none'" style="width: 150px;height: 100px"></dt>
+          <dt>
+            <img th:if="${i.imageURL != ''}" th:src="@{${i.imageURL}}" style="width: 150px;height: 100px">
+            <img th:if="${i.imageURL == ''}" th:src="@{/img/image.png}" style="width: 150px;height: 100px">
+<!--            <img th:inline="none" th:src="${i.imageURL}" onerror="this.style.display='none'" style="width: 150px;height: 100px">-->
+          </dt>
         </div>
         <div class="col-10">
           <dts th:utext="${i.title}" class="h5"></dts>
@@ -130,7 +134,7 @@
       }
 
       summary[i].innerText = summary[i].innerText.substring(0, 155) + "..."
-    }s
+    }
   </script>
 </div>
 </html>

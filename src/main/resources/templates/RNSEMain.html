@@ -31,8 +31,9 @@
       margin: 25px auto;
 
     }
-    .b_catergory{
+    .b_catergory a{
       font-weight: 500;
+      color: black;
     }
 
     .category{
@@ -77,8 +78,15 @@
       top:3px;
     }
     a{
+      color: black !important;
       text-decoration: none;
     }
+    a:hover {
+      text-decoration: none !important; /* 밑줄 없애기 */
+      color: black !important; /* 색상 변경 없애기 */
+    }
+
+
 
   </style>
 </th:block>
@@ -110,28 +118,28 @@
     <div class="row row-cols-1 row-cols-md-4 gx-3 mt-4">
       <div class="col">
         <div class="card">
-          <img class="card-img-top" src="https://imgnews.pstatic.net/image/029/2023/03/29/0002791774_001_20230329144703482.jpg?type=w647" alt="Card image cap">
+          <a th:href="@{/economy}"><img class="card-img-top" src="https://imgnews.pstatic.net/image/029/2023/03/29/0002791774_001_20230329144703482.jpg?type=w647" alt="Card image cap"></a>
           <div class="card-body">
-            <h5 class="card-title">방역 완화에 소비 `껑충`…작년 신용카드 결제액 13.5%↑ </h5>
-            <p class="card-text">여행 67%·음식점 25% '급증' 대면결제 12% 증가 지난해 코로나19 방역 완화로 신용카드 결제액이 증가했다. 서울 명동거리가 시민과 관광객들로 북적이고 있다.</p>
+            <h5 class="card-title"><a th:href="@{/economy}">방역 완화에 소비 `껑충`…작년 신용카드 결제액 13.5%↑ </a></h5>
+            <p class="card-text"><a th:href="@{/economy}">여행 67%·음식점 25% '급증' 대면결제 12% 증가 지난해 코로나19 방역 완화로 신용카드 결제액이 증가했다. 서울 명동거리가 시민과 관광객들로 북적이고 있다.</a></p>
           </div>
         </div>
       </div>
       <div class="col">
         <div class="card">
-          <img class="card-img-top" src="https://imgnews.pstatic.net/image/119/2023/03/29/0002697370_001_20230329144201232.jpeg?type=w647" alt="Card image cap">
+          <a th:href="@{/life_culture}"><img class="card-img-top" src="https://imgnews.pstatic.net/image/119/2023/03/29/0002697370_001_20230329144201232.jpeg?type=w647" alt="Card image cap"></a>
           <div class="card-body">
-            <h5 class="card-title">노연홍 제약바이오협회장 “혁신 위한 혁신 필요할 때”  </h5>
-            <p class="card-text">노연홍 제22대 한국제약바이오협회장이 “산업계와 정부가 합심해 역량을 집중할 때 국가 미래를 좌우할 제약바이오 글로벌 중심국가 도약이 빠른 시일 내에 실현될 수 있을 것”이라고 말했다.</p>
+            <h5 class="card-title"><a th:href="@{/life_culture}">노연홍 제약바이오협회장 “혁신 위한 혁신 필요할 때” </a> </h5>
+            <p class="card-text"><a th:href="@{/life_culture}">노연홍 제22대 한국제약바이오협회장이 “산업계와 정부가 합심해 역량을 집중할 때 국가 미래를 좌우할 제약바이오 글로벌 중심국가 도약이 빠른 시일 내에 실현될 수 있을 것”이라고 말했다.</a></p>
           </div>
         </div>
       </div>
       <div class="col">
         <div class="card">
-          <img class="card-img-top" src="https://imgnews.pstatic.net/image/029/2023/03/29/0002791774_001_20230329144703482.jpg?type=w647" alt="Card image cap">
+          <a th:href="@{/it_science}"><img class="card-img-top" src="https://imgnews.pstatic.net/image/029/2023/03/29/0002791774_001_20230329144703482.jpg?type=w647" alt="Card image cap"></a>
           <div class="card-body">
-            <h5 class="card-title">방역 완화에 소비 `껑충`…작년 신용카드 결제액 13.5%↑ </h5>
-            <p class="card-text">여행 67%·음식점 25% '급증' 대면결제 12% 증가 지난해 코로나19 방역 완화로 신용카드 결제액이 증가했다. 서울 명동거리가 시민과 관광객들로 북적이고 있다.</p>
+            <h5 class="card-title"><a th:href="@{/it_science}">방역 완화에 소비 `껑충`…작년 신용카드 결제액 13.5%↑ </a></h5>
+            <p class="card-text"><a th:href="@{/it_science}">여행 67%·음식점 25% '급증' 대면결제 12% 증가 지난해 코로나19 방역 완화로 신용카드 결제액이 증가했다. 서울 명동거리가 시민과 관광객들로 북적이고 있다</a>.</p>
           </div>
         </div>
       </div>

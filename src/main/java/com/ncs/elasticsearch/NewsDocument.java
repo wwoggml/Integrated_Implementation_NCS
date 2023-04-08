@@ -35,11 +35,7 @@ public class NewsDocument {
     private String reporter;
 
     @Column(name = "datetime")
-    private Date datetime;
-
-//    @ElementCollection
-//    @Column(name = "imageurl")
-//    private List<String> imageURL;
+    private String datetime;
 
     @Lob
     @Column(name = "imageurl")
@@ -56,17 +52,6 @@ public class NewsDocument {
     private String text;
 
 
-    //    public NewsDocument() {}
-//    public NewsDocument(News news) {
-//        this.id = news.getId();
-//        this.text = news.getText();
-//        this.title = news.getTitle();
-//        this.imageURL = news.getImageURL();
-//        this.url = news.getUrl();
-//        this.datetime = news.getDatetime();
-//        this.category = news.getCategory();
-//        this.reporter = news.getReporter();
-//    }
     public NewsDocument toDocument() {
         NewsDocument doc = new NewsDocument();
         doc.setTitle(title);
