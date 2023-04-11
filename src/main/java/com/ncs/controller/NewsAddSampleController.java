@@ -84,12 +84,18 @@ public class NewsAddSampleController {
                 }
 
 
-                if(URL.contains("sid=105"))
-                    category = "IT/과학";
+                if(URL.contains("sid=100"))
+                    category = "정치";
                 else if(URL.contains("sid=101"))
                     category = "경제";
+                else if(URL.contains("sid=102"))
+                    category = "사회";
                 else if(URL.contains("sid=103"))
                     category = "생활/문화";
+                else if(URL.contains("sid=104"))
+                    category = "세계";
+                else if(URL.contains("sid=105"))
+                    category = "IT/과학";
 
                 String dateString = date.text().split(" ")[0] + " " + date.text().split(" ")[1] + " " + date.text().split(" ")[2];
 
