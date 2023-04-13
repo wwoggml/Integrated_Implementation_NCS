@@ -29,6 +29,6 @@ public class MainController {
         model.addAttribute("sid_102_list", sid_102_list);
         model.addAttribute("sid_103_list", sid_103_list);
         model.addAttribute("sid_104_list", sid_104_list);
-        return "Main2";
+        return "Main";
     }
 }
