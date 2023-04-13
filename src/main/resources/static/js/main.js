@@ -7,23 +7,50 @@ function showContent(contentId) {
     targetContent.style.display = 'block';
 }
 
+function colorReset() {
+    const bcontents = document.querySelectorAll('b');
+    const pathcontents = document.querySelectorAll('path');
+    for (const content of bcontents) {
+        content.style.color = 'black';
+    }
+    for (const content of pathcontents) {
+        content.style.color = 'black';
+    }
+}
+
 document.getElementById('sid_100_btn').addEventListener('click', () => {
+    colorReset();
+    debugger;
+    this.document.querySelectorAll("b")[0].style.color="#FFCE44"
+    this.document.querySelectorAll("path")[0].style.color="#FFCE44"
     showContent('sid_100');
 });
 
 document.getElementById('sid_101_btn').addEventListener('click', () => {
+    colorReset();
+    this.document.querySelectorAll("b")[1].style.color="#0288D1"
+    this.document.querySelectorAll("path")[1].style.color="#0288D1"
     showContent('sid_101');
 });
 
 document.getElementById('sid_102_btn').addEventListener('click', () => {
+    colorReset();
+    this.document.querySelectorAll("b")[2].style.color="#43A047"
+    this.document.querySelectorAll("path")[2].style.color="#43A047"
     showContent('sid_102');
 });
 
 document.getElementById('sid_103_btn').addEventListener('click', () => {
+    colorReset();
+    this.document.querySelectorAll("b")[3].style.color="#FFCE44"
+    this.document.querySelectorAll("path")[3].style.color="#FFCE44"
     showContent('sid_103');
 });
 
 document.getElementById('sid_104_btn').addEventListener('click', () => {
+    colorReset();
+    this.document.querySelectorAll("b")[4].style.color="#0288D1"
+    this.document.querySelectorAll("path")[4].style.color="#0288D1"
     showContent('sid_104');
 });
 

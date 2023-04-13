@@ -56,6 +56,11 @@ public class SearchController {
             e.printStackTrace();
         }
 
+        if (keyword.equals("")) {
+            String none_result = "검색 결과가 없습니다.";
+            model.addAttribute("none_result", none_result);
+            return "SearchResult";
+        }
 
         Pageable pageable = PageRequest.of(page - 1, size);
         Page<News> news = null;
@@ -68,9 +73,7 @@ public class SearchController {
             news = newsService.getSortAsc(keyword, pageable);
         }
 
-        if (keyword == null) {
-            return "SearchResult";
-        }
+
 
         if (news.getContent().size() == 0) {
             String none_result = "검색 결과가 없습니다.";
@@ -107,71 +110,6 @@ public class SearchController {
         return "NewsDetailPage";
     }
 
-    @GetMapping("/category")
-    public String Category(HttpServletRequest httpServletRequest, Model model,
-                          @RequestParam(defaultValue = "10") int size,
-                           @RequestParam(defaultValue = "101") int sid,
-                          @RequestParam(value = "page", defaultValue = "1") int page) {
 
-        Pageable pageable = PageRequest.of(page - 1, size);
-        Page<News> list = null;
-
-        if(sid == 100) list = newsService.searchCategory("정치", pageable);
-        else if(sid == 101) list = newsService.searchCategory("경제", pageable);
-        else if(sid == 102) list = newsService.searchCategory("스포츠", pageable);
-        else if(sid == 103) list = newsService.searchCategory("생활/문화", pageable);
-        else if(sid == 104) list = newsService.searchCategory("IT/과학", pageable);
-
-        model.addAttribute("list",list);
-        model.addAttribute("currentPage", page);
-        model.addAttribute("totalPages", list.getTotalPages());
-
-        return "SearchCategory1";
-    }
-
-    @GetMapping("/economy")
-    public String Economy(HttpServletRequest httpServletRequest, Model model,
-                           @RequestParam(defaultValue = "10") int size,
-                           @RequestParam(value = "page", defaultValue = "1") int page) {
-
-        Pageable pageable = PageRequest.of(page - 1, size);
-        Page<News> list = newsService.searchCategory("경제", pageable);
-
-        model.addAttribute("list",list);
-        model.addAttribute("currentPage", page);
-        model.addAttribute("totalPages", list.getTotalPages());
-
-        return "SearchCategory1";
-    }
-
-    @GetMapping("/life_culture")
-    public String Life_culture(HttpServletRequest httpServletRequest, Model model,
-                           @RequestParam(defaultValue = "10") int size,
-                           @RequestParam(value = "page", defaultValue = "1") int page) {
-
-        Pageable pageable = PageRequest.of(page - 1, size);
-        Page<News> list = newsService.searchCategory("생활/문화", pageable);
-
-        model.addAttribute("list",list);
-        model.addAttribute("currentPage", page);
-        model.addAttribute("totalPages", list.getTotalPages());
-
-        return "SearchCategory2";
-    }
-
-    @GetMapping("/it_science")
-    public String It_Science(HttpServletRequest httpServletRequest, Model model,
-                               @RequestParam(defaultValue = "10") int size,
-                               @RequestParam(value = "page", defaultValue = "1") int page) {
-
-        Pageable pageable = PageRequest.of(page - 1, size);
-        Page<News> list = newsService.searchCategory("IT/과학", pageable);
-
-        model.addAttribute("list", list);
-        model.addAttribute("currentPage", page);
-        model.addAttribute("totalPages", list.getTotalPages());
-
-        return "SearchCategory3";
-    }
 
 }
