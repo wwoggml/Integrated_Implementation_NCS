@@ -1,7 +1,6 @@
 package com.ncs.controller;
 
-import com.ncs.dto.NewsDto;
-import com.ncs.elasticsearch.NewsDocument;
+
 import com.ncs.elasticsearch.NewsDocumentRepository;
 import com.ncs.entity.News;
 import com.ncs.repository.NewsRepository;
@@ -16,18 +15,13 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-
 import javax.servlet.http.HttpServletRequest;
 import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
 import java.net.URLEncoder;
-
 import java.util.List;
 
-
-
 @Log4j2
-
 @Controller
 public class SearchController {
 
@@ -42,6 +36,10 @@ public class SearchController {
     @Autowired
     NewsService newsService;
 
+    @GetMapping("/news/search")
+    public String SearchURL() {
+        return "CrawlingAdd";
+    }
     @GetMapping("/search")
     public String test(HttpServletRequest httpServletRequest, Model model,
                        @RequestParam(defaultValue = "10") int size,
@@ -60,9 +58,6 @@ public class SearchController {
 
 
         Pageable pageable = PageRequest.of(page - 1, size);
-//        Page<NewsDocument> news = newsService.searchNews(keyword, pageable);
-//        Page<NewsDocument> news = newsService.searchNewsByTitleOrText(keyword, pageable);
-
         Page<News> news = null;
 
         if(sort == 1) {
@@ -91,32 +86,47 @@ public class SearchController {
         return "SearchResult";
     }
 
-
-    @GetMapping("/Second")
-    public String Second(Model model){
-
-        return "asdfgh";
-    }
-
     @GetMapping("/detail")
     public String Detail(HttpServletRequest httpServletRequest, Model model, @RequestParam Long id){
-        List<News> newsDetail;
-        newsDetail = newsService.getIdNews(id);
+        List<News> newsDetail = newsService.getIdNews(id);
 
-        List<News> itCategory = newsService.getTwoEntities("IT/과학");
-        List<News> cultureCategory = newsService.getTwoEntities("생활/문화");
-        List<News> economyCategory = newsService.getTwoEntities("경제");
+        List<News> politicsCategory = newsService.getOneEntities("정치");
+        List<News> economyCategory = newsService.getOneEntities("경제");
+        List<News> sportsCategory = newsService.getOneEntities("스포츠");
+        List<News> cultureCategory = newsService.getOneEntities("생활/문화");
+        List<News> itCategory = newsService.getOneEntities("IT/과학");;
 
-        model.addAttribute("itCategory", itCategory);
+        model.addAttribute("politicsCategory", politicsCategory);
         model.addAttribute("economyCategory", economyCategory);
+        model.addAttribute("sportsCategory", sportsCategory);
         model.addAttribute("cultureCategory", cultureCategory);
+        model.addAttribute("itCategory", itCategory);
+        model.addAttribute("newsDetail", newsDetail);
+
         model.addAttribute("newsDetail", newsDetail);
         return "NewsDetailPage";
     }
 
-    @GetMapping("/main")
-    public String searchMain() {
-        return "SearchMain";
+    @GetMapping("/category")
+    public String Category(HttpServletRequest httpServletRequest, Model model,
+                          @RequestParam(defaultValue = "10") int size,
+                           @RequestParam(defaultValue = "101") int sid,
+                          @RequestParam(value = "page", defaultValue = "1") int page) {
+
+        Pageable pageable = PageRequest.of(page - 1, size);
+        Page<News> list = null;
+
+        if(sid == 100) list = newsService.searchCategory("정치", pageable);
+        else if(sid == 101) list = newsService.searchCategory("경제", pageable);
+        else if(sid == 102) list = newsService.searchCategory("스포츠", pageable);
+        else if(sid == 103) list = newsService.searchCategory("생활/문화", pageable);
+        else if(sid == 104) list = newsService.searchCategory("IT/과학", pageable);
+
+        model.addAttribute("list",list);
+        model.addAttribute("currentPage", page);
+        model.addAttribute("totalPages", list.getTotalPages());
+
+        return "SearchCategory1";
     }
 
     @GetMapping("/economy")

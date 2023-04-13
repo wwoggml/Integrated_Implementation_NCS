@@ -1,0 +1,55 @@
+{
+  "index_patterns": ["news_test*"],
+  "settings": {
+    "analysis": {
+      "tokenizer": {
+        "nori_tokenizer": {
+          "type": "nori_tokenizer",
+          "decompound_mode": "none"
+        }
+      },
+      "analyzer": {
+        "nori": {
+          "tokenizer": "nori_tokenizer",
+          "filter": [
+            "my_char_filter",
+            "my_stop_filter",
+            "my_nori_filter"
+          ]
+        }
+      },
+      "filter": {
+        "my_char_filter": {
+          "type": "pattern_replace",
+          "pattern": "[\\p{Alpha}\\p{Digit}]+",
+          "replacement": "은"
+        },
+        "my_stop_filter": {
+          "type": "stop",
+          "ignore_case": true,
+          "stopwords_path": "/usr/share/elasticsearch/config/stopwords.txt"
+        },
+        "my_nori_filter": {
+          "type": "nori_part_of_speech",
+          "user_dictionary": {
+            "filepath": "/usr/share/elasticsearch/config/userdict.txt"
+          }
+        }
+      }
+    }
+  },
+  "mappings": {
+    "properties": {
+      "text": {
+        "type": "text",
+        "analyzer": "nori",
+        "fielddata": true
+      }
+    }
+  }
+}
+
+
+
+
+

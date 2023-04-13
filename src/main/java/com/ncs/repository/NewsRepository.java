@@ -20,7 +20,10 @@ public interface NewsRepository extends JpaRepository<News, Long> {
     NewsDto findByTitle(String title);
     Page<News> findByCategory(String category, Pageable pageable);
 
-    List<News> findTop2ByCategory(String category);
+    List<News> findTop1ByCategory(String category);
+
+    List<News> findTop5ByCategory(String category);
+
 
     @Query("SELECT n FROM News n WHERE (n.title LIKE %:keyword% OR n.text LIKE %:keyword%)")
     Page<News> findByKeyword(@Param("keyword") String keyword, Pageable pageable);

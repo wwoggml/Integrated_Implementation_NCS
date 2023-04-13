@@ -48,14 +48,14 @@ public class NewsDocument {
 
 
     @Lob
-    @Column(name = "text")
-    private String text;
+    @Column(name = "content")
+    private String content;
 
 
     public NewsDocument toDocument() {
         NewsDocument doc = new NewsDocument();
         doc.setTitle(title);
-        doc.setText(text);
+        doc.setContent(content);
         doc.setImageurl(imageurl);
         doc.setReporter(reporter);
         doc.setUrl(url);

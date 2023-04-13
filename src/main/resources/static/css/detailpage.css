@@ -1,0 +1,52 @@
+.container {
+    min-width: 1140px;
+}
+input{
+    position: relative;
+    margin: 0px 0px 20px 20px;
+    left: 15px;
+    top: 7px;
+    font-size: 15px;
+    width: 85%;
+    height: 30px;
+    border: none;
+    outline: none;
+}
+.search{
+    position: relative;
+    border: 1px solid #CCCCCC;
+    border-radius: 50px;
+    width: 300px;
+    height: 45px;
+    margin-top: 20px;
+    margin: 25px auto;
+    left: 530px;
+
+}
+
+.category {
+    padding: 30px;
+}
+button {
+    background-color: transparent;
+    border: none;
+    position:relative;
+    right: 10px;
+    top:5px;
+}
+
+
+.logo_image {
+    width: 100px;
+    position: relative;
+    top: 25px;
+}
+
+
+.article-image {
+    text-align: center;
+}
+
+a {
+    color: black !important;
+}

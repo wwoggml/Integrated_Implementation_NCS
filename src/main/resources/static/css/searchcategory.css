@@ -1,0 +1,45 @@
+.logo_image {
+    width: 100px;
+    position: relative;
+    top: 90px;
+}
+.container{
+    min-width: 1140px;
+    margin: 0 auto;
+}
+.main{
+    margin-top: 120px;
+}
+.category{
+    width: auto;
+    height: 40px;
+}
+
+.category-name{
+    text-align: center;
+    color: white;
+    display: inline-block;
+    margin: 10px 15px 10px 10px;
+    text-decoration: none;
+}
+
+
+.category-name a{
+    text-decoration: none;
+    color: white;
+}
+.category-name a:hover{
+    text-decoration: none;
+    color: white;
+}
+
+
+.paging {
+    display: flex;
+    justify-content: center;
+}
+
+.h5, .summary, .summary:hover {
+    text-decoration-line: none;
+    color:black;
+}

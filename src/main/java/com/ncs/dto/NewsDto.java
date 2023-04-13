@@ -41,8 +41,6 @@ public class NewsDto {
     public News createNews() {
         return modelMapper.map(this, News.class);
     }
-//    public static NewsDto of(News news) {
-//        return modelMapper.map(news, NewsDto.class);
-//    }
+
 
 }

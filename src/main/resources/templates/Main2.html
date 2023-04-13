@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/layout1}">
+<head>
+    <meta charset="UTF-8">
+    <title>RNSE</title>
+    <link th:href="@{/css/main.css}" rel="stylesheet" />
+</head>
+<body>
+<div layout:fragment="content">
+    <div class="logo">
+        <a th:href="@{/}" target="_self"><img src="/img/RNSE_LOGO.png" width="272px" height="85px"></a>
+    </div>
+    <div class="search mt-3">
+        <form action="/search" method="get">
+            <input type="text" name="keyword" placeholder=" 검색어를 입력하세요" th:value="${param.keyword}">
+            <button type="submit" class="float-right"><img class="searchLogo" src="/img/search.png" width="30px" height="30px"></button>
+        </form>
+    </div>
+    <div class="container-fluid">
+        <hr>
+    </div>
+    <div class="container mt-3">
+        <div class="row mt-4">
+            <div class="col-3">
+                <div class="row mt-3">
+                    <div class="col-1"></div>
+                    <div class="col-11">
+                        <h6><a th:href="@{/category(sid=100)}"><b>정치</b></a><a id="sid_100_btn"><i class="fas fa-angle-right float-right text-secondary mr-2"></i></a></h6>
+                        <hr>
+                    </div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-1"></div>
+                    <div class="col-11">
+                        <h6><a th:href="@{/category(sid=101)}"><b>경제</b></a><a id="sid_101_btn"><i class="fas fa-angle-right float-right text-secondary mr-2"></i></a></h6>
+                        <hr>
+                    </div>
+
+                </div>
+                <div class="row mt-3">
+                    <div class="col-1"></div>
+                    <div class="col-11">
+                        <h6><a th:href="@{/category(sid=102)}"><b>스포츠</b></a><a id="sid_102_btn"><i class="fas fa-angle-right float-right text-secondary mr-2"></i></a></h6>
+                        <hr>
+                    </div>
+
+                </div>
+                <div class="row mt-3">
+                    <div class="col-1"></div>
+                    <div class="col-11">
+                        <h6><a th:href="@{/category(sid=103)}"><b>생활/문화</b></a><a id="sid_103_btn"><i class="fas fa-angle-right float-right text-secondary mr-2"></i></a></h6>
+                        <hr>
+                    </div>
+
+                </div>
+                <div class="row mt-3">
+                    <div class="col-1"></div>
+                    <div class="col-11">
+                        <h6><a th:href="@{/category(sid=104)}"><b>IT/과학</b></a><a id="sid_104_btn"><i class="fas fa-angle-right float-right text-secondary mr-2"></i></a></h6>
+                        <hr>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-6">
+                <div id="sid_100" class="sid" style="display: block">
+                    <div class="row mt-3" th:each="sid_100 : ${sid_100_list}">
+                        <div class="col-8"> <a th:href="@{/detail(id=${sid_100.id})}"> <small th:text="${sid_100.title}">봄나들이 좋은 맑은 날씨…미세먼지도 오후 해소</small></a></div>
+                        <div class="col-3">
+                            <a th:href="@{/detail(id=${sid_100.id})}"><img th:if="${sid_100.imageURL != ''}" th:src="@{${sid_100.imageURL}}" style="width: 100%; height: 80px"></a>
+                            <a th:href="@{/detail(id=${sid_100.id})}"><img th:if="${sid_100.imageURL == ''}" th:src="@{/img/image.png}" style="width: 100%; height: 80px"></a>
+                        </div>
+                    </div>
+                    <small class="float-right mt-4 mr-5"><a th:href="@{/category(sid=100)}"><b>더보기</b><i class="fas fa-angle-right float-right text-secondary ml-2" style="margin-top:3px"></i></a></small><br>
+                </div>
+                <div id="sid_101" class="sid" style="display: none">
+                    <div class="row mt-3" th:each="sid_101 : ${sid_101_list}">
+                        <div class="col-8"> <a th:href="@{/detail(id=${sid_101.id})}"> <small th:text="${sid_101.title}">봄나들이 좋은 맑은 날씨…미세먼지도 오후 해소</small></a></div>
+                        <div class="col-3">
+                            <a th:href="@{/detail(id=${sid_101.id})}"><img th:if="${sid_101.imageURL != ''}" th:src="@{${sid_101.imageURL}}" style="width: 100%; height: 80px"></a>
+                            <a th:href="@{/detail(id=${sid_101.id})}"><img th:if="${sid_101.imageURL == ''}" th:src="@{/img/image.png}" style="width: 100%; height: 80px"></a>
+                        </div>
+                    </div>
+                    <small class="float-right mt-4 mr-5"><a th:href="@{/category(sid=101)}"><b>더보기</b><i class="fas fa-angle-right float-right text-secondary ml-2" style="margin-top:3px"></i></a></small><br>
+                </div>
+                <div id="sid_102" class="sid" style="display: none">
+                    <div class="row mt-3" th:each="sid_102 : ${sid_102_list}">
+                        <div class="col-8"> <a th:href="@{/detail(id=${sid_102.id})}"> <small th:text="${sid_102.title}">봄나들이 좋은 맑은 날씨…미세먼지도 오후 해소</small></a></div>
+                        <div class="col-3">
+                            <a th:href="@{/detail(id=${sid_102.id})}"><img th:if="${sid_102.imageURL != ''}" th:src="@{${sid_102.imageURL}}" style="width: 100%; height: 80px"></a>
+                            <a th:href="@{/detail(id=${sid_102.id})}"><img th:if="${sid_102.imageURL == ''}" th:src="@{/img/image.png}" style="width: 100%; height: 80px"></a>
+                        </div>
+                    </div>
+                    <small class="float-right mt-4 mr-5"><a th:href="@{/category(sid=102)}"><b>더보기</b><i class="fas fa-angle-right float-right text-secondary ml-2" style="margin-top:3px"></i></a></small><br>
+                </div>
+                <div id="sid_103" class="sid" style="display: none">
+                    <div class="row mt-3" th:each="sid_103 : ${sid_103_list}">
+                        <div class="col-8"> <a th:href="@{/detail(id=${sid_103.id})}"> <small th:text="${sid_103.title}">봄나들이 좋은 맑은 날씨…미세먼지도 오후 해소</small></a></div>
+                        <div class="col-3">
+                            <a th:href="@{/detail(id=${sid_103.id})}"><img th:if="${sid_103.imageURL != ''}" th:src="@{${sid_103.imageURL}}" style="width: 100%; height: 80px"></a>
+                            <a th:href="@{/detail(id=${sid_103.id})}"><img th:if="${sid_103.imageURL == ''}" th:src="@{/img/image.png}" style="width: 100%; height: 80px"></a>
+                        </div>
+                    </div>
+                    <small class="float-right mt-4 mr-5"><a th:href="@{/category(sid=103)}"><b>더보기</b><i class="fas fa-angle-right float-right text-secondary ml-2" style="margin-top:3px"></i></a></small><br>
+                </div>
+                <div id="sid_104" class="sid" style="display: none">
+                    <div class="row mt-3" th:each="sid_104 : ${sid_104_list}">
+                        <div class="col-8"> <a th:href="@{/detail(id=${sid_104.id})}"> <small th:text="${sid_104.title}">봄나들이 좋은 맑은 날씨…미세먼지도 오후 해소</small></a></div>
+                        <div class="col-3">
+                            <a th:href="@{/detail(id=${sid_104.id})}"><img th:if="${sid_104.imageURL != ''}" th:src="@{${sid_104.imageURL}}" style="width: 100%; height: 80px"></a>
+                            <a th:href="@{/detail(id=${sid_104.id})}"><img th:if="${sid_104.imageURL == ''}" th:src="@{/img/image.png}" style="width: 100%; height: 80px"></a>
+                        </div>
+                    </div>
+                    <small class="float-right mt-4 mr-5"><a th:href="@{/category(sid=104)}"><b>더보기</b><i class="fas fa-angle-right float-right text-secondary ml-2" style="margin-top:3px"></i></a></small><br>
+                </div>
+                <div id="sid_105" class="sid" style="display: none">
+                    <div class="row mt-3" th:each="sid_105 : ${sid_105_list}">
+                        <div class="col-8"> <a th:href="@{/detail(id=${sid_105.id})}"> <small th:text="${sid_105.title}">봄나들이 좋은 맑은 날씨…미세먼지도 오후 해소</small></a></div>
+                        <div class="col-3">
+                            <a th:href="@{/detail(id=${sid_105.id})}"><img th:if="${sid_105.imageURL != ''}" th:src="@{${sid_105.imageURL}}" style="width: 100%; height: 80px"></a>
+                            <a th:href="@{/detail(id=${sid_105.id})}"><img th:if="${sid_105.imageURL == ''}" th:src="@{/img/image.png}" style="width: 100%; height: 80px"></a>
+                        </div>
+                    </div>
+                    <small class="float-right mt-4 mr-5"><a th:href="@{/category(sid=105)}"><b>더보기</b><i class="fas fa-angle-right float-right text-secondary ml-2" style="margin-top:3px"></i></a></small><br>
+                </div>
+            </div>
+            <div class="col-3 realtime-search">
+                <div class="row mt-3">
+                    <div class="col-1">1</div>
+                    <div class="col-10"> <small>실시간 검색어</small></div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-1">2</div>
+                    <div class="col-10"> <small>실시간 검색어</small></div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-1">3</div>
+                    <div class="col-10"> <small>실시간 검색어</small></div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-1">4</div>
+                    <div class="col-10"> <small>실시간 검색어</small></div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-1">5</div>
+                    <div class="col-10"> <small>실시간 검색어</small></div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-1">6</div>
+                    <div class="col-10"> <small>실시간 검색어</small></div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-1">7</div>
+                    <div class="col-10"> <small>실시간 검색어</small></div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-1">8</div>
+                    <div class="col-10"> <small>실시간 검색어</small></div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-1">9</div>
+                    <div class="col-10"> <small>실시간 검색어</small></div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-1">10</div>
+                    <div class="col-10"> <small>실시간 검색어</small></div>
+                </div>
+                <a id="show-top" class="text-center"><i class="fas fa-chevron-up"></i></a>
+                <a id="show-all" class="text-center"> <i class="fas fa-chevron-down"></i></a>
+            </div>
+
+        </div>
+
+    </div>
+    <script type="text/javascript" th:src="@{/js/main.js}">
+    </script>
+</div>
+</body>
+</html>
+

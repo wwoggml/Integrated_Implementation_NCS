@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/layout1}">
+<head>
+    <title>RNSE</title>
+</head>
+
+<th:block layout:fragment="css">
+    <style>
+        .container {
+            min-width: 1140px;
+        }
+        .logo{
+            text-align: center;
+            margin-top: 120px;
+            margin-bottom: 40px;
+        }
+        .searchLogo{
+            position: relative;
+            margin-top: 3px;
+            margin-left: 92%;
+        }
+        .search{
+            position: relative;
+            border: 1px solid #CCCCCC;
+            border-radius: 50px;
+            width: 550px;
+            height: 45px;
+            margin-top: 20px;
+            margin: 25px auto;
+
+        }
+        .b_catergory a{
+            font-weight: 500;
+            color: black;
+        }
+
+        .category{
+            border: 2px solid #CCCCCC;
+            border-right: none;
+            border-left: none;
+            width: 100%;
+            height:40px;
+            margin-top: 55px;
+        }
+
+        .card {
+            padding: 0px !important;
+            width: 270px !important;
+            height: 400px !important;
+            border-radius: 20px !important;
+        }
+
+        .card2 {
+            width: 270px !important;
+            padding: 0px !important;
+        }
+        .card-img-top {
+            border-radius: 20px 20px 0px 0px !important;
+            height: 150px; !important;
+            width:100% !important;
+            overflow:hidden !important;
+        }
+
+        input{
+            position: relative;
+            margin: 0px 0px 20px 20px;
+            left: 15px;
+            top: 5px;
+            font-size: 15px;
+            width: 85%;
+            height: 30px;
+            border: none;
+            outline: none;
+        }
+
+        button {
+            background-color: transparent;
+            border: none;
+            position:relative;
+            right: 30px;
+            top:3px;
+        }
+        a{
+            color: black !important;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: none !important; /* 밑줄 없애기 */
+            color: black !important; /* 색상 변경 없애기 */
+        }
+
+
+
+    </style>
+</th:block>
+<div layout:fragment="content">
+    <div class="logo">
+        <a th:href="@{/}" target="_self"><img src="/img/RNSE_LOGO.png" width="272px" height="92px"></a>
+    </div>
+
+
+    <div class="search mt-3">
+        <form action="/search" method="get">
+            <input type="text" name="keyword" placeholder=" 검색어를 입력하세요" th:value="${param.keyword}">
+            <button type="submit" class="float-right"><img class="searchLogo" src="/img/search.png" width="30px" height="30px"></button>
+        </form>
+    </div>
+    <div class="container-fluid">
+        <div class="category" style="padding: 5px">
+            <div class="container">
+                <div class="row" style="text-align: center;">
+                    <b class="b_catergory col-3"><a th:href="@{/economy}" target="_self">경제</a></b>
+                    <b class="b_catergory col-3"><a th:href="@{/life_culture}" target="_self">생활/문화</a></b>
+                    <b class="b_catergory col-3"><a th:href="@{/it_science}" target="_self">IT/과학</a></b>
+                    <b class="b_catergory col-3">실시간</b>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row mt-4">
+            <div class="col">
+                <div class="card">
+                    <a th:href="@{/detail(id=374)}"><img class="card-img-top" src="https://imgnews.pstatic.net/image/417/2023/04/05/0000910137_001_20230405142501399.jpg?type=w647" alt="Card image cap"></a>
+                    <div class="card-body">
+                        <h5 class="card-title"><a th:href="@{/detail(id=374)}">삼성페이 손 잡은 네이버페이, '페이동맹' 업고 인기앱 1위 '우뚝'</a></h5>
+                        <p class="card-text"><a th:href="@{/detail(id=374)}">삼성페이 결제가 가능한 전국 300만개 오프라인 가맹점에서도 네이버페이 앱으로 현장결제가 가능해진 것이다. 앞서 지난달 23일에는 온라인 결제 영역에서 서비스를 연동했다.</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <a th:href="@{/detail(id=156)}"><img class="card-img-top" src="https://imgnews.pstatic.net/image/119/2023/04/05/0002699724_001_20230405140106842.jpeg?type=w647" alt="Card image cap"></a>
+                    <div class="card-body">
+                        <h5 class="card-title"><a th:href="@{/detail(id=156)}">‘마이크로바이옴’이 뭐길래....4000억 규모 범정부 신사업 나온다 </a> </h5>
+                        <p class="card-text"><a th:href="@{/detail(id=156)}">“마이크로바이옴은 만병통치약 수준, 많은 정부부처가 관심 가지고 투자를 진행 중이며 곧 6개 부처가 합동으로 4000억원 규모의 신규 지원 사업을 준비 중이다”</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <a th:href="@{/detail(id=18)}"><img class="card-img-top" src="https://imgnews.pstatic.net/image/009/2023/04/05/0005111859_001_20230405095701021.jpg?type=w647" alt="Card image cap"></a>
+                    <div class="card-body">
+                        <h5 class="card-title"><a th:href="@{/detail(id=18)}">유튜브로 쏠리는 고령층…OTT별 시청 콘텐츠도 ‘차이’</a></h5>
+                        <p class="card-text"><a th:href="@{/detail(id=18)}">온라인동영상서비스(OTT) 중 유튜브가 가장 높은 이용률을 나타냈다, OTT별로 보면 유튜브에서는 예능, 넷플릭스 등 나머지 플랫폼에서는 드라마를 주로 이용하는 것으로 조사됐다</a>.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+
+                <ul class="list-group">
+                    <li class="list-group-item">1. 실시간 검색어</li>
+                    <li class="list-group-item">1. 실시간 검색어</li>
+                    <li class="list-group-item">1. 실시간 검색어</li>
+                    <li class="list-group-item">1. 실시간 검색어</li>
+                    <li class="list-group-item">1. 실시간 검색어</li>
+                    <li class="list-group-item">1. 실시간 검색어</li>
+                    <li class="list-group-item">1. 실시간 검색어</li>
+                    <li class="list-group-item">1. 실시간 검색어</li>
+                    <li class="list-group-item">1. 실시간 검색어</li>
+                    <li class="list-group-item">1. 실시간 검색어</li>
+                </ul>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+</div>
+</html>
+
