@@ -173,7 +173,7 @@ public class NewsSaveController {
                 imageDesc = "";
             }
             else {
-                imageURL = imageUrl.get(0).select("img").attr("abs:data-src");
+                imageURL = imageUrl.get(0).select("img").attr("abs:src");
                 imageDesc = img_desc.get(0).text();
             }
 

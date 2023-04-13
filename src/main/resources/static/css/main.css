@@ -91,18 +91,22 @@ a:hover {
 b {
     color: black;
 }
+#sid_100_btn b,
+#sid_100_btn path {
+    color: #0288D1;
+}
 #sid_100_btn:hover b,
 #sid_100_btn:hover path,
 #sid_103_btn:hover b,
 #sid_103_btn:hover path
 {
-    color: #FFCE44 !important;
+    color: #0288D1 !important;
 }
 #sid_101_btn:hover b,
 #sid_101_btn:hover path,
 #sid_104_btn:hover b,
 #sid_104_btn:hover path {
-    color: #0288D1 !important;
+    color: #FFCE44 !important;
 }
 #sid_102_btn:hover b, #sid_102_btn:hover path{
     color: #43A047 !important;

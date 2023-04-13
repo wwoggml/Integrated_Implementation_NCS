@@ -1,3 +1,5 @@
+
+
 function showContent(contentId) {
     const contents = document.querySelectorAll('.sid');
     for (const content of contents) {
@@ -20,16 +22,15 @@ function colorReset() {
 
 document.getElementById('sid_100_btn').addEventListener('click', () => {
     colorReset();
-    debugger;
-    this.document.querySelectorAll("b")[0].style.color="#FFCE44"
-    this.document.querySelectorAll("path")[0].style.color="#FFCE44"
+    this.document.querySelectorAll("b")[0].style.color="#0288D1"
+    this.document.querySelectorAll("path")[0].style.color="#0288D1"
     showContent('sid_100');
 });
 
 document.getElementById('sid_101_btn').addEventListener('click', () => {
     colorReset();
-    this.document.querySelectorAll("b")[1].style.color="#0288D1"
-    this.document.querySelectorAll("path")[1].style.color="#0288D1"
+    this.document.querySelectorAll("b")[1].style.color="#FFCE44"
+    this.document.querySelectorAll("path")[1].style.color="#FFCE44"
     showContent('sid_101');
 });
 
@@ -42,15 +43,15 @@ document.getElementById('sid_102_btn').addEventListener('click', () => {
 
 document.getElementById('sid_103_btn').addEventListener('click', () => {
     colorReset();
-    this.document.querySelectorAll("b")[3].style.color="#FFCE44"
-    this.document.querySelectorAll("path")[3].style.color="#FFCE44"
+    this.document.querySelectorAll("b")[3].style.color="#0288D1"
+    this.document.querySelectorAll("path")[3].style.color="#0288D1"
     showContent('sid_103');
 });
 
 document.getElementById('sid_104_btn').addEventListener('click', () => {
     colorReset();
-    this.document.querySelectorAll("b")[4].style.color="#0288D1"
-    this.document.querySelectorAll("path")[4].style.color="#0288D1"
+    this.document.querySelectorAll("b")[4].style.color="#FFCE44"
+    this.document.querySelectorAll("path")[4].style.color="#FFCE44"
     showContent('sid_104');
 });
 
