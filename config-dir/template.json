@@ -27,6 +27,12 @@
         "my_stop_filter": {
           "type": "stop",
           "ignore_case": true,
+          "stoptags": [
+            "E", "IC", "J", "MAG", "MAJ",
+            "MM", "SP", "SSC", "SSO", "SC",
+            "SE", "XPN", "XSA", "XSN", "XSV",
+            "UNA", "NA", "VSV"
+          ],
           "stopwords_path": "/usr/share/elasticsearch/config/stopwords.txt"
         },
         "my_nori_filter": {
