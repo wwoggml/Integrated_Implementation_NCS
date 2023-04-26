@@ -10,9 +10,15 @@ services:
       - discovery.type=single-node
     ports:
       - 9200:9200
+    volumes:
+      - ./config-dir/stopwords.txt:/usr/share/elasticsearch/config/stopwords.txt
+    command: >
+      bash -c "
+        elasticsearch-plugin install analysis-nori;
+        /usr/local/bin/docker-entrypoint.sh elasticsearch
+      "
     networks:
       - es-bridge
-
   kibana:
     container_name: kibana
     image: kibana:7.17.9
@@ -34,9 +40,11 @@ services:
       - host.docker.internal:host-gateway
     volumes:
       - ./config-dir:/config-dir
+      - ./config-dir/stopwords.txt:/usr/share/elasticsearch/config/stopwords.txt
     command: logstash -f /config-dir/logstash.conf
 
 networks:
   es-bridge:
     driver: bridge
+
 

@@ -19,10 +19,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-<<<<<<< HEAD
 import org.springframework.web.bind.annotation.RestController;
-=======
->>>>>>> ae83bdfe42b2f39fd5bd1704ee862b2e2897a83f
 
 import javax.servlet.http.HttpServletRequest;
 import java.io.UnsupportedEncodingException;
@@ -117,7 +114,6 @@ public class SearchController {
         return "SearchMain";
     }
 
-<<<<<<< HEAD
     @GetMapping("/economy")
     public String Economy(HttpServletRequest httpServletRequest, Model model,
                            @RequestParam(defaultValue = "10") int size,
@@ -156,18 +152,17 @@ public class SearchController {
         Pageable pageable = PageRequest.of(page - 1, size);
         Page<News> list = newsService.searchCategory("IT/과학", pageable);
 
-        model.addAttribute("list",list);
+        model.addAttribute("list", list);
         model.addAttribute("currentPage", page);
         model.addAttribute("totalPages", list.getTotalPages());
 
         return "SearchCategory3";
-=======
+    }
 
     @GetMapping("/test2")
     public String test(Model model) {
         List<News> news = newsRepository.findByKeywordOrderByDatetimeDesc("네이버");
         model.addAttribute("news", news);
         return "SearchResult2";
->>>>>>> ae83bdfe42b2f39fd5bd1704ee862b2e2897a83f
     }
 }
