@@ -21,7 +21,7 @@
       "filter": {
         "my_char_filter": {
           "type": "pattern_replace",
-          "pattern": "[\\p{Alpha}\\p{Digit}]+",
+          "pattern": "[\\p{Digit}]+",
           "replacement": "은"
         },
         "my_stop_filter": {

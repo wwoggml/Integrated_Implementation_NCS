@@ -112,3 +112,115 @@ showAllButton.addEventListener('click', function() {
     showTopButton.style.margin = "0 auto;"
     this.style.display = 'none';
 });
+
+// anychart.onDocumentReady(function () {
+//     var data = [
+//         {
+//             "x": "IT",
+//             "value": 590000000,
+//             category: "Sino-Tibetan"
+//         },
+//         {
+//             "x": "Python",
+//             "value": 283000000,
+//             category: "Indo-European"
+//         },
+//         {
+//             "x": "소프트웨어",
+//             "value": 544000000,
+//             category: "Indo-European"
+//         },
+//         {
+//             "x": "JAVA",
+//             "value": 527000000,
+//             category: "Indo-European"
+//         }, {
+//             "x": "C++",
+//             "value": 422000000,
+//             category: "Afro-Asiatic"
+//         }, {
+//             "x": "HTML",
+//             "value": 620000000,
+//             category: "Afro-Asiatic"
+//         }
+//     ];
+//     var chart = anychart.tagCloud(data);
+//     chart.angles([0]);
+//     chart.container("container");
+//     // chart.getCredits().setEnabled(false);
+//     chart.draw();
+//     chart.getCredits().setEnabled(false);
+// });
+// var data = [
+//     {x: "learning", value: 80},
+//     {x: "includes", value: 56},
+//     {x: "lists", value: 44},
+//     {x: "meaning", value: 40},
+//     {x: "useful", value: 36},
+//     {x: "different", value: 32}
+// ];
+//
+// // create a chart and set the data
+// chart = anychart.tagCloud(data);
+//
+// chart.mode("cards");
+//
+// // set the container id
+// chart.container("container");
+//
+// // initiate drawing the chart
+// chart.draw();
+
+// anychart.onDocumentReady(function () {
+//
+//     // create data
+//     var data = "Tyger, tyger, burning bright " +
+//         "In the forests of the night, " +
+//         "What immortal hand or eye " +
+//         "Could frame thy fearful symmetry? " +
+//         "In what distant deeps or skies " +
+//         "Burnt the fire of thine eyes? " +
+//         "On what wings dare he aspire? " +
+//         "What the hand dare seize the fire? " +
+//         "And what shoulder and what art " +
+//         "Could twist the sinews of thy heart? " +
+//         "And, when thy heart began to beat, " +
+//         "What dread hand and what dread feet? " +
+//         "What the hammer? what the chain? " +
+//         "In what furnace was thy brain? " +
+//         "What the anvil? what dread grasp " +
+//         "Dare its deadly terrors clasp? " +
+//         "When the stars threw down their spears, " +
+//         "And watered heaven with their tears, " +
+//         "Did He smile His work to see? " +
+//         "Did He who made the lamb make thee? " +
+//         "Tyger, tyger, burning bright " +
+//         "In the forests of the night, " +
+//         "What immortal hand or eye " +
+//         "Dare frame thy fearful symmetry? ";
+//
+//     // create a chart
+//     chart = anychart.tagCloud();
+//
+//     // configure angles
+//     chart.angles([0]);
+//
+//     // set the parsing mode
+//     chart.data(data, {mode: "by-word"});
+//
+//     // set the chart title
+//     chart.listen("chartDraw", function () {
+//         chart.title("Tag Cloud Chart: Mode = " +  chart.mode());
+//     });
+//
+//     // set the container id
+//     chart.container("container");
+//
+//     // initiate drawing the chart
+//     chart.draw();
+// });
+//
+// // set the mode of the tag cloud
+// function tagCloudMode(mode) {
+//     chart.mode(mode);
+//}
