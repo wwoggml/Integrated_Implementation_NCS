@@ -34,7 +34,4 @@ public interface NewsRepository extends JpaRepository<News, Long> {
     @Query("SELECT n FROM News n WHERE (n.title LIKE %:keyword% OR n.text LIKE %:keyword%) ORDER BY CAST(n.datetime AS timestamp) ASC ")
     Page<News> findByKeywordOrderByDatetimeAsc(@Param("keyword") String keyword, Pageable pageable);
 
-    List<News> findByKeywordOrderByDatetimeDesc(String 네이버);
 }
-
-

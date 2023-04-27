@@ -46,13 +46,16 @@ tag.addEventListener("click", () => {
 
 pie.addEventListener("click", () => {
     if(pie.checked) {
-        document.getElementById('container').innerHTML="";
+        document.getElementById('container').innerHTML = ""
     }
 });
 
 bar.addEventListener("click", () => {
     if(bar.checked) {
-        document.getElementById('container').innerHTML="";
+        chart = anychart.bar(data);
+        // set the container id
+        chart.container("container");
+        chart.draw();
     }
 });
 

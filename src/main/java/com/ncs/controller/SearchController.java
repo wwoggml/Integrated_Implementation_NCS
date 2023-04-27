@@ -15,7 +15,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
 import javax.servlet.http.HttpServletRequest;
 import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
@@ -111,55 +110,6 @@ public class SearchController {
         return "NewsDetailPage";
     }
 
-    @GetMapping("/economy")
-    public String Economy(HttpServletRequest httpServletRequest, Model model,
-                           @RequestParam(defaultValue = "10") int size,
-                           @RequestParam(value = "page", defaultValue = "1") int page) {
 
-        Pageable pageable = PageRequest.of(page - 1, size);
-        Page<News> list = newsService.searchCategory("경제", pageable);
 
-        model.addAttribute("list",list);
-        model.addAttribute("currentPage", page);
-        model.addAttribute("totalPages", list.getTotalPages());
-
-        return "SearchCategory1";
-    }
-
-    @GetMapping("/life_culture")
-    public String Life_culture(HttpServletRequest httpServletRequest, Model model,
-                           @RequestParam(defaultValue = "10") int size,
-                           @RequestParam(value = "page", defaultValue = "1") int page) {
-
-        Pageable pageable = PageRequest.of(page - 1, size);
-        Page<News> list = newsService.searchCategory("생활/문화", pageable);
-
-        model.addAttribute("list",list);
-        model.addAttribute("currentPage", page);
-        model.addAttribute("totalPages", list.getTotalPages());
-
-        return "SearchCategory2";
-    }
-
-    @GetMapping("/it_science")
-    public String It_Science(HttpServletRequest httpServletRequest, Model model,
-                               @RequestParam(defaultValue = "10") int size,
-                               @RequestParam(value = "page", defaultValue = "1") int page) {
-
-        Pageable pageable = PageRequest.of(page - 1, size);
-        Page<News> list = newsService.searchCategory("IT/과학", pageable);
-
-        model.addAttribute("list", list);
-        model.addAttribute("currentPage", page);
-        model.addAttribute("totalPages", list.getTotalPages());
-
-        return "SearchCategory3";
-    }
-
-    @GetMapping("/test2")
-    public String test(Model model) {
-        List<News> news = newsRepository.findByKeywordOrderByDatetimeDesc("네이버");
-        model.addAttribute("news", news);
-        return "SearchResult2";
-    }
 }
