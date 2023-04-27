@@ -3,62 +3,11 @@
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns="http://www.w3.org/1999/html"
       layout:decorate="~{layouts/layout1}">
 
-<th:block layout:fragment="css">
-  <style>
-    .container {
-      min-width: 1140px;
-    }
-    input{
-      position: relative;
-      margin: 0px 0px 20px 20px;
-      left: 15px;
-      top: 7px;
-      font-size: 15px;
-      width: 85%;
-      height: 30px;
-      border: none;
-      outline: none;
-    }
-    .search{
-      position: relative;
-      border: 1px solid #CCCCCC;
-      border-radius: 50px;
-      width: 300px;
-      height: 45px;
-      margin-top: 20px;
-      margin: 25px auto;
-      left: 530px;
-
-    }
-
-    .category {
-      padding: 30px;
-    }
-    button {
-      background-color: transparent;
-      border: none;
-      position:relative;
-      right: 10px;
-      top:5px;
-    }
-
-
-    .logo_image {
-      width: 100px;
-      position: relative;
-      top: 25px;
-    }
-
-
-    .article-image {
-      text-align: center;
-    }
-
-    a:link{color:black; font-weight: bolder; text-decoration-line: none;}
-
-
-  </style>
-</th:block>
+<head>
+  <meta charset="UTF-8">
+  <title>RNSE</title>
+  <link th:href="@{/css/detailpage.css}" rel="stylesheet" />
+</head>
 <div layout:fragment="content">
   <div class="container">
     <div class="row">
@@ -89,7 +38,8 @@
         </div>
         <div class="article-content">
           <div class="article-image m-5">
-            <img th:src="${newsDetail.get(0).imageURL}" onerror="this.style.display='none'" alt="Article Image">
+            <img th:src="${newsDetail.get(0).imageURL}" onerror="this.style.display='none'" alt="Article Image"><br>
+            <small class="text-center" th:text="${newsDetail.get(0).img_desc}" onerror="this.style.display='none'"></small>
           </div>
           <div class="article-text">
             <p th:text="${newsDetail.get(0).text}" class="newsMain"></p>
@@ -100,12 +50,12 @@
         <div class="row mt-2">
           <div class="col-1"></div>
           <div class="col-11">
-            <h6><b>생활/문화</b> <i class="fas fa-angle-right float-right text-secondary mr-2"></i></h6>
-            <div class="row mt-3" th:each="culture : ${cultureCategory}">
-              <div class="col-8 mt-1"> <a th:href="@{/detail(id=${culture.id})}"> <small th:text="${culture.title}">봄나들이 좋은 맑은 날씨…미세먼지도 오후 해소</small></a></div>
+            <h6><a th:href="@{/category(sid=100)}"><b>정치</b><i class="fas fa-angle-right float-right text-secondary mr-2"></i></a></h6>
+            <div class="row mt-3" th:each="politic : ${politicsCategory}">
+              <div class="col-8 mt-1"> <a th:href="@{/detail(id=${politic.id})}"> <small th:text="${politic.title}">봄나들이 좋은 맑은 날씨…미세먼지도 오후 해소</small></a></div>
               <div class="col-4">
-                <a th:href="@{/detail(id=${culture.id})}"><img th:if="${culture.imageURL != ''}" th:src="@{${culture.imageURL}}" style="width: 100%; height: 55px"></a>
-                  <a th:href="@{/detail(id=${culture.id})}"><img th:if="${culture.imageURL == ''}" th:src="@{/img/image.png}" style="width: 100%; height: 55px"></a>
+                <a th:href="@{/detail(id=${politic.id})}"><img th:if="${politic.imageURL != ''}" th:src="@{${politic.imageURL}}" style="width: 100%; height: 55px"></a>
+                  <a th:href="@{/detail(id=${politic.id})}"><img th:if="${politic.imageURL == ''}" th:src="@{/img/white.png}" style="width: 100%; height: 55px"></a>
               </div>
             </div>
             <hr>
@@ -115,12 +65,42 @@
         <div class="row mt-3">
           <div class="col-1"></div>
           <div class="col-11">
-            <h6><b>경제</b> <i class="fas fa-angle-right float-right text-secondary mr-2"></i></h6>
+            <h6><a th:href="@{/category(sid=101)}"><b>경제</b> <i class="fas fa-angle-right float-right text-secondary mr-2"></i></a></h6>
             <div class="row mt-3" th:each="economy : ${economyCategory}">
               <div class="col-8 mt-1"><a th:href="@{/detail(id=${economy.id})}"> <small th:text="${economy.title}">HMM 주총, 개미들 '성토의 장'됐다…김경배 사장 "자사주 매입 검토</small></a></div>
               <div class="col-4">
                 <a th:href="@{/detail(id=${economy.id})}"><img th:if="${economy.imageURL != ''}" th:src="@{${economy.imageURL}}" style="width: 100%; height: 55px"></a>
-                  <a th:href="@{/detail(id=${economy.id})}"><img th:if="${economy.imageURL == ''}" th:src="@{/img/image.png}" style="width: 100%; height: 55px"></a>
+                  <a th:href="@{/detail(id=${economy.id})}"><img th:if="${economy.imageURL == ''}" th:src="@{/img/white.png}" style="width: 100%; height: 55px"></a>
+              </div>
+            </div>
+            <hr>
+          </div>
+
+        </div>
+        <div class="row mt-2">
+          <div class="col-1"></div>
+          <div class="col-11">
+            <h6><a th:href="@{/category(sid=102)}"><b>스포츠</b><i class="fas fa-angle-right float-right text-secondary mr-2"></i></a></h6>
+            <div class="row mt-3" th:each="sports : ${sportsCategory}">
+              <div class="col-8 mt-1"> <a th:href="@{/detail(id=${sports.id})}"> <small th:text="${sports.title}">봄나들이 좋은 맑은 날씨…미세먼지도 오후 해소</small></a></div>
+              <div class="col-4">
+                <a th:href="@{/detail(id=${sports.id})}"><img th:if="${sports.imageURL != ''}" th:src="@{${sports.imageURL}}" style="width: 100%; height: 55px"></a>
+                <a th:href="@{/detail(id=${sports.id})}"><img th:if="${sports.imageURL == ''}" th:src="@{/img/white.png}" style="width: 100%; height: 55px"></a>
+              </div>
+            </div>
+            <hr>
+          </div>
+
+        </div>
+        <div class="row mt-2">
+          <div class="col-1"></div>
+          <div class="col-11">
+            <h6><a th:href="@{/category(sid=103)}"><b>생활/문화</b><i class="fas fa-angle-right float-right text-secondary mr-2"></i></a></h6>
+            <div class="row mt-3" th:each="culture : ${cultureCategory}">
+              <div class="col-8 mt-1"> <a th:href="@{/detail(id=${culture.id})}"> <small th:text="${culture.title}">봄나들이 좋은 맑은 날씨…미세먼지도 오후 해소</small></a></div>
+              <div class="col-4">
+                <a th:href="@{/detail(id=${culture.id})}"><img th:if="${culture.imageURL != ''}" th:src="@{${culture.imageURL}}" style="width: 100%; height: 55px"></a>
+                <a th:href="@{/detail(id=${culture.id})}"><img th:if="${culture.imageURL == ''}" th:src="@{/img/white.png}" style="width: 100%; height: 55px"></a>
               </div>
             </div>
             <hr>
@@ -130,18 +110,19 @@
         <div class="row mt-3">
           <div class="col-1"></div>
           <div class="col-11">
-            <h6><b>IT/과학</b> <i class="fas fa-angle-right float-right text-secondary mr-2"></i></h6>
+            <h6><a th:href="@{/category(sid=104)}"><b>IT/과학</b> <i class="fas fa-angle-right float-right text-secondary mr-2"></i></a></h6>
             <div class="row mt-3" th:each="it : ${itCategory}">
               <div class="col-8 mt-1"> <a th:href="@{/detail(id=${it.id})}"><small th:text="${it.title}">KT 이사 단 1명…"새 대표 선임, 최소 5개월</small></a></div>
               <div class="col-4">
                 <a th:href="@{/detail(id=${it.id})}"><img th:if="${it.imageURL != ''}" th:src="@{${it.imageURL}}" style="width: 100%; height: 55px"></a>
-                <a th:href="@{/detail(id=${it.id})}"><img th:if="${it.imageURL == ''}" th:src="@{/img/image.png}" style="width: 100%; height: 55px"></a>
+                <a th:href="@{/detail(id=${it.id})}"><img th:if="${it.imageURL == ''}" th:src="@{/img/white.png}" style="width: 100%; height: 55px"></a>
               </div>
             </div>
             <hr>
           </div>
 
         </div>
+
         <div class="row mt-5">
           <div class="col-1"></div>
           <div class="col-11">
@@ -175,28 +156,6 @@
       </div>
     </div>
   </div>
-
-  <script th:inline="javascript">
-    let datetime = document.querySelector('.datetime');
-
-    let dateChangeStr;
-    dateChangeStr = datetime.innerText.split('T')[0].replaceAll('-','.') + " ";
-    if(Number(datetime.innerText.split('T')[1].split('+')[0].split(':')[0]) > 12) {
-      dateChangeStr += " 오후  " + (Number(datetime.innerText.split('T')[1].split('+')[0].split(':')[0]) - 12) + '시' + datetime.innerText.split('T')[1].split('+')[0].split(':')[1] + '분'
-    } else if(Number(datetime.innerText.split('T')[1].split('+')[0].split(':')[0]) == 12) {
-      dateChangeStr += " 오후  " + (Number(datetime.innerText.split('T')[1].split('+')[0].split(':')[0])) + '시' + datetime.innerText.split('T')[1].split('+')[0].split(':')[1] + '분'
-    } else {
-      dateChangeStr += " 오전  " + (Number(datetime.innerText.split('T')[1].split('+')[0].split(':')[0])) + '시' + datetime.innerText.split('T')[1].split('+')[0].split(':')[1] + '분'
-    }
-
-    datetime.innerText = dateChangeStr;
-
-    let news_text = document.querySelector('.newsMain');
-    let news_textStr;
-    let news_textSize = news_text.innerText.split('.').length;
-    news_text.innerText.split('.')
-    news_textStr = news_text.innerText.split('.')[0] + "<br><br>"  + news_text.innerText.split('.').slice(1,news_textSize/4) + "<br><br>" + news_text.innerText.split('.').slice(news_textSize/4+1,news_textSize/2) + "<br><br>" + news_text.innerText.split('.').slice(news_textSize/2+1,news_textSize - 1)
-    news_text.innerHTML = news_textStr;
-  </script>
+  <script type="text/javascript" th:src="@{/js/detailpage.js}"></script>
 </div>
 </html>

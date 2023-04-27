@@ -1,0 +1,60 @@
+.container {
+    min-width: 1140px;
+}
+.logo_image {
+    width: 100px;
+    position: relative;
+    top: 20px;
+}
+input{
+    position: relative;
+    margin: 0px 0px 20px 20px;
+    left: 15px;
+    top: 7px;
+    font-size: 15px;
+    width: 85%;
+    height: 30px;
+    border: none;
+    outline: none;
+}
+.search{
+    position: relative;
+    border: 1px solid #CCCCCC;
+    border-radius: 50px;
+    width: 550px;
+    height: 45px;
+    margin-top: 20px;
+    margin: 25px auto;
+    box-shadow: 0 1px 6px 0 rgba(32, 33, 36, 0.28), 0 1px 2px 0 rgba(32, 33, 36, 0.2);
+}
+
+button {
+    background-color: transparent;
+    border: none;
+    position:relative;
+    right: 10px;
+    top:5px;
+}
+
+.searchResult {
+    margin-top: 40px;
+    margin-bottom: 50px;
+}
+
+.paging {
+    display: flex;
+    justify-content: center;
+}
+
+.h5, .summary, .summary:hover {
+    text-decoration-line: none;
+    color:black;
+}
+.sort {
+    color: grey;
+}
+
+/* 마우스 오버 링크 스타일 */
+a:hover {
+    color: black !important;
+}

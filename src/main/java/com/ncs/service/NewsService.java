@@ -22,6 +22,7 @@ import org.springframework.data.elasticsearch.core.ElasticsearchOperations;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 
@@ -86,11 +87,26 @@ public class NewsService {
         return list;
     }
 
-    public List<News> getTwoEntities(String category) {
-        List<News> resultList = newsRepository.findTop2ByCategory(category);
+    public List<News> getOneEntities(String category) {
+        List<News> resultList = newsRepository.findTop1ByCategory(category);
         return resultList;
     }
 
+    public List<News> getFiveEntities(String category) {
+        List<News> resultList = newsRepository.findTop5ByCategory(category);
+        return resultList;
+    }
+
+    public Page<News> getNews(String keyword, Pageable pageable) {
+        return newsRepository.findByKeyword(keyword, pageable);
+    }
+    public Page<News> getSortDesc(String keyword, Pageable pageable) {
+        return newsRepository.findByKeywordOrderByDatetimeDesc(keyword, pageable);
+    }
+
+    public Page<News> getSortAsc(String keyword, Pageable pageable) {
+        return newsRepository.findByKeywordOrderByDatetimeAsc(keyword, pageable);
+    }
 }
 
 

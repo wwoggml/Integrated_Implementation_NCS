@@ -1,32 +1,48 @@
 # 구현 현황
-#### 1. 메인 페이지 이동
-==> http://localhost:8080 
+
+**스포츠 카테고리 추가**
+
+<br>
+
+#### 1. elasticsearch, kibana, logstash 설치
+
+* docker-compose.yml 파일이 있는 위치에서 `docker-compose up -d` 명령어 실행
+* `docker ps` 로 elasticsearch, kibana, logstash가 모두 실행 중인지 확인한 후 프로젝트 RUN
+
+<br>
 
 
 <br>
 
-#### 2. https://news.naver.com/main/main.naver?mode=LSD&mid=shm&sid1=105, https://news.naver.com/main/main.naver?mode=LSD&mid=shm&sid1=103, https://news.naver.com/main/main.naver?mode=LSD&mid=shm&sid1=101
-에 있는 뉴스기사 크롤링한 예제
-==> localhost:8080/news/search -> localhost:8080/news/add -> localhost:8080/news/result  
+#### 2. 데이터 추가하기
+==> localhost:8080/news/search 
+
+정치 : https://news.naver.com/main/main.naver?mode=LSD&mid=shm&sid1=100
+
+경제 : https://news.naver.com/main/main.naver?mode=LSD&mid=shm&sid1=101
+
+생활/문화 : https://news.naver.com/main/main.naver?mode=LSD&mid=shm&sid1=103
+
+IT/과학 : https://news.naver.com/main/main.naver?mode=LSD&mid=shm&sid1=105
+
+스포츠 
+* https://sports.news.naver.com/kbaseball/index
+* https://sports.news.naver.com/kfootball/index
+* https://sports.news.naver.com/basketball/index
+* https://sports.news.naver.com/volleyball/index
+* https://sports.news.naver.com/golf/index
+* https://sports.news.naver.com/general/index
+
 
 <br>
 
-#### 3. Naver Api 구현 샘플 코드 (키워드 입력)
-==> http://localhost:8080/api
-
-
 <br>
 
-#### 4. 텍스트 마이닝 구현 샘플 코드 
-==> http://localhost:8080/mining
 
+#### 3. 메인 페이지 이동
+==> http://localhost:8080
 
-<br>
-
-#### 5. elasticsearch 검색 샘플 코드
-==> localhost:8080/search
-
-
-
-
+* 메인 페이지에서 카테고리로 이동 가능
+* 키워드 검색 가능
+* 카테고리 추기
 

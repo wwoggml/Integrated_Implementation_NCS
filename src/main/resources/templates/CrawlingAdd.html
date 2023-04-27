@@ -11,16 +11,14 @@
 
   <h3>크롤링 테스트</h3>
 
+  <ul>
+    <li>Input 창에 네이버 뉴스 기사 URL 입력</li>
+  </ul>
 
-  <div class="row" th:each="dto : ${newsDtoListlist}">
-    <div class="col-md-2">
-      <dt><img th:src="${dto.imageURL}" onerror="this.style.display='none'" style="width: 100px;height: 70px"></dt>
-    </div>
-    <div class="col-md-10">
-      <dt th:text="${dto.title}"></dt>
-      <dd th:text="${dto.reporter}"></dd>
-    </div>
-  </div>
+  <form action="/news/save" method="post" style="width: 100%">
+    <input type="text" name="url" placeholder="URL 입력" style="width: 70%">
+    <button type="submit" style="width: 20%">검색</button>
+  </form>
 </div>
 </body>
 </html>

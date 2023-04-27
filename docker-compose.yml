@@ -19,6 +19,7 @@ services:
       "
     networks:
       - es-bridge
+
   kibana:
     container_name: kibana
     image: kibana:7.17.9
