@@ -48,12 +48,20 @@ pie.addEventListener("click", () => {
     if(pie.checked) {
         document.getElementById('container').innerHTML = ""
     }
+    if (pie.checked) {
+        chart.dispose(); // Clear the container
+        chart = anychart.pie(data); // Create a new pie chart
+        chart.container("container");
+        chart.draw();
+    }
 });
 
 bar.addEventListener("click", () => {
     if(bar.checked) {
+        document.getElementById('container').innerHTML = ""
+
+        chart.dispose();
         chart = anychart.bar(data);
-        // set the container id
         chart.container("container");
         chart.draw();
     }
