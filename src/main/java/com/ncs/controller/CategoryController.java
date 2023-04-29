@@ -127,7 +127,7 @@ public class CategoryController {
         searchSourceBuilder.aggregation(
                 AggregationBuilders.terms("top_words")
                         .field("text")
-                        .size(100)
+                        .size(50)
                         .order(BucketOrder.count(false))
         );
 

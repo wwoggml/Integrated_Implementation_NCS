@@ -21,34 +21,29 @@ const pie = document.getElementById('primary-outlined');
 const bar = document.getElementById('warning-outlined');
 const tag = document.getElementById('success-outlined');
 
-debugger;
-chart = anychart.tagCloud(data);
-chart.angles([0]);
-// set the container id
+chart = anychart.pie(data); // Create a new pie chart
 chart.container("container");
 chart.draw();
 
 tag.addEventListener("click", () => {
     if(tag.checked) {
-        if(document.getElementById('container').innerHTML != "") {
-            return;
-        }
-        else {
-            chart = anychart.tagCloud(data);
-            chart.angles([0]);
-            // set the container id
-            chart.container("container");
-            chart.draw();
-        }
+        document.getElementById('container').innerHTML = "";
+
+        chart = anychart.tagCloud(data);
+        chart.angles([0]);
+        chart.container("container");
+        chart.draw();
+
     }
 });
 
 
 pie.addEventListener("click", () => {
-    if(pie.checked) {
-        document.getElementById('container').innerHTML = ""
-    }
+
+
     if (pie.checked) {
+        document.getElementById('container').innerHTML = ""
+
         chart.dispose(); // Clear the container
         chart = anychart.pie(data); // Create a new pie chart
         chart.container("container");
