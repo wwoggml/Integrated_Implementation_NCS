@@ -32,20 +32,33 @@
         </div>
         <div class="main">
             <div class="category" id="category">
-                <div class="category-name"><a th:href="@{/category/keyword(sid=100)}" id="sid_100" target="_self">정치</a></div>
-                <div class="category-name"><a th:href="@{/category/keyword(sid=101)}" id="sid_101" target="_self">경제</a></div>
-                <div class="category-name"><a th:href="@{/category/keyword(sid=102)}" id="sid_102" target="_self">스포츠</a></div>
-                <div class="category-name"><a th:href="@{/category/keyword(sid=103)}" id="sid_103" target="_self">생활/문화</a></div>
-                <div class="category-name"><a th:href="@{/category/keyword(sid=104)}" id="sid_104" target="_self">IT/과학</a></div>
+                <div class="category-name"><a th:href="@{/category/keyword(size=${param.size},sid=100)}" id="sid_100" target="_self">정치</a></div>
+                <div class="category-name"><a th:href="@{/category/keyword(size=${param.size},sid=101)}" id="sid_101" target="_self">경제</a></div>
+                <div class="category-name"><a th:href="@{/category/keyword(size=${param.size},sid=102)}" id="sid_102" target="_self">스포츠</a></div>
+                <div class="category-name"><a th:href="@{/category/keyword(size=${param.size},sid=103)}" id="sid_103" target="_self">생활/문화</a></div>
+                <div class="category-name"><a th:href="@{/category/keyword(size=${param.size},sid=104)}" id="sid_104" target="_self">IT/과학</a></div>
             </div>
 
-            <div class="mt-3 float-right">
-                <input type="radio" class="btn-check" name="options-outlined" id="primary-outlined" autocomplete="off" checked>
-                <label class="btn btn-outline-primary rounded-pill m-2" for="primary-outlined">Pie</label>
-                <input type="radio" class="btn-check" name="options-outlined" id="warning-outlined" autocomplete="off">
-                <label class="btn btn-outline-warning rounded-pill m-2" for="warning-outlined">Horizontal bar</label>
-                <input type="radio" class="btn-check" name="options-outlined" id="success-outlined" autocomplete="off">
-                <label class="btn btn-outline-success rounded-pill m-2" for="success-outlined">Tag cloud</label>
+            <div class="">
+                <form th:action="@{/category/keyword}" method="get">
+                    <div class="mt-3 float-left">
+                        <input type="hidden" name="sid" th:value="${param.sid}">
+                        <div class="input-group mb-3">
+                            <input type="text" class="form-control" name="size" placeholder="ex) 50" th:value="${param.size}">
+                            <div class="input-group-append">
+                                <button  type="submit" class="btn btn-outline-secondary">변경</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                    <div class="mt-3 float-right">
+                        <input type="radio" class="btn-check" name="options-outlined" id="primary-outlined" autocomplete="off" checked>
+                        <label class="btn btn-outline-primary rounded-pill m-2" for="primary-outlined">Pie</label>
+                        <input type="radio" class="btn-check" name="options-outlined" id="warning-outlined" autocomplete="off">
+                        <label class="btn btn-outline-warning rounded-pill m-2" for="warning-outlined">Horizontal bar</label>
+                        <input type="radio" class="btn-check" name="options-outlined" id="success-outlined" autocomplete="off">
+                        <label class="btn btn-outline-success rounded-pill m-2" for="success-outlined">Tag cloud</label>
+                    </div>
             </div>
             <input type="hidden" id="jsonData" th:value="${jsonArray}">
             <div class="result">

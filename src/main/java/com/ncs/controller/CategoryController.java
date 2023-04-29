@@ -78,6 +78,7 @@ public class CategoryController {
                                @RequestParam(defaultValue = "10") int size,
                                @RequestParam(value = "page", defaultValue = "1") int page) {
 
+
         Pageable pageable = PageRequest.of(page - 1, size);
         Page<News> list = newsService.searchCategory("생활/문화", pageable);
 
@@ -104,10 +105,9 @@ public class CategoryController {
     }
 
     @GetMapping("/category/keyword")
-    public String CategoryKeyword(@RequestParam(defaultValue = "100") int sid, Model model) throws IOException {
+    public String CategoryKeyword(@RequestParam(defaultValue = "50") int size, @RequestParam(defaultValue = "100") int sid, Model model) throws IOException {
         RestClientBuilder builder = RestClient.builder(
                 new HttpHost("localhost", 9200, "http"));
-
         RestHighLevelClient client = new RestHighLevelClient(builder);
 
 
@@ -127,7 +127,7 @@ public class CategoryController {
         searchSourceBuilder.aggregation(
                 AggregationBuilders.terms("top_words")
                         .field("text")
-                        .size(50)
+                        .size(size)
                         .order(BucketOrder.count(false))
         );
 
