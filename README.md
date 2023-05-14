@@ -1,6 +1,12 @@
 # 구현 현황
 
-**스포츠 카테고리 추가**
+**실시간 기능 구현 코드**
+* entiy - TopKeyword 
+* repository - TopKeywordRepository
+* service - TopKeywordService
+* controller - TopKeywordController, SearchController
+* dto - TopKeywordDto
+* main.js, main.html 
 
 <br>
 

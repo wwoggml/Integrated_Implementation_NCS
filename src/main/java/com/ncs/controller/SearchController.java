@@ -1,10 +1,13 @@
 package com.ncs.controller;
 
 
+import com.ncs.dto.TopKeywordDto;
 import com.ncs.elasticsearch.NewsDocumentRepository;
 import com.ncs.entity.News;
 import com.ncs.repository.NewsRepository;
+import com.ncs.repository.TopKeywordRepository;
 import com.ncs.service.NewsService;
+import com.ncs.service.TopKeywordService;
 import lombok.extern.log4j.Log4j2;
 import org.elasticsearch.client.RestHighLevelClient;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +22,8 @@ import javax.servlet.http.HttpServletRequest;
 import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
 import java.net.URLEncoder;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 @Log4j2
@@ -33,6 +38,12 @@ public class SearchController {
 
     @Autowired
     private NewsRepository newsRepository;
+
+    @Autowired
+    private TopKeywordRepository topKeywordRepository;
+
+    @Autowired
+    TopKeywordService topKeywordService;
     @Autowired
     NewsService newsService;
 
@@ -40,12 +51,18 @@ public class SearchController {
     public String SearchURL() {
         return "CrawlingAdd";
     }
+
     @GetMapping("/search")
     public String test(HttpServletRequest httpServletRequest, Model model,
                        @RequestParam(defaultValue = "10") int size,
                        @RequestParam(defaultValue = "1") int sort,
                        @RequestParam(value = "page", defaultValue = "1") int page) throws UnsupportedEncodingException {
         String keyword = httpServletRequest.getParameter("keyword");
+
+        TopKeywordDto topKeywordDto = new TopKeywordDto();
+
+
+        topKeywordService.saveSearchKeyword(keyword);
 
         try {
             // URL 디코딩 수행
