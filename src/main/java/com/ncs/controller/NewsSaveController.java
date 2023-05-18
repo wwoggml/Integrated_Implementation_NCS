@@ -97,14 +97,12 @@ public class NewsSaveController {
 
                 String dateString = date.text().split(" ")[0] + " " + date.text().split(" ")[1] + " " + date.text().split(" ")[2];
 
-
-                SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy.MM.dd. a hh:mm");
+                SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy.MM.dd. a hh:mm", Locale.KOREAN);
                 Date timestamp = dateFormat.parse(dateString);
 
                 DateTimeFormatter formatter = DateTimeFormatter.ofPattern("EEE MMM dd HH:mm:ss zzz yyyy", Locale.ENGLISH);
                 ZonedDateTime dateTime = ZonedDateTime.parse(timestamp.toString(), formatter);
                 String iso8601String = dateTime.toOffsetDateTime().toString();
-
 
 
                 newsDto.setUrl((String) URL);
@@ -178,7 +176,7 @@ public class NewsSaveController {
             }
 
             String dateString = date.text().split(" ")[1] + " " + date.text().split(" ")[2] + " " + date.text().split(" ")[3];
-            SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy.MM.dd. a hh:mm");
+            SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy.MM.dd. a hh:mm", Locale.KOREAN);
             Date timestamp = dateFormat.parse(dateString);
 
             DateTimeFormatter formatter = DateTimeFormatter.ofPattern("EEE MMM dd HH:mm:ss zzz yyyy", Locale.ENGLISH);

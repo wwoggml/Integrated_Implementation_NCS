@@ -107,7 +107,8 @@ public class CategoryController {
     @GetMapping("/category/keyword")
     public String CategoryKeyword(@RequestParam(defaultValue = "50") int size, @RequestParam(defaultValue = "100") int sid, Model model) throws IOException {
         RestClientBuilder builder = RestClient.builder(
-                new HttpHost("localhost", 9200, "http"));
+                new HttpHost("localhost", 9200, "http"),
+                new HttpHost("192.168.0.5", 9200, "http"));
         RestHighLevelClient client = new RestHighLevelClient(builder);
 
 

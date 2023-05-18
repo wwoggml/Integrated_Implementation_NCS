@@ -1,4 +1,17 @@
 spring:
+  profiles:
+    group:
+      local: "local,common"
+---
+spring:
+  profiles:
+    group:
+      kimjaehee: "kimjaehee,common"
+---
+spring:
+  config:
+    activate:
+      on-profile: local
   datasource:
     url: jdbc:mysql://localhost:3306/ncs?useSSL=false&useUnicode=true&serverTimezone=Asia/Seoul&allowPublicKeyRetrieval=true
     driver-class-name: com.mysql.cj.jdbc.Driver
@@ -7,13 +20,46 @@ spring:
   thymeleaf:
     cache: false
   jpa:
+    show-sql: true
     hibernate:
-      ddl-auto: update
+    ddl-auto: update
     properties:
       hibernate:
         format_sql: true
+        default_batch_fetch_size: 1000
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+server:
+  port: 8080
 logging:
   level:
     org.hibernate.SQL: debug
     org.hibernate.type: trace
     org.springframework.data.elasticsearch.client.WIRE: TRACE
+---
+spring:
+  config:
+    activate:
+      on-profile: kimjaehee
+  datasource:
+    url: jdbc:mysql://192.168.0.5:3306/ncs?useSSL=false&useUnicode=true&serverTimezone=Asia/Seoul&allowPublicKeyRetrieval=true
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: 1234
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        format_sql: true
+        default_batch_fetch_size: 1000
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+
+server:
+  port: 8080
+logging:
+  level:
+    org.hibernate.SQL: debug
+    org.hibernate.type: trace
+    org.springframework.data.elasticsearch.client.WIRE: TRACE
+---
