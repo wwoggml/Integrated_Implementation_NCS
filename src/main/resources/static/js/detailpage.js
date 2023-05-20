@@ -18,3 +18,4 @@ let news_textSize = news_text.innerText.split('.').length;
 news_text.innerText.split('.')
 news_textStr = news_text.innerText.split('.')[0] + "<br><br>"  + news_text.innerText.split('.').slice(1,news_textSize/4) + "<br><br>" + news_text.innerText.split('.').slice(news_textSize/4+1,news_textSize/2) + "<br><br>" + news_text.innerText.split('.').slice(news_textSize/2+1,news_textSize - 1)
 news_text.innerHTML = news_textStr;
+
