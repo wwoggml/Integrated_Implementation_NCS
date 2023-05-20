@@ -10,8 +10,7 @@
 <br>
 
 ### 완성 사이트
-
-==> rnse.developlog.site:13380
+==> http://rnse.developlog.site:13380
 
 
 <br>
