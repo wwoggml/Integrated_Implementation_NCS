@@ -28,9 +28,9 @@
     <div class="searchResult">
       <div class="sort_bar mb-0">
         <ul class="nav justify-content-end mb-0">
-          <a class="nav-link sort" id="link1" th:href="@{/search(sort=1, keyword=${param.keyword})}">• <small> 관련도순</small></a>
-          <a class="nav-link sort" id="link2"  th:href="@{/search(sort=2, keyword=${param.keyword})}">• <small> 최신순</small></a>
-          <a class="nav-link sort" id="link3"  th:href="@{/search(sort=3, keyword=${param.keyword})}">• <small> 오래된순</small></a>
+          <a class="nav-link sort" id="link1" th:href="@{/search(sort=1, keyword=${param.keyword}, startPage=1)}">• <small> 관련도순</small></a>
+          <a class="nav-link sort" id="link2"  th:href="@{/search(sort=2, keyword=${param.keyword}, startPage=1)}">• <small> 최신순</small></a>
+          <a class="nav-link sort" id="link3"  th:href="@{/search(sort=3, keyword=${param.keyword}, startPage=1)}">• <small> 오래된순</small></a>
         </ul>
       </div>
       <hr>
@@ -50,22 +50,46 @@
         </div>
       </div>
     </div>
-    <div class="paging" th:if="${totalPages > 0}">
+
+<!--    <div class="paging" th:if="${totalPages > 0}">-->
+<!--      <nav aria-label="Page navigation example">-->
+<!--        <ul class="pagination">-->
+<!--          <li class="page-item" th:class="${currentPage == 1} ? disabled : ''">-->
+<!--            <a class="page-link" aria-label="Previous" th:if="${currentPage > 1}" th:href="@{/search(page=${currentPage - 1}, sort=${param.sort}, keyword=${param.keyword})}">-->
+<!--              <span aria-hidden="true">&laquo;</span>-->
+<!--              <span class="sr-only">Previous</span>-->
+<!--            </a>-->
+<!--          </li>-->
+<!--          <li class="page-item" th:class="${currentPage == i} ? 'page-item active' : ''" th:each="i : ${#numbers.sequence(1, totalPages)}">-->
+<!--            <a class="page-link" th:href="@{/search(page=${i}, sort=${param.sort}, keyword=${param.keyword})}" th:text="${i}"></a>-->
+<!--          </li>-->
+
+<!--          <li class="page-item" th:class="${currentPage == totalPages} ? disabled : ''">-->
+
+<!--            <a class="page-link" th:if="${currentPage < totalPages}" th:href="@{/search(page=${currentPage + 1}, sort=${param.sort}, keyword=${param.keyword})}" aria-label="Next">-->
+<!--              <span aria-hidden="true">&raquo;</span>-->
+<!--              <span class="sr-only">Next</span>-->
+<!--            </a>-->
+<!--          </li>-->
+<!--        </ul>-->
+<!--      </nav>-->
+<!--    </div>-->
+    <div class="paging" th:if="${totalPages > 0 && totalPages <= 10}">
       <nav aria-label="Page navigation example">
         <ul class="pagination">
           <li class="page-item" th:class="${currentPage == 1} ? disabled : ''">
-            <a class="page-link" aria-label="Previous" th:if="${currentPage > 1}" th:href="@{/search(page=${currentPage - 1}, sort=${param.sort}, keyword=${param.keyword})}">
+            <a class="page-link" aria-label="Previous" th:if="${currentPage > 1}" th:href="@{/search(page=${currentPage - 1}, sort=${param.sort}, keyword=${param.keyword}, startPage=${param.startPage})}">
               <span aria-hidden="true">&laquo;</span>
               <span class="sr-only">Previous</span>
             </a>
           </li>
           <li class="page-item" th:class="${currentPage == i} ? 'page-item active' : ''" th:each="i : ${#numbers.sequence(1, totalPages)}">
-            <a class="page-link" th:href="@{/search(page=${i}, sort=${param.sort}, keyword=${param.keyword})}" th:text="${i}"></a>
+            <a class="page-link" th:href="@{/search(page=${i}, sort=${param.sort}, keyword=${param.keyword}, startPage=${param.startPage})}" th:text="${i}"></a>
           </li>
 
           <li class="page-item" th:class="${currentPage == totalPages} ? disabled : ''">
 
-            <a class="page-link" th:if="${currentPage < totalPages}" th:href="@{/search(page=${currentPage + 1}, sort=${param.sort}, keyword=${param.keyword})}" aria-label="Next">
+            <a class="page-link" th:if="${currentPage < totalPages}" th:href="@{/search(page=${currentPage + 1}, sort=${param.sort}, keyword=${param.keyword}, startPage=${param.startPage})}" aria-label="Next">
               <span aria-hidden="true">&raquo;</span>
               <span class="sr-only">Next</span>
             </a>
@@ -73,8 +97,48 @@
         </ul>
       </nav>
     </div>
+    <div class="paging" th:if="${totalPages > 10}">
+      <nav aria-label="Page navigation example">
+        <ul class="pagination">
+          <li class="page-item" th:if="${currentPage == 1}">
+          </li>
+          <li class="page-item" th:unless="${currentPage == 1}">
+            <a class="page-link" aria-label="Previous" th:if="${currentPage > 1 && currentPage % 10 == 1}" th:href="@{/search(page=${currentPage - 1}, sort=${param.sort}, keyword=${param.keyword}, startPage=${param.startPage})}">
+              <span aria-hidden="true">&laquo;</span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="page-link" aria-label="Previous" th:unless="${currentPage > 1 && currentPage % 10 == 1}" th:href="@{/search(page=${currentPage - 1}, sort=${param.sort}, keyword=${param.keyword}, startPage=${param.startPage})}">
+              <span aria-hidden="true">&laquo;</span>
+              <span class="sr-only">Previous</span>
+            </a>
+          </li>
+          <li class="page-item" th:class="${currentPage == i} ? 'page-item active' : ''" th:if="${totalPages - startPage < 9}"th:each="i : ${#numbers.sequence(startPage, totalPages)}">
+            <a class="page-link" th:href="@{/search(page=${i}, sid=${param.sid}, startPage=${param.startPage})}" th:text="${i}"></a>
+          </li>
+          <li class="page-item" th:class="${currentPage == i} ? 'page-item active' : ''" th:if="${totalPages - startPage > 9}"th:each="i : ${#numbers.sequence(startPage, startPage+9)}">
+            <a class="page-link" th:href="@{/search(page=${i}, sort=${param.sort}, keyword=${param.keyword}, startPage=${param.startPage})}" th:text="${i}"></a>
+          </li>
+
+          <li class="page-item" th:if="${currentPage != totalPages}">
+
+            <a class="page-link" th:if="${currentPage < totalPages && currentPage % 10 == 0}" th:href="@{/search(page=${currentPage+1}, sort=${param.sort}, keyword=${param.keyword}, startPage=${startPage+10})}" aria-label="Next">
+              <th:block></th:block>
+              <span aria-hidden="true">&raquo;</span>
+              <span class="sr-only">Next</span>
+            </a>
+            <a class="page-link" th:unless="${currentPage < totalPages && currentPage % 10 == 0}" th:href="@{/search(page=${currentPage + 1}, sort=${param.sort}, keyword=${param.keyword}, startPage=${param.startPage})}" aria-label="Next">
+              <span aria-hidden="true">&raquo;</span>
+              <span class="sr-only">Next</span>
+            </a>
+          </li>
+          <li class="page-item" th:unless="${currentPage != totalPages}">
+
+          </li>
+        </ul>
+      </nav>
+    </div>
   </div>
-  <script type="text/javascript" th:src="@{/js/searchresult.js}"></script>
+    <script type="text/javascript" th:src="@{/js/searchresult.js}"></script>
 </div>
 </body>
 </html>

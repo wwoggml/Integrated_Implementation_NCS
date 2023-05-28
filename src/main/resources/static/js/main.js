@@ -127,7 +127,7 @@ function loadTopKeywords() {
             $.each(data, function (index, keyword) {
                 var row = "<div class='row mt-3'>" +
                     "<div class='col-1'>" + (index + 1) + "</div>" +
-                    "<div class='col-10'><small><a href='/search?sort=1&keyword=" + encodeURIComponent(keyword.keyword) + "'>" + keyword.keyword + "</a></small></div>"
+                    "<div class='col-10'><small><a href='/search?sort=1&startPage=1&keyword=" + encodeURIComponent(keyword.keyword) + "'>" + keyword.keyword + "</a></small></div>"
                 "</div>";
                 $("#topkeywords-container").append(row);
             });

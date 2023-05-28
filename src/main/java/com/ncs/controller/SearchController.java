@@ -56,12 +56,18 @@ public class SearchController {
     public String test(HttpServletRequest httpServletRequest, Model model,
                        @RequestParam(defaultValue = "10") int size,
                        @RequestParam(defaultValue = "1") int sort,
+                       @RequestParam(defaultValue = "1") int startPage,
                        @RequestParam(value = "page", defaultValue = "1") int page) throws UnsupportedEncodingException {
         String keyword = httpServletRequest.getParameter("keyword");
 
+        model.addAttribute("startPage", startPage);
+
+        if(page % 10 == 0) {
+            startPage = 1;
+            startPage += page;
+        }
+
         TopKeywordDto topKeywordDto = new TopKeywordDto();
-
-
         topKeywordService.saveSearchKeyword(keyword);
 
         try {

@@ -36,14 +36,22 @@ public class CategoryController {
     @Autowired
     NewsService newsService;
 
+
     @GetMapping("/category")
     public String Category(HttpServletRequest httpServletRequest, Model model,
                            @RequestParam(defaultValue = "10") int size,
                            @RequestParam(defaultValue = "101") int sid,
+                           @RequestParam(defaultValue = "1") int startPage,
                            @RequestParam(value = "page", defaultValue = "1") int page) {
-
         Pageable pageable = PageRequest.of(page - 1, size);
         Page<News> list = null;
+
+        model.addAttribute("startPage", startPage);
+
+        if(page % 10 == 0) {
+            startPage = 1;
+            startPage += page;
+        }
 
         if(sid == 100) list = newsService.searchCategory("정치", pageable);
         else if(sid == 101) list = newsService.searchCategory("경제", pageable);
