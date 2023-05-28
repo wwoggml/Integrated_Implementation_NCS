@@ -41,7 +41,7 @@ for(let i = 0; i<datetime.length; i++) {
 
     if (parameterSortValue == 1) {
         document.getElementById("link1").style.color = "black";
-    } else if(parameterValue == 2) {
+    } else if(parameterSortValue == 2) {
         document.getElementById("link2").style.color = "black";
     }
 }
