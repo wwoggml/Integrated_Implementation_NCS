@@ -23,6 +23,7 @@ for(let i = 0; i<datetime.length; i++) {
 
     const urlParams = new URLSearchParams(window.location.search);
     const parameterValue = urlParams.get("sid");
+    const parameterSortValue = urlParams.get("sort");
 
     const categoryColors = ["#FFCE44", "#0288D1", "#43A047", "#FFCE44", "#0288D1"];
     const categoryIds = ["sid_100", "sid_101", "sid_102", "sid_103", "sid_104"];
@@ -35,5 +36,12 @@ for(let i = 0; i<datetime.length; i++) {
 
         const sidElem = document.getElementById(categoryIds[index]);
         sidElem.style.borderBottom = "2px solid white";
+    }
+
+
+    if (parameterSortValue == 1) {
+        document.getElementById("link1").style.color = "black";
+    } else if(parameterValue == 2) {
+        document.getElementById("link2").style.color = "black";
     }
 }

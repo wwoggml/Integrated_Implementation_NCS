@@ -40,11 +40,19 @@ public class CategoryController {
     @GetMapping("/category")
     public String Category(HttpServletRequest httpServletRequest, Model model,
                            @RequestParam(defaultValue = "10") int size,
+                           @RequestParam(defaultValue = "1") int sort,
                            @RequestParam(defaultValue = "101") int sid,
                            @RequestParam(defaultValue = "1") int startPage,
                            @RequestParam(value = "page", defaultValue = "1") int page) {
         Pageable pageable = PageRequest.of(page - 1, size);
         Page<News> list = null;
+        String category = "";
+
+        if(sid == 100) category = "정치";
+        else if(sid == 101) category = "경제";
+        else if(sid == 102) category = "스포츠";
+        else if(sid == 103) category = "생활/문화";
+        else if(sid == 104) category = "IT/과학";
 
         model.addAttribute("startPage", startPage);
 
@@ -53,11 +61,13 @@ public class CategoryController {
             startPage += page;
         }
 
-        if(sid == 100) list = newsService.searchCategory("정치", pageable);
-        else if(sid == 101) list = newsService.searchCategory("경제", pageable);
-        else if(sid == 102) list = newsService.searchCategory("스포츠", pageable);
-        else if(sid == 103) list = newsService.searchCategory("생활/문화", pageable);
-        else if(sid == 104) list = newsService.searchCategory("IT/과학", pageable);
+        if(sort == 1) {
+            list = newsService.getCategorySortDesc(category, pageable);
+        }else if(sort == 2) {
+            list = newsService.getCategorySortAsc(category, pageable);
+        }else {
+            list = newsService.searchCategory(category, pageable);
+        }
 
         model.addAttribute("list",list);
         model.addAttribute("currentPage", page);
@@ -73,6 +83,7 @@ public class CategoryController {
 
         Pageable pageable = PageRequest.of(page - 1, size);
         Page<News> list = newsService.searchCategory("경제", pageable);
+
 
         model.addAttribute("list",list);
         model.addAttribute("currentPage", page);

@@ -24,6 +24,15 @@
 }
 
 
+.sort {
+    color: grey;
+}
+
+/* 마우스 오버 링크 스타일 */
+a:hover {
+    color: black !important;
+}
+
 .category-name a{
     text-decoration: none;
     color: white;
